@@ -1,12 +1,10 @@
 import { createStore } from 'vuex'
+import delivery from './delivery'
+import deliveries from './deliveries'
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    delivery,
+    deliveries
   }
 })
