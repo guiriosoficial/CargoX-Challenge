@@ -21,21 +21,21 @@
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import { useToast } from 'vue-toastification'
-import HeaderSkeleton from '@/components/skeleton/HeaderSkeleton'
-import MapSkeleton from './skeleton/MapSkeleton'
 
 const Details = defineAsyncComponent(() => import('./Details' /* webpackChunkName: 'Details' */))
 const Header = defineAsyncComponent(() => import('@/components/Header' /* webpackChunkName: 'Header' */))
+const HeaderSkeleton = defineAsyncComponent(() => import('@/components/skeleton/HeaderSkeleton' /* webpackChunkName: 'HeaderSkeleton' */))
 const Map = defineAsyncComponent(() => import('./Map' /* webpackChunkName: 'Map' */))
+const MapSkeleton = defineAsyncComponent(() => import('./skeleton/MapSkeleton' /* webpackChunkName: 'MapSkeleton' */))
 
 export default {
   name: 'App',
   components: {
     Details,
     Header,
+    HeaderSkeleton,
     Map,
-    MapSkeleton,
-    HeaderSkeleton
+    MapSkeleton
   },
   computed: {
     ...mapGetters({

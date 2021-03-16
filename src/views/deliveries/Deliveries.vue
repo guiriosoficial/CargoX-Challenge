@@ -18,10 +18,10 @@
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import { useToast } from 'vue-toastification'
-import TableSkeleton from './skeleton/TableSkeleton'
 
 const Header = defineAsyncComponent(() => import('@/components/Header' /* webpackChunkName: 'Header' */))
 const Table = defineAsyncComponent(() => import('./Table' /* webpackChunkName: 'Table' */))
+const TableSkeleton = defineAsyncComponent(() => import('./skeleton/TableSkeleton' /* webpackChunkName: 'TableSkeleton' */))
 
 export default {
   name: 'Home',
