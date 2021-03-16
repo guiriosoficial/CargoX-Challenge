@@ -1,0 +1,48 @@
+@import '../variables/colors.scss';
+$--transition-cubic: cubic-bezier(.64,.09,.08,1);
+
+[class$="tooltip"] {
+  position: relative;
+  &:after {
+    content: attr(data-tooltip);
+    z-index: 2;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    bottom: calc(2em);
+    border-radius: 2px;
+    padding: 6px 10px;
+    color: $--color-white;
+    background: $--color-background-dark;
+    transform: translateX(-50%) translateY(-2px);
+    transition: opacity 0.2s $--transition-cubic, transform 0.2s $--transition-cubic;
+    transition-delay: .4s;
+    white-space: nowrap;
+  }
+  &:before {
+    content: '';
+    z-index: 3;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    bottom: calc(2em - 6px);
+    width: 0;
+    height: 0;
+    border-left: solid 6px transparent;
+    border-right: solid 6px transparent;
+    border-top: solid 6px $--color-background-dark;
+    transform: translateX(-50%) translateY(-2px);
+    transition: opacity 0.2s $--transition-cubic, transform 0.2s $--transition-cubic;
+    transition-delay: .4s;
+  }
+  &:hover {
+    &:after, &:before {
+      display: block;
+      opacity: .8;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import '../variables/colors.scss';
+
+.cx-card {
+  background-color: $--color-white;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.05);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
