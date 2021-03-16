@@ -3,9 +3,9 @@
     <h1>
       {{ String(title).toUpperCase() }}
     </h1>
-    <h4 class="header-container__sub-title">
+    <h2 class="header-container__sub-title">
       {{ subtitle }}
-    </h4>
+    </h2>
   </header>
 </template>
 
@@ -34,6 +34,7 @@ export default {
 
   .header-container__sub-title {
     font-weight: 500;
+    font-size: 1em;
   }
 }
 
