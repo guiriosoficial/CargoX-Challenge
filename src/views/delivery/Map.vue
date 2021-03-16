@@ -3,6 +3,7 @@
     <map class="map-container__content">
       <iframe
         :src="routeUrl"
+        title="Google Direction Map"
         width="100%"
         height="480"
         loading="lazy"

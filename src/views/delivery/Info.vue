@@ -7,7 +7,7 @@
     />
 
     <div class="info-container__container">
-      <h5 class="info-container__label">
+      <span class="info-container__label">
         {{ $t(`labels.${detail.key}`) }}
         <fa
           v-if="detail.tooltip"
@@ -15,7 +15,7 @@
           icon="question-circle"
           class="info-container__icon tooltip"
         />
-      </h5>
+      </span>
 
       <component
         :is="detail.component"
@@ -78,6 +78,7 @@ export default {
     .info-container__label {
       display: flex;
       align-items: center;
+      font-size: .84em;
       height: 26px;
       gap: 4px;
       color: $--color-text-placeholder;
