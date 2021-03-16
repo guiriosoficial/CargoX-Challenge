@@ -36,6 +36,13 @@ export default {
       isLoadingDeliveries: 'getIsLoadingDeliveries'
     })
   },
+  async beforeMount () {
+    this.clearDelivery()
+    await this.getDeliveries()
+      .catch(() => {
+        useToast().error(`Ops! ${this.$t('errors.somethig-wrong')}.`)
+      })
+  },
   methods: {
     ...mapActions([
       'getDeliveries',

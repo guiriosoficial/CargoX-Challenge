@@ -44,9 +44,18 @@ export default {
       return this.$route.params.id
     }
   },
+  async beforeMount () {
+    await this.init(this.deliveryId)
+  },
   methods: {
     ...mapActions(['getDelivery']),
 
+    init (deliveryId) {
+      this.getDelivery(deliveryId)
+        .catch(() => {
+          useToast().error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
+          this.$router.push('/')
+        })
     }
   }
 }
