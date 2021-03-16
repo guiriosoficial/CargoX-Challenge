@@ -265,4 +265,16 @@ export default {
   }
 }
 
+@media (max-width: 1080px) {
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .details-container__column {
+      &:first-child { flex: 5; }
+      &:last-child { flex: 4; }
+    }
+  }
+}
 </style>

@@ -37,4 +37,9 @@ export default {
   }
 }
 
+@media (max-width: 600px) {
+  .header-container {
+    margin: 30px 20px
+  }
+}
 </style>
