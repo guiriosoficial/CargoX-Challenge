@@ -10,6 +10,7 @@
         allowfullscreen
       />
     </map>
+
     <footer class="map-container__footer">
       Última atualização: {{ route.lastAppUpdateAt }}
     </footer>
@@ -26,6 +27,7 @@ export default {
     ...mapGetters({
       route: 'getRoute'
     }),
+
     routeUrl () {
       const { origin, destination } = this.route
       return `
@@ -33,7 +35,6 @@ export default {
         &origin=${origin?.latitude},+${origin?.longitude}
         &destination=${destination?.latitude},+${destination?.longitude}
       `
-      // &mode=transit
     }
   }
 }

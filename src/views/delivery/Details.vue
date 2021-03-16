@@ -8,6 +8,7 @@
         :detail="detail"
       />
     </div>
+
     <div class="details-container__column">
       <component
         :is="isLoadingDelivery ? 'InfoSkeleton' : 'Info'"
@@ -23,8 +24,8 @@
 import { defineAsyncComponent } from 'vue'
 import { mapGetters } from 'vuex'
 import { dateTime, phoneNumber } from '@/filters'
-
 import InfoSkeleton from './skeleton/InfoSkeleton'
+
 const Info = defineAsyncComponent(() => import('./Info' /* webpackChunkName: 'Info' */))
 
 export default {

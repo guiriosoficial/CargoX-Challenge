@@ -8,22 +8,14 @@
     </thead>
     <tbody class="table-container__body">
       <tr
-        v-for="data in [1, 2, 3, 4]"
-        :key="data"
+        v-for="n in 3"
+        :key="n"
         class="table-container__row"
       >
-        <td>
-          <span class="skeleton-loading" />
-        </td>
-        <td>
-          <span class="skeleton-loading" />
-        </td>
-        <td>
-          <span class="skeleton-loading" />
-        </td>
-        <td>
-          <span class="skeleton-loading" />
-        </td>
+        <td><span class="skeleton-loading" /></td>
+        <td><span class="skeleton-loading" /></td>
+        <td><span class="skeleton-loading" /></td>
+        <td><span class="skeleton-loading" /></td>
       </tr>
     </tbody>
   </table>

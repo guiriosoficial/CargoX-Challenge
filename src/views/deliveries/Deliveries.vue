@@ -18,8 +18,8 @@
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import { useToast } from 'vue-toastification'
-
 import TableSkeleton from './skeleton/TableSkeleton'
+
 const Header = defineAsyncComponent(() => import('@/components/Header' /* webpackChunkName: 'Header' */))
 const Table = defineAsyncComponent(() => import('./Table' /* webpackChunkName: 'Table' */))
 
@@ -38,6 +38,7 @@ export default {
   },
   async beforeMount () {
     this.clearDelivery()
+
     await this.getDeliveries()
       .catch(() => {
         useToast().error(`Ops! ${this.$t('errors.somethig-wrong')}.`)

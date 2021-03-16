@@ -6,6 +6,7 @@
       <th>{{ $t('labels.customer-name') }}</th>
       <th>{{ $t('labels.delivery-status') }}</th>
     </thead>
+
     <tbody
       v-if="tableData.length"
       class="table-container__body"

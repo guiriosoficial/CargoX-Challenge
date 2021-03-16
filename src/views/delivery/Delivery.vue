@@ -4,7 +4,9 @@
       :is="isLoadingDelivery ? 'HeaderSkeleton' : 'Header'"
       :title="customer?.name"
       :subtitle="`ID do cliente ${customer.id}`"
+      class="delivery-container__header"
     />
+
     <section class="delivery-container__info">
       <Details class="delivery-container__info-details" />
       <component
@@ -19,9 +21,9 @@
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import { useToast } from 'vue-toastification'
-
 import HeaderSkeleton from '@/components/skeleton/HeaderSkeleton'
 import MapSkeleton from './skeleton/MapSkeleton'
+
 const Details = defineAsyncComponent(() => import('./Details' /* webpackChunkName: 'Details' */))
 const Header = defineAsyncComponent(() => import('@/components/Header' /* webpackChunkName: 'Header' */))
 const Map = defineAsyncComponent(() => import('./Map' /* webpackChunkName: 'Map' */))
@@ -39,12 +41,11 @@ export default {
     ...mapGetters({
       customer: 'getCostumer',
       isLoadingDelivery: 'getIsLoadingDelivery'
-    }),
-    deliveryId () {
-      return this.$route.params.id
-    }
+    })
   },
   async beforeMount () {
+    this.clearDelivery()
+
     await this.getDelivery(this.$route.params.id)
       .catch(() => {
         useToast().error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
@@ -52,7 +53,10 @@ export default {
       })
   },
   methods: {
-    ...mapActions(['getDelivery'])
+    ...mapActions([
+      'getDelivery',
+      'clearDelivery'
+    ])
   }
 }
 </script>
@@ -63,7 +67,10 @@ export default {
     display: flex;
     gap: 20px;
 
-    .delivery-container__info-details { flex: 3; }
+    .delivery-container__info-details {
+      flex: 3;
+    }
+
     .delivery-container__info-map {
       flex: 2;
       position: sticky;

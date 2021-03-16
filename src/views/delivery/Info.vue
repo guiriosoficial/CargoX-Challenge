@@ -5,6 +5,7 @@
       :type="detail.iconType || 'fas'"
       class="info-container__icon"
     />
+
     <div class="info-container__container">
       <h5 class="info-container__label">
         {{ $t(`labels.${detail.key}`) }}
@@ -15,6 +16,7 @@
           class="info-container__icon tooltip"
         />
       </h5>
+
       <component
         :is="detail.component"
         :text="detail.text"
