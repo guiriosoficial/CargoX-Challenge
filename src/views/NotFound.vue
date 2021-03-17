@@ -1,24 +1,23 @@
 <template>
   <div class="error-container">
-    <h1>{{ $t('errors.404.code') }}</h1>
-    <h4>{{ $t('errors.404.message') }}</h4>
-    <Button
-      placeholder="go-back"
+    <h1 class="error-container__title">
+      {{ $t('errors.404.code') }}
+    </h1>
+    <h2 class="error-container__sub-title">
+      {{ $t('errors.404.message') }}
+    </h2>
+    <button
+      class="error-container__button cx-button"
       @click="$router.push('/')"
-    />
+    >
+      {{ $t(`buttons.go-back`) }}
+    </button>
   </div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
-
-const Button = defineAsyncComponent(() => import('@/components/Button' /* webpackChunkName: 'Button' */))
-
 export default {
-  name: 'NotFound',
-  components: {
-    Button
-  }
+  name: 'NotFound'
 }
 </script>
 
@@ -32,5 +31,9 @@ export default {
   justify-content: center;
   flex-direction: column;
   gap: 12px;
+
+  .error-container__sub-title {
+    font-size: 1em;
+  }
 }
 </style>

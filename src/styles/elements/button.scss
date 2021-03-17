@@ -1,23 +1,6 @@
-<template>
-  <span class="button-container">{{ $t(`buttons.${placeholder}`) }}</span>
-</template>
-
-<script>
-export default {
-  name: 'Button',
-  props: {
-    placeholder: {
-      type: String,
-      required: true
-    }
-  }
-}
-</script>
-
-<style lang="scss" scoped>
 @import '@/styles/variables/colors.scss';
 
-.button-container {
+.cx-button {
   cursor: pointer;
   font-size: 0.83em;
   border-radius: 6px;
@@ -32,4 +15,3 @@ export default {
     color: $--color-white;
   }
 }
-</style>
