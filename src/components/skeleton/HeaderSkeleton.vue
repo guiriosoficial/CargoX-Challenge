@@ -1,7 +1,7 @@
 <template>
   <header class="header-container">
     <h1 class="header-container__title skeleton-loading" />
-    <h4 class="header-container__sub-title skeleton-loading" />
+    <h2 class="header-container__sub-title skeleton-loading" />
   </header>
 </template>
 

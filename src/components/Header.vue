@@ -1,7 +1,7 @@
 <template>
   <header class="header-container">
-    <h1>
-      {{ String(title).toUpperCase() }}
+    <h1 class="header-container__title">
+      {{ title.toUpperCase() }}
     </h1>
     <h2 class="header-container__sub-title">
       {{ subtitle }}

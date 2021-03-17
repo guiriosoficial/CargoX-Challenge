@@ -26,7 +26,7 @@ import { mapGetters } from 'vuex'
 import { dateTime, phoneNumber } from '@/filters'
 
 const Info = defineAsyncComponent(() => import('./Info' /* webpackChunkName: 'Info' */))
-const InfoSkeleton = defineAsyncComponent(() => import('./skeleton/InfoSkeleton'))
+const InfoSkeleton = defineAsyncComponent(() => import('./skeleton/InfoSkeleton' /* webpackChunkName: 'InfoSkeleton' */))
 
 export default {
   name: 'Details',
