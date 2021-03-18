@@ -1,5 +1,5 @@
 # ![CargoX](https://raw.githubusercontent.com/riversofficial/cargox-challenge/main/src/assets/logo.png) Challenge
-This project was my challenge for an internship job at CargoX.  
+This project is my challenge for a job at CargoX.  
 CargoX is the largest freight marketplace in Brazil!  
 
 ## The Challenge
@@ -9,7 +9,7 @@ The challenge is create a **VueJS** application usin de following API: [Mocky AP
 - They like _responsive layouts_,  
 - They like _tests_.  
 
-The following layouts must been developed:  
+The following layouts must been created:  
 
 **Desktop**
 ![tela](https://user-images.githubusercontent.com/234173/53424507-17f6ce00-39c2-11e9-945e-766d1961b4ac.png)  
