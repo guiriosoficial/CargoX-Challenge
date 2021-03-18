@@ -132,12 +132,13 @@ export default {
 
 @media (max-width: 600px) {
   .table-container {
-    font-size: .9em;
+    font-size: .89em;
 
     .table-container__header > th {
       &:first-child { padding-left: 20px; }
       &:last-child { padding-right: 10px; }
     }
+
     .table-container__body {
       .table-container__row  > td {
         &:first-child { padding-left: 20px; }

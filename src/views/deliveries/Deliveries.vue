@@ -69,6 +69,8 @@ export default {
 
 @media (max-width: 600px) {
   .home-container {
+    height: calc(100vh);
+
     .home-container__table.cx-card {
       padding: 30px 0;
     }
