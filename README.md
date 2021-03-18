@@ -17,15 +17,6 @@ The following layouts must been developed:
 **Mobile**
 ![tela_responsiva](https://user-images.githubusercontent.com/234173/53424574-2e048e80-39c2-11e9-9972-2c613bf0de73.png)  
 
-## Project Setup
-- **Requirements:** `Node` and `NPM` installed  
-- **Install Dependencies:** `npm install`  
-- **Start Development Server:** `npm run serve`  
-- **Compiles For Production:** `npm run build`  
-- **Run Unit Tests:** `npm run test:unit`
-- **Run End-2-End Tests:** `npm run test:e2e`  
-- **Lints and Fixes Files**: `npm run lint`   
-
 #### Notes:
 The API was been moved for new version (v3) of Mocky.io
 - [ ] Old API: <http://www.mocky.io/v2/5c7552e43100009c20c23450>
@@ -36,5 +27,14 @@ A Second API was been created to test difrent cases
   
 A Second Screen was been create to navegate between cases
 - [x] New API: <https://run.mocky.io/v3/1e985b3b-8543-4406-b8df-dd65baac501c>
+
+## Project Setup
+- **Requirements:** `Node` and `NPM` installed  
+- **Install Dependencies:** `npm install`  
+- **Start Development Server:** `npm run serve`  
+- **Compiles For Production:** `npm run build`  
+- **Run Unit Tests:** `npm run test:unit`
+- **Run End-2-End Tests:** `npm run test:e2e`  
+- **Lints and Fixes Files**: `npm run lint`   
 
 > **Status:** Waiting for análise... :truck:
