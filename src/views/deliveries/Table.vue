@@ -88,6 +88,7 @@ export default {
     & > th {
       flex: 1;
       font-weight: 500;
+      padding-right: 10px;
     }
   }
 
@@ -108,6 +109,7 @@ export default {
       }
       & > td {
         flex: 1;
+        padding-right: 10px;
       }
     }
   }
@@ -124,6 +126,23 @@ export default {
 
     .table-container__empty-state-icon {
       width: 110px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .table-container {
+    font-size: .9em;
+
+    .table-container__header > th {
+      &:first-child { padding-left: 20px; }
+      &:last-child { padding-right: 10px; }
+    }
+    .table-container__body {
+      .table-container__row  > td {
+        &:first-child { padding-left: 20px; }
+        &:last-child { padding-right: 10px; }
+      }
     }
   }
 }

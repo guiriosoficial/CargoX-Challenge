@@ -66,4 +66,12 @@ export default {
     overflow: hidden;
   }
 }
+
+@media (max-width: 600px) {
+  .home-container {
+    .home-container__table.cx-card {
+      padding: 30px 0;
+    }
+  }
+}
 </style>
