@@ -25,7 +25,7 @@
         <h4 class="timeline-container__step-title">
           {{ step.label }}
         </h4>
-        <span class="timeline-container__step-content">
+        <span class="timeline-container__step-time">
           {{ step.time }}
         </span>
       </div>
@@ -125,7 +125,7 @@ export default {
         font-weight: 600;
       }
 
-      .timeline-container__step-content {
+      .timeline-container__step-time {
         margin-bottom: 20px;
       }
     }

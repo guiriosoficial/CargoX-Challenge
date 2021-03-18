@@ -17,8 +17,8 @@ describe('Tags', () => {
   })
 
   test('Should be visible', () => {
-    expect(recived[0].wrapperElement).toBeVisible()
-    expect(recived[1].wrapperElement).toBeVisible()
+    expect(recived[0].isVisible()).toBeTruthy()
+    expect(recived[1].isVisible()).toBeTruthy()
   })
 
   test('Should be show label props', () => {
@@ -27,8 +27,7 @@ describe('Tags', () => {
   })
 
   test('Should active has modifies class', () => {
-    const activeRecived = recived[0]
-    expect(activeRecived.classes()).toContain('tags-container__tag--active')
-    // expect(activeRecived.wrapperElement).toHaveStyle('background-color: rgb(46, 205, 112)')
+    expect(recived[0].classes()).toContain('tags-container__tag--active')
+    expect(recived[1].classes()).not.toContain('tags-container__tag--active')
   })
 })
