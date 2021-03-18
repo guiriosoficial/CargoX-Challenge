@@ -28,8 +28,8 @@ A Second API was been created to test difrent cases
 A Second Screen was been create to navegate between cases
 - [x] New API: <https://run.mocky.io/v3/1e985b3b-8543-4406-b8df-dd65baac501c>
 
-NPM Version: 7.6.5
-Node Version: 10.19.0
+NPM Version: 7.6.5  
+Node Version: 10.19.0  
 
 ## Project Setup
 - **Requirements:** `Node` and `NPM` installed  
