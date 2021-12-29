@@ -32,7 +32,7 @@ NPM Version: 7.6.5
 Node Version: 10.19.0  
 
 ## Project Setup
-- **Requirements:** `Node` and `NPM` installed  
+- **Requirements:** `Node` (>=14.18.12 || <=16.13.1) and `NPM` (>=6.14.15 || <=8.1.2) installed  
 - **Install Dependencies:** `npm install`  
 - **Start Development Server:** `npm run serve`  
 - **Compiles For Production:** `npm run build`  

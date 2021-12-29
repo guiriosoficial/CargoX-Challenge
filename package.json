@@ -1,7 +1,33 @@
 {
   "name": "cargox-challenge",
+  "author": {
+    "name": "Guilherme Rios da Cunha",
+    "email": "guilherme.rc.98@gmail.com",
+    "url": "https://guiriosoficial.github.io"
+  },
+  "bugs": "https://github.com/guiriosoficial/CargoX-Challenge/issues",
+  "homepage": "https://github.com/guiriosoficial/CargoX-Challenge",
   "version": "0.1.0",
-  "private": true,
+  "keywords": [
+    "challenge",
+    "cargox-test",
+    "layout",
+    "vuejs3",
+    "vue-router",
+    "vue-components",
+    "vuex",
+    "spa",
+    "unit-tests",
+    "e2e-tests",
+    "i18n"
+  ],
+  "description": "Shipment View Challenge for Internship Vacancy at CargoX - DONE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guiriosoficial/CargoX-Challenge.git"
+  },
+  "main": "src/main.js",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -47,5 +73,14 @@
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  }
+  },
+  "engines": {
+    "node": ">=14.18.12 || <=16.13.1",
+    "npm": ">=6.14.15 || <=8.1.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
