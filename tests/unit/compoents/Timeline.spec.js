@@ -2,15 +2,14 @@ import { shallowMount } from '@vue/test-utils'
 import Timeline from '@/components/Timeline'
 import { dateTime } from '@/filters'
 
-
 describe('Timeline', () => {
   const wrapper = shallowMount(Timeline, {
-    props: { 
+    props: {
       timeline: [
         { label: 'Step done', time: dateTime(1551124241) },
         { label: 'Step done second', time: dateTime(1551124241) },
         { label: 'Step doing', time: null },
-        { label: 'Step todo', time: null },
+        { label: 'Step todo', time: null }
       ]
     }
   })
@@ -20,7 +19,6 @@ describe('Timeline', () => {
   test('Should be render', () => {
     expect(wrapper.exists()).toBeTruthy()
   })
-
 
   test('Should be render', () => {
   })

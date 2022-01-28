@@ -10,7 +10,7 @@ describe('Commun flow', () => {
     cy.get('.table-container__row .skeleton-loading')
       .should('not.exist')
   })
-    
+
   it('Click on item should be redirect to item', () => {
     cy.get('.table-container__row')
       .first()

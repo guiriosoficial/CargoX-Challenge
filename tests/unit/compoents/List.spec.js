@@ -20,5 +20,4 @@ describe('List', () => {
     expect(recived[0].text()).toBe('Item 1')
     expect(recived[1].text()).toBe('Item 2')
   })
-
 })

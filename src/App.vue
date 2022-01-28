@@ -16,6 +16,7 @@ export default {
   name: 'App'
 }
 </script>
+
 <style lang="scss" scoped>
 .main-container {
   padding: 0 20px 20px;

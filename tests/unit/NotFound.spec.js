@@ -16,14 +16,15 @@ const i18n = {
 describe('NotFound', () => {
   const wrapper = shallowMount(NotFound, {
     global: {
-      mocks: { $t: (msg) => {
+      mocks: {
+        $t: (msg) => {
           const splitedMsg = msg.split('.')
           return i18n[splitedMsg[0]][splitedMsg[1]]
         }
       }
     }
   })
-  
+
   test('Should be render', () => {
     expect(wrapper.exists()).toBeTruthy()
   })
@@ -32,7 +33,7 @@ describe('NotFound', () => {
     const recived = wrapper.find('.error-container__title')
     expect(recived.text()).toMatch('404')
   })
-  
+
   test('Should hava Go Back button', () => {
     const recived = wrapper.find('.error-container__button')
     expect(recived.text()).toBe('Voltar')

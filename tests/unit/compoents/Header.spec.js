@@ -18,7 +18,7 @@ describe('Header', () => {
     expect(recivedTitle.isVisible()).toBeTruthy()
     expect(recivedSubtitle.isVisible()).toBeTruthy()
   })
-  
+
   test('Should be have props value', () => {
     expect(recivedTitle.text()).toBe(title.toUpperCase())
     expect(recivedSubtitle.text()).toBe(subtitle)

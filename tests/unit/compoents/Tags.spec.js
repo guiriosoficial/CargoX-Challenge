@@ -3,7 +3,7 @@ import Tags from '@/components/Tags'
 
 describe('Tags', () => {
   const wrapper = shallowMount(Tags, {
-    props: { 
+    props: {
       tags: [
         { label: 'ActiveTest', isActive: true },
         { label: 'InactiveTest', isActive: false }
