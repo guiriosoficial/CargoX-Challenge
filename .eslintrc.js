@@ -6,7 +6,9 @@ module.exports = {
   },
 
   extends: [
-    'plugin:vue/vue3-essential',
+    // 'plugin:vue/vue3-essential',
+    // 'plugin:vue/strongly-recommended',
+    'plugin:vue/vue3-strongly-recommended',
     '@vue/standard'
   ],
 
@@ -17,7 +19,8 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-debugger': 'off',
-    'camelcase': 'off'
+    camelcase: 'off',
+    // 'vue/script-setup-uses-vars': 'error'
   },
 
   overrides: [
@@ -30,10 +33,5 @@ module.exports = {
         jest: true
       }
     }
-  ],
-
-  'extends': [
-    'plugin:vue/strongly-recommended',
-    '@vue/standard'
   ]
 }

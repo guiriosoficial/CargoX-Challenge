@@ -33,8 +33,9 @@ export default defineComponent({
   },
 
   setup (props) {
-    const { type, icon } = props
     const definition = computed(() => {
+      const { type, icon } = props
+
       return findIconDefinition({
         prefix: type,
         iconName: icon

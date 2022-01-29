@@ -54,8 +54,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/variables/colors.scss';
-
 .home-container {
   display: flex;
   flex-direction: column;
