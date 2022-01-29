@@ -6,9 +6,9 @@ module.exports = {
   },
 
   extends: [
-    // 'plugin:vue/vue3-essential',
-    // 'plugin:vue/strongly-recommended',
+    'plugin:vue/vue3-essential',
     'plugin:vue/vue3-strongly-recommended',
+    'plugin:vue/vue3-recommended',
     '@vue/standard'
   ],
 
@@ -17,10 +17,7 @@ module.exports = {
   },
 
   rules: {
-    'no-console': 'off',
-    'no-debugger': 'off',
-    camelcase: 'off',
-    // 'vue/script-setup-uses-vars': 'error'
+    camelcase: 'off'
   },
 
   overrides: [

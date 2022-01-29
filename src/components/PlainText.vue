@@ -1,9 +1,11 @@
+/* eslint-disable vue/no-v-html */
+
 <template>
   <div class="plain-text-container">
     <span
       v-if="text"
-      v-html="upperCaseText"
       class="plain-text-container__content"
+      v-html="upperCaseText"
     />
     <span
       v-else
