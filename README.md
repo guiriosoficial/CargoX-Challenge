@@ -4,7 +4,7 @@ CargoX is the largest freight marketplace in Brazil!
 
 ## The Challenge
 The challenge is create a **VueJS** application usin de following API: [Mocky API](http://www.mocky.io/v2/5c7552e43100009c20c23450)
-- They like _ceactive views_,  
+- They like _reactive views_,  
 - They like _components_,  
 - They like _responsive layouts_,  
 - They like _tests_.  

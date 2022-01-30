@@ -1,25 +1,27 @@
 {
   "name": "cargox-challenge",
   "author": {
-    "name": "Guilherme Rios da Cunha",
+    "name": "Guilherme Rios",
     "email": "guilherme.rc.98@gmail.com",
     "url": "https://guiriosoficial.github.io"
   },
   "bugs": "https://github.com/guiriosoficial/CargoX-Challenge/issues",
   "homepage": "https://github.com/guiriosoficial/CargoX-Challenge",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "keywords": [
+    "cargox",
     "challenge",
-    "cargox-test",
-    "layout",
-    "vuejs3",
-    "vue-router",
-    "vue-components",
-    "vuex",
-    "spa",
-    "unit-tests",
     "e2e-tests",
-    "i18n"
+    "internationalization",
+    "pwa",
+    "responsive-layout",
+    "spa",
+    "tests",
+    "unit-tests",
+    "vue-components",
+    "vue-router",
+    "vue3",
+    "vuex"
   ],
   "description": "Shipment View Challenge for Internship Vacancy at CargoX - DONE",
   "repository": {
