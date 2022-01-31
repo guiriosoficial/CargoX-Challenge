@@ -17,7 +17,8 @@ module.exports = {
   },
 
   rules: {
-    camelcase: 'off'
+    camelcase: 'off',
+    'vue/no-v-html': 'off'
   },
 
   overrides: [

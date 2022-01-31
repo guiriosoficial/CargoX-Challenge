@@ -34,8 +34,8 @@ Node Version: 10.19.0
 ## Project Setup
 - **Requirements:** `Node` (>=14.18.12 || <=16.13.1) and `NPM` (>=6.14.15 || <=8.1.2) installed  
 - **Install Dependencies:** `npm install`  
-- **Start Development Server:** `npm run serve`  
-- **Compiles For Production:** `npm run build`  
+- **Start Development Server:** `npm run serve` (Run on [http://localhost:8080/](http://localhost:8080/))  
+- **Compiles For Production:** `npm run build` (Build in `/dist`)  
 - **Run Unit Tests:** `npm run test:unit`
 - **Run End-2-End Tests:** `npm run test:e2e`  
 - **Lints and Fixes Files**: `npm run lint`   
