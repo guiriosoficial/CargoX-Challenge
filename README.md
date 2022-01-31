@@ -29,10 +29,12 @@ A Second Screen was been create to navegate between cases
 - [x] New API: <https://run.mocky.io/v3/1e985b3b-8543-4406-b8df-dd65baac501c>
 
 ## Project Setup
-- **Requirements:** `Node` (>=14.18.12 || <=16.13.1) and `NPM` (>=6.14.15 || <=8.1.2) installed  
+- **Requirements:**
+  - `Node` (>=14.18.12 || <=16.13.1)
+  - `NPM` (>=6.14.15 || <=8.1.2)
 - **Install Dependencies:** `npm install`  
 - **Start Development Server:** `npm run serve` (Run on [http://localhost:8080/](http://localhost:8080/))  
-- **Compiles For Production:** `npm run build` (Build in `/dist`)  
+- **Compiles For Production:** `npm run build` (Will be Build in `/dist`)  
 - **Run Unit Tests:** `npm run test:unit`
 - **Run End-2-End Tests:** `npm run test:e2e`  
 - **Lints and Fixes Files**: `npm run lint`   
