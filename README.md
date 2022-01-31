@@ -33,7 +33,7 @@ A Second Screen was been create to navegate between cases
   - `Node` (>=14.18.12 || <=16.13.1)
   - `NPM` (>=6.14.15 || <=8.1.2)
 - **Install Dependencies:** `npm install`  
-- **Start Development Server:** `npm run serve` (Run on [http://localhost:8080/](http://localhost:8080/))  
+- **Start Development Server:** `npm run serve` (Runs on [http://localhost:8080/](http://localhost:8080/))  
 - **Compiles For Production:** `npm run build` (Will be Build in `/dist`)  
 - **Run Unit Tests:** `npm run test:unit`
 - **Run End-2-End Tests:** `npm run test:e2e`  
