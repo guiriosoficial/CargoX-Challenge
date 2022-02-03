@@ -6,7 +6,7 @@
     "url": "https://guiriosoficial.github.io"
   },
   "bugs": "https://github.com/guiriosoficial/CargoX-Challenge/issues",
-  "homepage": "https://github.com/guiriosoficial/CargoX-Challenge",
+  "homepage": "/",
   "version": "2.0.0",
   "keywords": [
     "cargox",
@@ -26,7 +26,7 @@
   "description": "Shipment View Challenge for Internship Vacancy at CargoX - DONE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/guiriosoficial/CargoX-Challenge.git"
+    "url": "https://github.com/guiriosoficial/CargoX-Challenge"
   },
   "main": "src/main.js",
   "private": false,
