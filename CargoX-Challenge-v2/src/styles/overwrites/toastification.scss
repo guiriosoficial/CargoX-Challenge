@@ -1,0 +1,11 @@
+@import '../variables/colors.scss';
+
+.Vue-Toastification__toast {
+  opacity: .9 !important;
+  border-radius: 6px !important;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.05) !important;
+  &--success { background-color: $--color-success !important; }
+  &--info { background-color: $--color-info !important; }
+  &--warning { background-color: $--color-warning !important; }
+  &--error { background-color: $--color-danger !important; }
+}

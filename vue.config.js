@@ -3,7 +3,7 @@ process.env.VUE_APP_VERSION = require('./package.json').version
 module.exports = {
   css: {
     sourceMap: true,
-    requireModuleExtension: true
+    // requireModuleExtension: true
   },
 
   pwa: {

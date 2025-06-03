@@ -1,4 +1,4 @@
-import Toast from 'vue3-toastify'
+import Vue3Toastify from 'vue3-toastify'
 
 const toastOptions = {
   timeout: 4000,
@@ -8,4 +8,4 @@ const toastOptions = {
 }
 
 export { toastOptions }
-export default Toast
+export default Vue3Toastify

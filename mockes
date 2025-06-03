@@ -1,0 +1,118 @@
+// {
+//   "data": [
+//     {
+//       "id": 204054,
+//       "customer_tracking_number": 276357,
+//       "customer": {
+//         "id": 430810,
+//         "name": "Conrado Souza Melo"
+//       },
+//       "last_status": {
+//         "translation": "Entregue",
+//         "status": "delivered"
+//       },
+//       "token": "f1dcebe0-380f-4cfb-989d-6395ce3ba432"
+//     },
+//     {
+//       "id": 204055,
+//       "customer_tracking_number": 276358,
+//       "customer": {
+//         "id": 430802,
+//         "name": "Augusto Shinoda Meireles"
+//       },
+//       "last_status": {
+//         "translation": "Entregue",
+//         "status": "delivered"
+//       },
+//       "token": "6fca1240-3129-42a1-9a15-eb26ab92e428"
+//     },
+//     {
+//       "id": 204056,
+//       "customer_tracking_number": 276359,
+//       "customer": {
+//         "id": 430819,
+//         "name": "Manoel Bosco Rosário"
+//       },
+//       "last_status": {
+//         "translation": "Agendado",
+//         "status": "scheduled"
+//       },
+//       "token": "8b23bf84-7a5f-426e-b848-c35f34ca37c2"
+//     },
+//     {
+//       "id": 204057,
+//       "customer_tracking_number": 276360,
+//       "customer": {
+//         "id": 430826,
+//         "name": "Tadeu Fagundes Takeda"
+//       },
+//       "last_status": {
+//         "translation": "Em Trânsito",
+//         "status": "in_transit"
+//       },
+//       "token": "085a54ec-fd71-44e3-b8a4-e34f7ac7b13c"
+//     }
+//   ]
+// } 
+
+
+
+{
+  "id": null,
+  "customer_tracking_number": null,
+  "customer": {
+    "name": "",
+    "id": null
+  },
+  "trucker": {
+    "name": "",
+    "phone": ""
+  },
+  "trucks": [
+    {
+      "plate": "",
+      "type": {
+        "name": ""
+      }
+    }
+  ],
+  "origin": {
+    "address": "",
+    "number": "",
+    "city": "",
+    "state": "",
+    "zip_code": ""
+  },
+  "destination": {
+    "address": "",
+    "number": "",
+    "city": "",
+    "state": "",
+    "zip_code": ""
+  },
+  "trucker_seeker": {
+    "name": ""
+  },
+  "salesperson": {
+    "name": ""
+  },
+
+  "pickup_date": "",
+  "delivery_date": "",
+  "estimated_time_of_arrival": "",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "payments": [
+    {
+      "name": "",
+      "status": "",
+      "at": ""
+    }
+  ]
+}

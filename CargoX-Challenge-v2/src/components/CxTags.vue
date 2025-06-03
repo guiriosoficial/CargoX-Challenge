@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'Tag',
+  name: 'CxTag',
   props: {
     tags: {
       type: Array,
