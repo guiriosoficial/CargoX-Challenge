@@ -1,7 +1,8 @@
-@import '../variables/colors.scss';
+@use 'sass:color';
+@use '../variables/colors.scss' as colors;
 
 .skeleton-loading {
-  background-image: linear-gradient(100deg, mix($--color-gray, $--color-white, 45%) 0px, $--color-background-light 100px, mix($--color-gray, $--color-white, 45%) 200px); 
+  background-image: linear-gradient(100deg, color.mix(colors.$color-gray, colors.$color-white, 45%) 0px, colors.$color-background-light 100px, color.mix(colors.$color-gray, colors.$color-white, 45%) 200px);
   background-size: 600px;
   animation: skeleton-shine 1.4s infinite linear
 }

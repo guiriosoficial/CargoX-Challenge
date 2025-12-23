@@ -5,13 +5,6 @@
   </header>
 </template>
 
-<script>
-
-export default {
-  name: 'HeaderSkeleton'
-}
-</script>
-
 <style lang="scss" scoped>
 .header-container {
   margin: 30px 0;

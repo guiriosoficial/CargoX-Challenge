@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const Deliveries = () => import('@/views/deliveries/Deliveries.vue' /* webpackChunkName: 'Deliveries' */)
-const Delivery = () => import('@/views/delivery/Delivery.vue' /* webpackChunkName: 'Delivery' */)
-const NotFound = () => import('@/views/NotFound.vue' /* webpackChunkName: 'NotFound' */)
+const Deliveries = () => import('@/views/deliveries/DeliveriesView.vue')
+const Delivery = () => import('@/views/delivery/DeliveryView.vue')
+const NotFound = () => import('@/views/NotFound.vue')
 
 const routes = [
   {
@@ -26,7 +26,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.VITE_BASE_URL),
   routes
 })
 

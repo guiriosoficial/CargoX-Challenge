@@ -1,4 +1,4 @@
-export default function (value = '') {
+function phoneNumber (value = '') {
   if (!value) return ''
   if (!/^\d+$/.test(value)) return value
 
@@ -8,40 +8,42 @@ export default function (value = '') {
 
   if (value.length === 8) {
     return template1
-      .replace('C', value.substr(0, 4))
-      .replace('D', value.substr(5, 4))
+      .replace('C', value.substring(0, 4))
+      .replace('D', value.substring(5, 4 + 5))
   }
   if (value.length === 9) {
     return template1
-      .replace('C', value.substr(0, 5))
-      .replace('D', value.substr(6, 4))
+      .replace('C', value.substring(0, 5))
+      .replace('D', value.substring(6, 4 + 6))
   }
   if (value.length === 10) {
     return template2
-      .replace('B', value.substr(0, 2))
-      .replace('C', value.substr(2, 4))
-      .replace('D', value.substr(6, 4))
+      .replace('B', value.substring(0, 2))
+      .replace('C', value.substring(2, 4 + 2))
+      .replace('D', value.substring(6, 4 + 6))
   }
   if (value.length === 11) {
     return template2
-      .replace('B', value.substr(0, 2))
-      .replace('C', value.substr(2, 5))
-      .replace('D', value.substr(7, 4))
+      .replace('B', value.substring(0, 2))
+      .replace('C', value.substring(2, 5 + 2))
+      .replace('D', value.substring(7, 4 + 7))
   }
   if (value.length === 12) {
     return template3
-      .replace('A', value.substr(0, 2))
-      .replace('B', value.substr(2, 2))
-      .replace('C', value.substr(4, 4))
-      .replace('D', value.substr(8, 4))
+      .replace('A', value.substring(0, 2))
+      .replace('B', value.substring(2, 2 + 2))
+      .replace('C', value.substring(4, 4 + 4))
+      .replace('D', value.substring(8, 4 + 8))
   }
   if (value.length === 13) {
     return template3
-      .replace('A', value.substr(0, 2))
-      .replace('B', value.substr(2, 2))
-      .replace('C', value.substr(4, 5))
-      .replace('D', value.substr(9, 4))
+      .replace('A', value.substring(0, 2))
+      .replace('B', value.substring(2, 2 + 2))
+      .replace('C', value.substring(4, 5 + 4))
+      .replace('D', value.substring(9, 4 + 9))
   }
 
   return value
 }
+
+export default phoneNumber

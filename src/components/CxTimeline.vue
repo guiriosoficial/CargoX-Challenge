@@ -35,7 +35,6 @@
 
 <script>
 export default {
-  name: 'CxTimeline',
   props: {
     timeline: {
       type: Array,
@@ -71,41 +70,41 @@ export default {
       .timeline-container__progress-dot {
         display: inline-block;
         border-radius: 50%;
-        border: 2px solid $--color-gray;
+        border: 2px solid colors.$color-gray;
         width: 24px;
         height: 24px;
         position: relative;
         &--done {
-          background-color: $--color-warning;
-          border-color: $--color-warning;
+          background-color: colors.$color-warning;
+          border-color: colors.$color-warning;
           &:before {
             content: '';
             position: absolute;
             display: inline-block;
             width: 8px;
             height: 5px;
-            border-bottom: 3px solid $--color-white;
-            border-left: 3px solid $--color-white;
+            border-bottom: 3px solid colors.$color-white;
+            border-left: 3px solid colors.$color-white;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -70%) rotate(-45deg);
           }
         }
         &--doing {
-          border-color: $--color-info;
+          border-color: colors.$color-info;
         }
       }
 
       .timeline-container__progress-line {
         display: inline-block;
-        background-color: $--color-gray;
+        background-color: colors.$color-gray;
         width: 2px;
         flex: 1;
         &--done {
-          background-color: $--color-warning;
+          background-color: colors.$color-warning;
         }
         &--doing {
-          background-color: $--color-info;
+          background-color: colors.$color-info;
         }
       }
     }
@@ -119,7 +118,7 @@ export default {
         display: flex;
         align-items: center;
         height: 24px;
-        color: $--color-text-regular;
+        color: colors.$color-text-regular;
         font-weight: 600;
       }
 

@@ -16,7 +16,6 @@
 
 <script>
 export default {
-  name: 'PlainText',
   props: {
     text: {
       type: [String, Number],
@@ -35,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .plain-text-container {
   .plain-text-container__content {
     & > p {

@@ -10,9 +10,7 @@
 </template>
 
 <script>
-
 export default {
-  name: 'CxHeader',
   props: {
     title: {
       type: String,
@@ -27,8 +25,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/variables/colors';
-
 .header-container {
   margin: 30px 0;
 

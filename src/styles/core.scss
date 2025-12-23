@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 // Elements
-@import './elements/button.scss';
-@import './elements/card.scss';
-@import './elements/skeleton.scss';
-@import './elements/tooltip.scss';
+@use './elements/button.scss';
+@use './elements/card.scss';
+@use './elements/skeleton.scss';
+@use './elements/tooltip.scss';
 
 // Overwrites
-@import './overwrites/fades.scss';
-@import './overwrites/toastification.scss';
+@use './overwrites/fades.scss';
+@use './overwrites/toastification.scss';
 
-// Variables
-@import './variables/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 // Reset
 html {
-  background-color:$--color-background-light;
+  background-color: colors.$color-background-light;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  color: $--color-text-regular;
+  color: colors.$color-text-regular;
 }
 
 * {
@@ -31,10 +28,10 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  color: $--color-text-title;
+  color: colors.$color-text-title;
 }
 
 // Generic classes
 .no-content {
-  color: $--color-text-placeholder;   
+  color: colors.$color-text-placeholder;
 }

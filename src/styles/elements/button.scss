@@ -1,4 +1,4 @@
-@import '@/styles/variables/colors.scss';
+@use '../variables/colors.scss' as colors;
 
 .cx-button {
   cursor: pointer;
@@ -6,12 +6,12 @@
   border-radius: 6px;
   padding: 4px 6px;
   transition: .2s ease-out;
-  color: $--color-text-placeholder;
-  border: 1px solid $--color-text-placeholder;
+  color: colors.$color-text-placeholder;
+  border: 1px solid colors.$color-text-placeholder;
 
   &:hover {
-    background-color: $--color-info;
-    border: 1px solid $--color-info;
-    color: $--color-white;
+    background-color: colors.$color-info;
+    border: 1px solid colors.$color-info;
+    color: colors.$color-white;
   }
 }

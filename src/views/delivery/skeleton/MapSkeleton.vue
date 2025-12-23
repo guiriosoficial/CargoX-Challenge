@@ -7,12 +7,6 @@
   </aside>
 </template>
 
-<script>
-export default {
-  name: 'MapSkeleton'
-}
-</script>
-
 <style lang="scss" scoped>
 .map-container {
   height: 100%;

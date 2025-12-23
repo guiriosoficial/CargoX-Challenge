@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import FaIcon from '@/components/FaIcon.vue'
+import FaIcon from '@/components/CxFaIcon.vue'
 
 library.add(fas, fab)
 

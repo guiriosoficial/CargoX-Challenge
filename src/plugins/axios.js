@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL
+  baseURL: import.meta.env.VITE_API_BASE_URL
 })

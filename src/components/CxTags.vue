@@ -24,7 +24,6 @@
 
 <script>
 export default {
-  name: 'CxTag',
   props: {
     tags: {
       type: Array,
@@ -45,8 +44,8 @@ export default {
 
     .tags-container__tag {
       font-size: 0.83em;
-      color: $--color-text-placeholder;
-      border: 1px solid $--color-text-placeholder;
+      color: colors.$color-text-placeholder;
+      border: 1px solid colors.$color-text-placeholder;
       border-radius: 6px;
       padding: 4px 6px;
       margin-left: 6px;
@@ -54,9 +53,9 @@ export default {
       &:first-child { margin-left: 0; }
 
       &--active {
-        background-color: $--color-success;
-        border: 1px solid $--color-success;
-        color: $--color-white;
+        background-color: colors.$color-success;
+        border: 1px solid colors.$color-success;
+        color: colors.$color-white;
       }
     }
   }

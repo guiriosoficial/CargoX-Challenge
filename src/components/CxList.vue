@@ -23,7 +23,6 @@
 
 <script>
 export default {
-  name: 'CxList',
   props: {
     list: {
       type: Array,
@@ -38,8 +37,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/variables/colors';
-
 .list-container {
   .list-container__list {
     margin-left: 18px;

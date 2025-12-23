@@ -8,7 +8,7 @@ import Toast, { toastOptions } from '@/plugins/tostification'
 import './plugins/registerServiceWorker'
 
 import '@/styles/core.scss'
-import 'vue-toastification/dist/index.css'
+// import 'vue-toastification/dist/index.css'
 
 createApp(App)
   .use(store)
