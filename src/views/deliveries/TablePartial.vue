@@ -1,5 +1,9 @@
 <template>
-  <table class="table-container">
+  <TableSkeleton v-if="isLoading" />
+  <table
+      v-else
+      class="table-container"
+  >
     <thead class="table-container__head">
       <tr class="table-container__header">
         <th>{{ $t('labels.delivery-id') }}</th>
@@ -10,7 +14,7 @@
     </thead>
 
     <tbody
-      v-if="tableData.length"
+      v-if="tableData?.length"
       class="table-container__body"
     >
       <tr
@@ -47,18 +51,24 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, defineComponent } from 'vue'
 
 const Tags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
+const TableSkeleton = defineComponent(() => import('@/components/CxTags.vue'))
 
 export default {
   components: {
+    TableSkeleton,
     Tags
   },
   props: {
     tableData: {
       type: Array,
       required: true
+    },
+    isLoading: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

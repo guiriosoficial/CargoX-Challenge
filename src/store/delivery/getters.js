@@ -1,13 +1,13 @@
 export default {
-  getDelivery: ({ delivery }) => delivery,
-  getRoute: ({ delivery }) => {
-    const { origin, destination, trucker } = delivery
+  getDelivery: (state) => state.delivery,
+  getRoute: (state) => {
+    const { origin, destination, trucker } = state.delivery
     return {
       origin,
       destination,
       lastAppUpdateAt: trucker?.last_app_update_at
     }
   },
-  getCostumer: ({ delivery }) => delivery.customer || {},
-  getIsLoadingDelivery: ({ isLoadingDelivery }) => isLoadingDelivery
+  getCostumer: (state) => state.delivery.customer || {},
+  getIsLoadingDelivery: (state) => state.isLoadingDelivery
 }

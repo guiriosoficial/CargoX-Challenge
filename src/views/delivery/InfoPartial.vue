@@ -35,13 +35,13 @@
 </template>
 
 <script>
-import { defineAsyncComponent, defineComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 
 const List = defineAsyncComponent(() => import('@/components/CxList.vue'))
 const PlainText = defineAsyncComponent(() => import('@/components/CxPlainText.vue'))
 const Tags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
 const Timeline = defineAsyncComponent(() => import('@/components/CxTimeline.vue'))
-const InfoSkeleton = defineComponent(() => import('./skeleton/InfoSkeleton.vue'))
+const InfoSkeleton = defineAsyncComponent(() => import('./skeleton/InfoSkeleton.vue'))
 
 export default {
   components: {

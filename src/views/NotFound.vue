@@ -16,12 +16,21 @@
 </template>
 
 <script>
+import { mapActions } from 'pinia'
+import { usePageStore } from "@/store/page";
+
 export default {
+  beforeMount() {
+    this.setHidePageHeader(true)
+  },
+  beforeUnmount() {
+    this.setHidePageHeader(false)
+  },
   methods: {
+    ...mapActions(usePageStore, ['setHidePageHeader']),
+
     goBack() {
-      console.log(this.$toast)
-      this.$toast('teste')
-      // $router.push('/')
+      this.$router.push('/')
     }
   }
 }

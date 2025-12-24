@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import pinia from './store'
 import i18n from '@/plugins/i18n'
 import FaIcon from '@/plugins/fa'
 import toast, { toastOptions } from '@/plugins/toastfy'
@@ -9,8 +9,9 @@ import './plugins/registerServiceWorker'
 
 import '@/styles/core.scss'
 
+
 createApp(App)
-  .use(store)
+  .use(pinia)
   .use(router)
   .use(i18n)
   .use(toast, toastOptions)

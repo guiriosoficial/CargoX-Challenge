@@ -1,4 +1,4 @@
 export default {
-  getDeliveries: ({ deliveries }) => deliveries || [],
-  getIsLoadingDeliveries: ({ isLoadingDeliveries }) => isLoadingDeliveries
+  getDeliveries: (state) => state.deliveries || [],
+  getIsLoadingDeliveries: (state) => state.isLoadingDeliveries
 }

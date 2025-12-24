@@ -1,10 +1,3 @@
-import { createStore } from 'vuex'
-import delivery from './delivery'
-import deliveries from './deliveries'
+import { createPinia } from 'pinia';
 
-export default createStore({
-  modules: {
-    delivery,
-    deliveries
-  }
-})
+export default createPinia()

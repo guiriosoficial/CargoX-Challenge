@@ -1,60 +1,57 @@
 <template>
-  <main class="delivery-container">
-    <CxHeader
-      :title="customer?.name"
-      :subtitle="`ID do cliente ${customer.id}`"
+  <div class="delivery-container">
+    <DetailsPartial class="delivery-container__info-details" />
+    <MapPartial
       :isLoading="isLoadingDelivery"
-      class="delivery-container__header"
+      class="delivery-container__info-map"
     />
-
-    <section class="delivery-container__info">
-      <DetailsPartial class="delivery-container__info-details" />
-      <MapPartial
-        :isLoading="isLoadingDelivery"
-        class="delivery-container__info-map"
-      />
-    </section>
-  </main>
+  </div>
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapActions, mapGetters } from 'vuex'
-// import toast from 'vue3-toastify'
+import { mapActions, mapState } from 'pinia'
+import { useDeliveryStore } from "@/store/delivery";
+import { usePageStore } from "@/store/page";
+import { toast } from 'vue3-toastify'
 
 const DetailsPartial = defineAsyncComponent(() => import('./DetailsPartial.vue'))
-const CxHeader = defineAsyncComponent(() => import('@/components/CxHeader.vue'))
-const HeaderSkeleton = defineAsyncComponent(() => import('@/components/skeleton/HeaderSkeleton.vue'))
 const MapPartial = defineAsyncComponent(() => import('./MapPartial.vue'))
-const MapSkeleton = defineAsyncComponent(() => import('./skeleton/MapSkeleton.vue'))
 
 export default {
   components: {
     DetailsPartial,
-    CxHeader,
-    HeaderSkeleton,
     MapPartial,
-    MapSkeleton
   },
   computed: {
-    ...mapGetters({
-      customer: 'getCostumer',
-      isLoadingDelivery: 'getIsLoadingDelivery'
-    })
+    ...mapState(useDeliveryStore, [
+      'customer',
+      'isLoadingDelivery'
+    ])
   },
   async beforeMount () {
     this.clearDelivery()
 
-    await this.getDelivery(this.$route.params.id)
+    this.setPageIsLoading(true)
+    this.getDelivery(this.$route.params.id)
       .catch(() => {
-        this.$toast.error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
+        toast.error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
         this.$router.push('/')
       })
+
+    this.setPageTitle(this.customer?.name)
+    this.setPageSubtitle(`ID do cliente: ${this.customer?.id}`)
+    this.setPageIsLoading(false)
   },
   methods: {
-    ...mapActions([
+    ...mapActions(useDeliveryStore, [
       'getDelivery',
       'clearDelivery'
+    ]),
+    ...mapActions(usePageStore, [
+      'setPageTitle',
+      'setPageSubtitle',
+      'setPageIsLoading'
     ])
   }
 }
@@ -62,44 +59,32 @@ export default {
 
 <style lang="scss" scoped>
 .delivery-container {
-  .delivery-container__info {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 
-    .delivery-container__info-details {
-      flex: 3;
-    }
+  .delivery-container__info-details {
+    flex: 1;
+  }
 
-    .delivery-container__info-map {
-      flex: 2;
-      position: sticky;
-      top: 20px;
-    }
+  .delivery-container__info-map {
+    width: 480px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
   }
 }
 
 @media (max-width: 1080px) {
   .delivery-container {
-    .delivery-container__info {
-      .delivery-container__info-details { flex: 1; }
-      .delivery-container__info-map { flex: 1; }
-    }
-  }
-}
+    flex-direction: column;
 
-@media (max-width: 900px) {
-  .delivery-container {
-    .delivery-container__info {
-      flex-direction: column;
-    }
+    .delivery-container__info-map { width: 100%; }
   }
 }
 
 @media (max-width: 600px) {
   .delivery-container {
-    .delivery-container__info {
-      gap: 10px
-    }
+    gap: 10px;
   }
 }
 </style>

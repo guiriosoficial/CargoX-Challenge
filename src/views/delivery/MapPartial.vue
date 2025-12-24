@@ -24,7 +24,8 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { mapGetters } from 'vuex'
+import { mapState } from 'pinia'
+import { useDeliveryStore } from "@/store/delivery/index.js";
 import { dateTime } from '@/filters'
 const API_KEY = import.meta.env.VITE_API_KEY
 
@@ -35,10 +36,10 @@ export default {
     MapSkeleton
   },
   computed: {
-    ...mapGetters({
-      route: 'getRoute',
-      isLoading: 'getIsLoadingDelivery'
-    }),
+    ...mapState(useDeliveryStore, [
+      'route',
+      'isLoading'
+    ]),
 
     routeUrl () {
       const { origin, destination } = this.route
@@ -59,7 +60,6 @@ export default {
 @use '@/styles/variables/colors' as * ;
 
 .map-container {
-  height: 100%;
   padding: 0;
 
   .map-container__footer {

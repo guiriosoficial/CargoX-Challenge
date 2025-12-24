@@ -1,51 +1,45 @@
 <template>
-  <main class="home-container">
-    <CxHeader
-      :title="$t('labels.welcome')"
-      :subtitle="$t('labels.select-delivery')"
-      class="home-container__header"
-    />
-
-    <component
-      :is="isLoadingDeliveries ? 'TableSkeleton' : 'TablePartial'"
-      :table-data="deliveries"
-      class="home-container__table cx-card"
-    />
-  </main>
+  <TablePartial
+    :isLoading="isLoadingDeliveries"
+    :table-data="deliveries"
+    class="home-container__table cx-card"
+  />
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapState } from 'pinia'
+import { useDeliveriesStore } from "@/store/deliveries";
+import { usePageStore } from "@/store/page";
 
-const CxHeader = defineAsyncComponent(() => import('@/components/CxHeader.vue'))
 const TablePartial = defineAsyncComponent(() => import('./TablePartial.vue'))
-const TableSkeleton = defineAsyncComponent(() => import('./skeleton/TableSkeleton.vue'))
 
 export default {
   components: {
-    CxHeader,
     TablePartial,
-    TableSkeleton
   },
   computed: {
-    ...mapGetters({
-      deliveries: 'getDeliveries',
-      isLoadingDeliveries: 'getIsLoadingDeliveries'
-    })
+    ...mapState(useDeliveriesStore, [
+      'deliveries',
+      'isLoadingDeliveries'
+    ])
   },
   async beforeMount () {
-    this.clearDelivery()
+    this.setPageTitle(this.$t('labels.welcome'))
+    this.setPageSubtitle(this.$t('labels.select-delivery'))
 
-    await this.getDeliveries()
+    this.getDeliveries()
       .catch(() => {
         this.$toast.error(`Ops! ${this.$t('errors.somethig-wrong')}.`)
       })
   },
   methods: {
-    ...mapActions([
+    ...mapActions(useDeliveriesStore, [
       'getDeliveries',
-      'clearDelivery'
+    ]),
+    ...mapActions(usePageStore, [
+      'setPageTitle',
+      'setPageSubtitle'
     ])
   }
 }
@@ -53,10 +47,6 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
   .home-container__table {
     flex: 1;
     overflow: hidden;

@@ -22,7 +22,8 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapGetters } from 'vuex'
+import { mapState } from 'pinia'
+import { useDeliveryStore } from "@/store/delivery/index.js";
 import { dateTime, phoneNumber } from '@/filters'
 
 const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
@@ -32,10 +33,10 @@ export default {
     InfoPartial
   },
   computed: {
-    ...mapGetters({
-      details: 'getDelivery',
-      isLoadingDelivery: 'getIsLoadingDelivery'
-    }),
+    ...mapState(useDeliveryStore, [
+      'details',
+      'isLoadingDelivery'
+    ]),
 
     detailsListLeft () {
       const {
@@ -263,7 +264,7 @@ export default {
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .details-container {
     display: flex;
     flex-direction: column;
