@@ -45,6 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '@/styles/variables/colors' as *;
+
 .timeline-container {
   .timeline-container__step {
     margin-bottom: 6px;
@@ -70,41 +72,41 @@ export default {
       .timeline-container__progress-dot {
         display: inline-block;
         border-radius: 50%;
-        border: 2px solid colors.$color-gray;
+        border: 2px solid $color-gray;
         width: 24px;
         height: 24px;
         position: relative;
         &--done {
-          background-color: colors.$color-warning;
-          border-color: colors.$color-warning;
+          background-color: $color-warning;
+          border-color: $color-warning;
           &:before {
             content: '';
             position: absolute;
             display: inline-block;
             width: 8px;
             height: 5px;
-            border-bottom: 3px solid colors.$color-white;
-            border-left: 3px solid colors.$color-white;
+            border-bottom: 3px solid $color-white;
+            border-left: 3px solid $color-white;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -70%) rotate(-45deg);
           }
         }
         &--doing {
-          border-color: colors.$color-info;
+          border-color: $color-info;
         }
       }
 
       .timeline-container__progress-line {
         display: inline-block;
-        background-color: colors.$color-gray;
+        background-color: $color-gray;
         width: 2px;
         flex: 1;
         &--done {
-          background-color: colors.$color-warning;
+          background-color: $color-warning;
         }
         &--doing {
-          background-color: colors.$color-info;
+          background-color: $color-info;
         }
       }
     }
@@ -118,7 +120,7 @@ export default {
         display: flex;
         align-items: center;
         height: 24px;
-        color: colors.$color-text-regular;
+        color: $color-text-regular;
         font-weight: 600;
       }
 

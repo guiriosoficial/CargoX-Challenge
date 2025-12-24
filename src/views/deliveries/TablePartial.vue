@@ -33,16 +33,16 @@
       </tr>
     </tbody>
 
-    <div
+    <tbody
       v-else
       class="table-container__empty-state"
     >
-      <fa
+      <Icon
         icon="folder-open"
         class="table-container__empty-state-icon"
       />
       Nada por aqui
-    </div>
+    </tbody>
   </table>
 </template>
 
@@ -73,6 +73,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '@/styles/variables/colors' as *;
 @use 'sass:color';
 
 .table-container {
@@ -83,10 +84,10 @@ export default {
   .table-container__head {
     .table-container__header {
       display: flex;
-      color: colors.$color-text-title;
+      color: $color-text-title;
       padding: 0 0 6px;
       text-align: left;
-      border-bottom: 2px solid colors.$color-background-light;
+      border-bottom: 2px solid $color-background-light;
       & > th {
         flex: 1;
         font-weight: 500;
@@ -102,13 +103,13 @@ export default {
       display: flex;
       align-items: center;
       padding: 10px 0;
-      border-bottom: 1px solid colors.$color-background-light;
+      border-bottom: 1px solid $color-background-light;
       &:nth-child(even) {
-        background-color: color.mix(colors.$color-background-light, colors.$color-white, 30%);
+        background-color: color.mix($color-background-light, $color-white, 30%);
       }
       &:hover {
         cursor: pointer;
-        background-color: color.mix(colors.$color-background-light, colors.$color-white, 50%);
+        background-color: color.mix($color-background-light, $color-white, 50%);
       }
       & > td {
         flex: 1;
@@ -124,7 +125,7 @@ export default {
     align-items: center;
     flex-direction: column;
     gap: 6px;
-    color: colors.$color-text-placeholder;
+    color: $color-text-placeholder;
     font-size: 1.2em;
 
     .table-container__empty-state-icon {

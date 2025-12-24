@@ -1,18 +1,18 @@
 <template>
   <section class="details-container cx-card">
     <div class="details-container__column">
-      <component
-        :is="isLoadingDelivery ? 'InfoSkeleton' : 'Info'"
+      <InfoPartial
         v-for="detail in detailsListLeft"
+        :isLoading="isLoadingDelivery"
         :key="detail.key"
         :detail="detail"
       />
     </div>
 
     <div class="details-container__column">
-      <component
-        :is="isLoadingDelivery ? 'InfoSkeleton' : 'Info'"
+      <InfoPartial
         v-for="detail in detailsListRight"
+        :isLoading="isLoadingDelivery"
         :key="detail.key"
         :detail="detail"
       />
@@ -25,13 +25,11 @@ import { defineAsyncComponent } from 'vue'
 import { mapGetters } from 'vuex'
 import { dateTime, phoneNumber } from '@/filters'
 
-const Info = defineAsyncComponent(() => import('./InfoPartial.vue'))
-const InfoSkeleton = defineAsyncComponent(() => import('./skeleton/InfoSkeleton.vue'))
+const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
 
 export default {
   components: {
-    Info,
-    InfoSkeleton
+    InfoPartial
   },
   computed: {
     ...mapGetters({

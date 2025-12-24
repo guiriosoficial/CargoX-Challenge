@@ -1,4 +1,4 @@
-@use '../variables/colors.scss' as colors;
+@use '../variables/colors' as *;
 
 $--transition-cubic: cubic-bezier(.64,.09,.08,1);
 
@@ -14,8 +14,8 @@ $--transition-cubic: cubic-bezier(.64,.09,.08,1);
     bottom: calc(2em);
     border-radius: 2px;
     padding: 6px 10px;
-    color: colors.$color-white;
-    background: colors.$color-background-dark;
+    color: $color-white;
+    background: $color-background-dark;
     transform: translateX(-50%) translateY(-2px);
     transition: opacity 0.2s $--transition-cubic, transform 0.2s $--transition-cubic;
     transition-delay: .4s;
@@ -33,7 +33,7 @@ $--transition-cubic: cubic-bezier(.64,.09,.08,1);
     height: 0;
     border-left: solid 6px transparent;
     border-right: solid 6px transparent;
-    border-top: solid 6px colors.$color-background-dark;
+    border-top: solid 6px $color-background-dark;
     transform: translateX(-50%) translateY(-2px);
     transition: opacity 0.2s $--transition-cubic, transform 0.2s $--transition-cubic;
     transition-delay: .4s;

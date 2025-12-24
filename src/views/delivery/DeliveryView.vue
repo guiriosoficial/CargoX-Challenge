@@ -1,16 +1,16 @@
 <template>
   <main class="delivery-container">
-    <component
-      :is="isLoadingDelivery ? 'HeaderSkeleton' : 'CxHeader'"
+    <CxHeader
       :title="customer?.name"
       :subtitle="`ID do cliente ${customer.id}`"
+      :isLoading="isLoadingDelivery"
       class="delivery-container__header"
     />
 
     <section class="delivery-container__info">
       <DetailsPartial class="delivery-container__info-details" />
-      <component
-        :is="isLoadingDelivery ? 'MapSkeleton' : 'MapPartial'"
+      <MapPartial
+        :isLoading="isLoadingDelivery"
         class="delivery-container__info-map"
       />
     </section>

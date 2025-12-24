@@ -1,21 +1,24 @@
 // Elements
-@use './elements/button.scss';
-@use './elements/card.scss';
-@use './elements/skeleton.scss';
-@use './elements/tooltip.scss';
+@use './elements/button';
+@use './elements/card';
+@use './elements/skeleton';
+@use './elements/tooltip';
 
 // Overwrites
-@use './overwrites/fades.scss';
-@use './overwrites/toastification.scss';
+@use './overwrites/fades';
+@use './overwrites/toastification';
+
+// Variables
+@use './variables/colors' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 // Reset
 html {
-  background-color: colors.$color-background-light;
+  background-color: $color-background-light;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  color: colors.$color-text-regular;
+  color: $color-text-regular;
 }
 
 * {
@@ -28,10 +31,10 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  color: colors.$color-text-title;
+  color: $color-text-title;
 }
 
 // Generic classes
 .no-content {
-  color: colors.$color-text-placeholder;
+  color: $color-text-placeholder;
 }

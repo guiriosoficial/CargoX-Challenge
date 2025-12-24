@@ -38,14 +38,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '@/styles/variables/colors' as *;
+
 .tags-container {
   .tags-container__content {
     display: flex;
 
     .tags-container__tag {
       font-size: 0.83em;
-      color: colors.$color-text-placeholder;
-      border: 1px solid colors.$color-text-placeholder;
+      color: $color-text-placeholder;
+      border: 1px solid $color-text-placeholder;
       border-radius: 6px;
       padding: 4px 6px;
       margin-left: 6px;
@@ -53,9 +55,9 @@ export default {
       &:first-child { margin-left: 0; }
 
       &--active {
-        background-color: colors.$color-success;
-        border: 1px solid colors.$color-success;
-        color: colors.$color-white;
+        background-color: $color-success;
+        border: 1px solid $color-success;
+        color: $color-white;
       }
     }
   }

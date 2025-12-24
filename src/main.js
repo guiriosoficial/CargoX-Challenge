@@ -4,16 +4,18 @@ import router from './router'
 import store from './store'
 import i18n from '@/plugins/i18n'
 import FaIcon from '@/plugins/fa'
-import Toast, { toastOptions } from '@/plugins/tostification'
+import toast, { toastOptions } from '@/plugins/toastfy'
 import './plugins/registerServiceWorker'
 
 import '@/styles/core.scss'
-// import 'vue-toastification/dist/index.css'
 
 createApp(App)
   .use(store)
   .use(router)
   .use(i18n)
-  .use(Toast, toastOptions)
-  .component('fa', FaIcon)
+  .use(toast, toastOptions)
+  .component('Icon', FaIcon)
   .mount('#app')
+
+// import { toast as toastFunc } from 'vue3-toastify';
+// app.config.globalProperties.$toast = toastFunc;

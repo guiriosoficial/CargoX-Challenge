@@ -1,6 +1,6 @@
 <template>
   <article class="info-container">
-    <fa class="info-container__icon skeleton-loading" />
+    <Icon class="info-container__icon skeleton-loading" />
     <div class="info-container__container">
       <h5 class="info-container__label skeleton-loading" />
       <div class="info-container__component skeleton-loading" />

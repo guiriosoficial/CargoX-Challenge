@@ -8,7 +8,7 @@
     </h2>
     <button
       class="error-container__button cx-button"
-      @click="$router.push('/')"
+      @click="goBack"
     >
       {{ $t(`buttons.go-back`) }}
     </button>
@@ -17,15 +17,21 @@
 
 <script>
 export default {
-  name: 'NotFound'
+  methods: {
+    goBack() {
+      console.log(this.$toast)
+      this.$toast('teste')
+      // $router.push('/')
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .error-container {
   font-size: 1.4em;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

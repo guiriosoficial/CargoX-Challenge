@@ -1,6 +1,10 @@
 <template>
-  <article class="info-container">
-    <fa
+  <InfoSkeleton v-if="isLoading" />
+  <article
+      v-else
+      class="info-container"
+  >
+    <Icon
       :icon="detail.icon"
       :type="detail.iconType || 'fas'"
       class="info-container__icon"
@@ -9,7 +13,7 @@
     <div class="info-container__container">
       <span class="info-container__label">
         {{ $t(`labels.${detail.key}`) }}
-        <fa
+        <Icon
           v-if="detail.tooltip"
           :data-tooltip="detail.tooltip"
           icon="question-circle"
@@ -31,30 +35,38 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, defineComponent } from 'vue'
 
 const List = defineAsyncComponent(() => import('@/components/CxList.vue'))
 const PlainText = defineAsyncComponent(() => import('@/components/CxPlainText.vue'))
 const Tags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
 const Timeline = defineAsyncComponent(() => import('@/components/CxTimeline.vue'))
+const InfoSkeleton = defineComponent(() => import('./skeleton/InfoSkeleton.vue'))
 
 export default {
   components: {
     List,
     PlainText,
     Tags,
-    Timeline
+    Timeline,
+    InfoSkeleton
   },
   props: {
     detail: {
       type: Object,
       required: true
+    },
+    isLoading: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@use '@/styles/variables/colors' as *;
+
 .info-container {
   display: flex;
   gap: 14px;
@@ -64,7 +76,7 @@ export default {
   .info-container__icon {
     width: 26px;
     height: 26px;
-    color: colors.$color-text-placeholder;
+    color: $color-text-placeholder;
   }
 
   .info-container__container {
@@ -78,7 +90,7 @@ export default {
       font-size: .84em;
       height: 26px;
       gap: 4px;
-      color: colors.$color-text-placeholder;
+      color: $color-text-placeholder;
       font-weight: 500;
 
       .info-container__icon {

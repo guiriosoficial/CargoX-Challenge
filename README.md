@@ -1,14 +1,33 @@
-# CargoX-Challenge-v2
+# ![CargoX](https://raw.githubusercontent.com/guiriosoficial/cargox-challenge/main/public/logo.png) Challenge
+This project is my challenge for a job at CargoX.  
+CargoX is the largest freight marketplace in Brazil!
 
-This template should help get you started developing with Vue 3 in Vite.
+## The Challenge
+The challenge is create a **VueJS** application usin de following API: [Mocky API](http://www.mocky.io/v2/5c7552e43100009c20c23450)
+- They like _reactive views_,
+- They like _components_,
+- They like _responsive layouts_,
+- They like _tests_.
 
-## Recommended IDE Setup
+The following layouts must been created:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**Desktop**
+![tela](https://user-images.githubusercontent.com/234173/53424507-17f6ce00-39c2-11e9-945e-766d1961b4ac.png)
 
-## Customize configuration
+**Mobile**
+![tela_responsiva](https://user-images.githubusercontent.com/234173/53424574-2e048e80-39c2-11e9-9972-2c613bf0de73.png)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+#### Notes:
+The API was moved to a new version (v3) of Mocky.io
+- [ ] Old API: <http://www.mocky.io/v2/5c7552e43100009c20c23450>
+- [x] New API: <https://run.mocky.io/v3/e56aec3b-c21f-44a6-887e-50133f4f5853>
+
+A Second API was been created to test different cases
+- [x] New API: <https://run.mocky.io/v3/d735b346-0b5a-42f9-8cf7-acfd1dde3f60>
+
+A Second Screen was created to navigate between cases
+- [x] New API: <https://run.mocky.io/v3/1e985b3b-8543-4406-b8df-dd65baac501c>
+
 
 ## Project Setup
 
@@ -55,3 +74,17 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+
+## Project Setup
+- **Requirements:**
+    - `Node` (>=14.18.12 || <=16.13.1)
+    - `NPM` (>=6.14.15 || <=8.1.2)
+- **Install Dependencies:** `npm install`
+- **Start Development Server:** `npm run serve` (Runs on [http://localhost:8080/](http://localhost:8080/))
+- **Compiles For Production:** `npm run build` (Will be Build in `/dist`)
+- **Run Unit Tests:** `npm run test:unit`
+- **Run End-2-End Tests:** `npm run test:e2e`
+- **Lint and Fixes Files**: `npm run lint`
+
+> **Status:** I Got the Job :truck:

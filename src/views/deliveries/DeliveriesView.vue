@@ -17,7 +17,6 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
-// import { useToast } from 'vue3-toastify'
 
 const CxHeader = defineAsyncComponent(() => import('@/components/CxHeader.vue'))
 const TablePartial = defineAsyncComponent(() => import('./TablePartial.vue'))
@@ -56,7 +55,7 @@ export default {
 .home-container {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 20px);
+  height: 100%;
 
   .home-container__table {
     flex: 1;

@@ -11,15 +11,10 @@
   </main>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
 <style lang="scss" scoped>
 .main-container {
   padding: 0 20px 20px;
+  height: calc(100vh - 20px);
   max-width: 1600px;
   margin: auto;
 }

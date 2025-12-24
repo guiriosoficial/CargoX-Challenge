@@ -1,10 +1,10 @@
 import Vue3Toastify from 'vue3-toastify'
+import 'vue3-toastify/dist/index.css';
 
 const toastOptions = {
-  timeout: 4000,
-  position: 'bottom-right',
+  autoClose: 4000,
+  position: 'top-right',
   hideProgressBar: true,
-  transition: 'Vue-Toastification__fade'
 }
 
 export { toastOptions }

@@ -1,11 +1,32 @@
-@use '../variables/colors.scss' as colors;
+@use '../variables/colors.scss' as *;
 
-.Vue-Toastification__toast {
+:root {
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: $color-info;
+  --toastify-color-success: $color-success;
+  --toastify-color-warning: $color-warning;
+  --toastify-color-error: $color-danger;
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+
+  --toastify-color-progress-light: #121212;
+  --toastify-color-progress-dark: #bb86fc;
+
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+}
+
+.Toastify__toast-container {
   opacity: .9 !important;
   border-radius: 6px !important;
-  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.05) !important;
-  &--success { background-color: colors.$color-success !important; }
-  &--info { background-color: colors.$color-info !important; }
-  &--warning { background-color: colors.$color-warning !important; }
-  &--error { background-color: colors.$color-danger !important; }
+  box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.05) !important;
 }

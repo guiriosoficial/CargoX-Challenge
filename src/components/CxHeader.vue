@@ -1,5 +1,10 @@
 <template>
-  <header class="header-container">
+  <HeaderSkeleton v-if="isLoading" />
+
+  <header
+      v-else
+      class="header-container"
+  >
     <h1 class="header-container__title">
       {{ title.toUpperCase() }}
     </h1>
@@ -10,7 +15,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
+
+const HeaderSkeleton = defineComponent(() => import('./skeleton/HeaderSkeleton.vue'))
+
 export default {
+  components: {
+    HeaderSkeleton
+  },
   props: {
     title: {
       type: String,
@@ -19,6 +31,10 @@ export default {
     subtitle: {
       type: String,
       default: ''
+    },
+    isLoading: {
+      type: Boolean,
+      default: false
     }
   }
 }
