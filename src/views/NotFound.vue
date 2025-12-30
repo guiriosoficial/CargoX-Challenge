@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { mapActions } from 'pinia'
-import { usePageStore } from "@/store/page/index.js";
+import { usePageStore } from '@/store/page'
 
 export default {
   beforeMount() {
@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .error-container {
   font-size: 1.4em;
   height: 100%;

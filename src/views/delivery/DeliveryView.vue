@@ -2,7 +2,7 @@
   <div class="delivery-container">
     <DetailsPartial class="delivery-container__info-details" />
     <MapPartial
-      :isLoading="isLoadingDelivery"
+      :is-loading="isLoadingDelivery"
       class="delivery-container__info-map"
     />
   </div>
@@ -11,8 +11,8 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
-import { useDeliveryStore } from "@/store/delivery/index.js";
-import { usePageStore } from "@/store/page/index.js";
+import { useDeliveryStore } from '@/store/delivery'
+import { usePageStore } from '@/store/page'
 import { toast } from 'vue3-toastify'
 
 const DetailsPartial = defineAsyncComponent(() => import('./DetailsPartial.vue'))
@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .delivery-container {
   display: flex;
   gap: 20px;

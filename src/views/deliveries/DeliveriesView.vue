@@ -1,6 +1,6 @@
 <template>
   <TablePartial
-    :isLoading="isLoadingDeliveries"
+    :is-loading="isLoadingDeliveries"
     :table-data="deliveries"
     class="home-container__table cx-card"
   />
@@ -9,8 +9,8 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
-import { useDeliveriesStore } from "@/store/deliveries/index.js";
-import { usePageStore } from "@/store/page/index.js";
+import { useDeliveriesStore } from '@/store/deliveries'
+import { usePageStore } from '@/store/page'
 
 const TablePartial = defineAsyncComponent(() => import('./TablePartial.vue'))
 
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .home-container {
   .home-container__table {
     flex: 1;

@@ -3,8 +3,8 @@
     <div class="details-container__column">
       <InfoPartial
         v-for="detail in detailsListLeft"
-        :isLoading="isLoadingDelivery"
         :key="detail.key"
+        :is-loading="isLoadingDelivery"
         :detail="detail"
       />
     </div>
@@ -12,8 +12,8 @@
     <div class="details-container__column">
       <InfoPartial
         v-for="detail in detailsListRight"
-        :isLoading="isLoadingDelivery"
         :key="detail.key"
+        :is-loading="isLoadingDelivery"
         :detail="detail"
       />
     </div>
@@ -23,8 +23,8 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from "@/store/delivery/index.ts";
-import { dateTime, phoneNumber } from '@/filters/index.js'
+import { useDeliveryStore } from '@/store/delivery'
+import { dateTime, phoneNumber } from '@/filters'
 
 const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
 
@@ -252,7 +252,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .details-container {
   display: flex;
   flex-direction: row;

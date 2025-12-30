@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use '@/styles/variables/colors' as *;
 
 .timeline-container {

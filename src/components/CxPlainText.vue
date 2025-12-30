@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .plain-text-container {
   .plain-text-container__content {
     & > p {

@@ -73,18 +73,13 @@ npm run test:e2e
 
 ```sh
 npm run lint
+npm run lint:fix
 ```
 
-
-## Project Setup
-- **Requirements:**
-    - `Node` (>=14.18.12 || <=16.13.1)
-    - `NPM` (>=6.14.15 || <=8.1.2)
-- **Install Dependencies:** `npm install`
-- **Start Development Server:** `npm run serve` (Runs on [http://localhost:8080/](http://localhost:8080/))
-- **Compiles For Production:** `npm run build` (Will be Build in `/dist`)
-- **Run Unit Tests:** `npm run test:unit`
-- **Run End-2-End Tests:** `npm run test:e2e`
-- **Lint and Fixes Files**: `npm run lint`
+## TODO
+- Adjust Mocks
+- Create Tests
+- Fix Link
+- Fix Types
 
 > **Status:** I Got the Job :truck:

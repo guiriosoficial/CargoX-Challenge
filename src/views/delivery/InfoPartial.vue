@@ -1,8 +1,8 @@
 <template>
   <InfoSkeleton v-if="isLoading" />
   <article
-      v-else
-      class="info-container"
+    v-else
+    class="info-container"
   >
     <Icon
       :icon="detail.icon"
@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use '@/styles/variables/colors' as *;
 
 .info-container {

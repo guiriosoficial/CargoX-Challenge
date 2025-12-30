@@ -1,10 +1,10 @@
 <template>
   <main class="main-container">
     <CxHeader
-        v-if="!hidePageHeader"
-        :title="pageTitle"
-        :subtitle="pageSubtitle"
-        :isLoading="pageIsLoading"
+      v-if="!hidePageHeader"
+      :title="pageTitle"
+      :subtitle="pageSubtitle"
+      :is-loading="pageIsLoading"
     />
     <router-view v-slot="{ Component }">
       <transition
@@ -12,8 +12,8 @@
         mode="out-in"
       >
         <component
-            :is="Component"
-            class="main-container__component"
+          :is="Component"
+          class="main-container__component"
         />
       </transition>
     </router-view>
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .main-container {
   display: flex;
   flex-direction: column;

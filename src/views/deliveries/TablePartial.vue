@@ -1,8 +1,8 @@
 <template>
   <TableSkeleton v-if="isLoading" />
   <table
-      v-else
-      class="table-container"
+    v-else
+    class="table-container"
   >
     <thead class="table-container__head">
       <tr class="table-container__header">
@@ -82,7 +82,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use '@/styles/variables/colors' as *;
 @use 'sass:color';
 

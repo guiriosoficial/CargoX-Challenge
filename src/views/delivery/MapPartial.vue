@@ -1,8 +1,8 @@
 <template>
   <MapSkeleton v-if="isLoading" />
   <aside
-      v-else
-      class="map-container cx-card"
+    v-else
+    class="map-container cx-card"
   >
     <map class="map-container__content">
       <iframe
@@ -23,13 +23,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from "@/store/delivery/index.ts";
+import { useDeliveryStore } from '@/store/delivery/index.ts'
 import { dateTime } from '@/filters/index.js'
 const API_KEY = import.meta.env.VITE_API_KEY
 
-const MapSkeleton = defineComponent(() => import('./skeleton/MapSkeleton.vue'))
+const MapSkeleton = defineAsyncComponent(() => import('./skeleton/MapSkeleton.vue'))
 
 export default {
   components: {
@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use '@/styles/variables/colors' as * ;
 
 .map-container {

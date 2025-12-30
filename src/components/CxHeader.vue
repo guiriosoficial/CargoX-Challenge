@@ -2,8 +2,8 @@
   <HeaderSkeleton v-if="isLoading" />
 
   <header
-      v-else
-      class="header-container"
+    v-else
+    class="header-container"
   >
     <h1 class="header-container__title">
       {{ title.toUpperCase() }}
@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 
-const HeaderSkeleton = defineComponent(() => import('./skeleton/HeaderSkeleton.vue'))
+const HeaderSkeleton = defineAsyncComponent(() => import('./skeleton/HeaderSkeleton.vue'))
 
 export default {
   components: {
@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .header-container {
   margin: 30px 0;
 
