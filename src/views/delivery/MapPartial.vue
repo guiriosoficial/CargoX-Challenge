@@ -22,11 +22,11 @@
   </aside>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from "@/store/delivery/index.js";
-import { dateTime } from '@/filters'
+import { useDeliveryStore } from "@/store/delivery/index.ts";
+import { dateTime } from '@/filters/index.js'
 const API_KEY = import.meta.env.VITE_API_KEY
 
 const MapSkeleton = defineComponent(() => import('./skeleton/MapSkeleton.vue'))

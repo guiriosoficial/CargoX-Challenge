@@ -14,7 +14,7 @@
   </span>
 </template>
 
-<script>
+<script lang="ts">
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 export default {

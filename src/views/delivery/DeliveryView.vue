@@ -8,11 +8,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
-import { useDeliveryStore } from "@/store/delivery";
-import { usePageStore } from "@/store/page";
+import { useDeliveryStore } from "@/store/delivery/index.js";
+import { usePageStore } from "@/store/page/index.js";
 import { toast } from 'vue3-toastify'
 
 const DetailsPartial = defineAsyncComponent(() => import('./DetailsPartial.vue'))

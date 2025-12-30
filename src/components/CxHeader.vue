@@ -14,7 +14,7 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 const HeaderSkeleton = defineComponent(() => import('./skeleton/HeaderSkeleton.vue'))

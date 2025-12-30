@@ -15,9 +15,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapActions } from 'pinia'
-import { usePageStore } from "@/store/page";
+import { usePageStore } from "@/store/page/index.js";
 
 export default {
   beforeMount() {

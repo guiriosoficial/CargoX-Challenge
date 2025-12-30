@@ -20,7 +20,7 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from "pinia";
 import { usePageStore } from "@/store/page";

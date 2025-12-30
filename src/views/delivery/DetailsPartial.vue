@@ -20,11 +20,11 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from "@/store/delivery/index.js";
-import { dateTime, phoneNumber } from '@/filters'
+import { useDeliveryStore } from "@/store/delivery/index.ts";
+import { dateTime, phoneNumber } from '@/filters/index.js'
 
 const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
 

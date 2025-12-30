@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import Timeline from '@/components/Timeline'
-import { dateTime } from '@/filters'
+import { dateTime } from '@/filters/index.js'
 
 describe('Timeline', () => {
   const wrapper = shallowMount(Timeline, {

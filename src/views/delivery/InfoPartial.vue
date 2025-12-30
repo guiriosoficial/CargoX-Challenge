@@ -34,7 +34,7 @@
   </article>
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
 
 const List = defineAsyncComponent(() => import('@/components/CxList.vue'))

@@ -1,4 +1,4 @@
-import dateTime from './dateTime'
+import dateTime from './dateTime.js'
 import phoneNumber from './phoneNumber'
 
 export {

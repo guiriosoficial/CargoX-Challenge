@@ -50,7 +50,7 @@
   </table>
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent, defineComponent } from 'vue'
 
 const Tags = defineAsyncComponent(() => import('@/components/CxTags.vue'))

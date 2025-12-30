@@ -1,7 +1,3 @@
-import getters from './getters'
-import actions from './actions'
-import state from './state'
-
 import { defineStore } from 'pinia'
 
 export const usePageStore = defineStore('page', {
@@ -25,7 +21,7 @@ export const usePageStore = defineStore('page', {
       this.pageSubtitle = subtitle
     },
     setPageIsLoading (isLoading) {
-      this.pageIsLoading = isLoading
+      this.pageLoading = isLoading
     },
     setHidePageHeader (hidePageHeader) {
       this.hidePageHeader = hidePageHeader

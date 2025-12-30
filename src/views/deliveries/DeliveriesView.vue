@@ -6,11 +6,11 @@
   />
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
-import { useDeliveriesStore } from "@/store/deliveries";
-import { usePageStore } from "@/store/page";
+import { useDeliveriesStore } from "@/store/deliveries/index.js";
+import { usePageStore } from "@/store/page/index.js";
 
 const TablePartial = defineAsyncComponent(() => import('./TablePartial.vue'))
 
