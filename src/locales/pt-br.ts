@@ -27,9 +27,9 @@ export default {
     'select-delivery': 'Selecione um pedido'
   },
   tooltips: {
-    'delivery_date': 'Data da entrega',
-    'estimated_time_of_arrival': 'Tempo estimado de chegada',
-    'manual_input_estimated_time_of_arrival': 'Tempo estimado de chegada'
+    'delivery-date': 'Data da entrega',
+    'estimated-time-of-arrival': 'Tempo estimado de chegada',
+    'manual-input-estimated-time-of-arrival': 'Tempo estimado de chegada'
   },
   'documents': {
     cte: 'CTe',

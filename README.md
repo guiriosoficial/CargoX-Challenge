@@ -79,10 +79,9 @@ npm run lint:fix
 ## TODO
 - Adjust Mocks
 - Create Tests
-- Fix Lint
-- Fix Types
+- Fix Lint Ans Types ($router)
+- Migrate to Composition API
 - Migrate Pinia Store do Composition API
-- Turn Styles into Components
 - Tuns Status Types in Enum
 
-> **Status:** I Got the Job :truck:
+> **Status:** I Got the Job 🚚
