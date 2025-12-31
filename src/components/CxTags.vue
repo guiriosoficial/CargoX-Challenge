@@ -34,8 +34,7 @@ export default {
   props: {
     tags: {
       type: Array as PropType<ITag[]>,
-      required: true,
-      default: []
+      default: () => []
     },
     noContent: {
       type: String,

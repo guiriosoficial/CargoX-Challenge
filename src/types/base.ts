@@ -24,17 +24,17 @@ interface IStatus {
   status: DeliveryStatus
 }
 
-interface ICustomer extends IPerson {}
+type ICustomer = IPerson
 
-interface ISalesPerson extends IPerson {}
+type ISalesPerson = IPerson
 
-interface ITruckerSeeker extends IPerson {}
+type ITruckerSeeker = IPerson
 
-interface IDocument extends IDatedEvents<DocumentStatus> {}
+type IDocument = IDatedEvents<DocumentStatus>
 
-interface IPayment extends IDatedEvents<PaymentStatus> {}
+type IPayment = IDatedEvents<PaymentStatus>
 
-interface IHistory extends IDatedEvents<HistoryStatus> {}
+type IHistory = IDatedEvents<HistoryStatus>
 
 interface ILocation {
   latitude: number

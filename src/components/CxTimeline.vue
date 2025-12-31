@@ -9,7 +9,7 @@
         <span
           :class="{
             'timeline-container__progress-dot--done': step.time,
-            'timeline-container__progress-dot--doing': !step.time && timeline[index - 1].time
+            'timeline-container__progress-dot--doing': !step.time && timeline[index - 1]?.time
           }"
           class="timeline-container__progress-dot"
         />
@@ -36,11 +36,17 @@
 <script lang="ts">
 import type { PropType } from 'vue'
 
+interface ITimeline {
+  key: string
+  label: string
+  time: Date
+}
+
 export default {
   props: {
     timeline: {
-      type: Array as PropType<any>,
-      default: () => ([])
+      type: Array as PropType<ITimeline[]>,
+      default: () => []
     }
   }
 }

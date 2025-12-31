@@ -63,67 +63,67 @@ export default {
           text: id,
           icon: 'orcid',
           iconType: 'fab',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'customer-tracking-number',
           text: customer_tracking_number,
           icon: 'orcid',
           iconType: 'fab',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'driver',
           text: trucker?.name,
           icon: 'user-astronaut',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'phone',
           text: phoneNumber(trucker?.phone),
           noContent: 'no-phone',
           icon: 'phone-alt',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'app',
           list: appDataList,
           noContent: 'no-app',
           icon: 'mobile-alt',
-          component: 'List'
+          component: 'CxList'
         },
         {
           key: 'trucks',
           text: handleTrucksList(trucks),
           noContent: 'no-trucks',
           icon: 'truck',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'origin',
           text: handleAddress(origin),
           noContent: 'no-location',
           icon: 'map-marker-alt',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'destination',
           text: handleAddress(destination),
           noContent: 'no-location',
           icon: 'flag',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'operation',
           text: trucker_seeker?.name,
           icon: 'user-cog',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'sale',
           text: salesperson?.name,
           icon: 'user-tag',
-          component: 'PlainText'
+          component: 'CxPlainText'
         }
       ]
     },
@@ -150,14 +150,14 @@ export default {
           text: dateTime(pickup_date),
           noContent: 'no-date',
           icon: 'calendar-day',
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'delivery-date',
           text: dateTime(delivery_date),
           noContent: 'no-date',
           tooltip: $t('tooltips.delivery_date'),
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'estimated-arrival',
@@ -171,27 +171,27 @@ export default {
           text: dateTime(manual_input_estimated_time_of_arrival),
           noContent: 'no-date',
           tooltip: $t('tooltips.manual_input_estimated_time_of_arrival'),
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'documents',
           tags: handleTags(documents, 'documents'),
           noContent: 'no-documents',
           icon: 'file-alt',
-          component: 'Tags'
+          component: 'CxTags'
         },
         {
           key: 'payments',
           tags: handleTags(payments, 'payments'),
           noContent: 'no-payments',
           icon: 'hand-holding-usd',
-          component: 'Tags'
+          component: 'CxTags'
         },
         {
           key: 'status',
           timeline: timelineSteps,
           icon: 'ellipsis-v',
-          component: 'Timeline'
+          component: 'CxTimeline'
         }
       ]
     },

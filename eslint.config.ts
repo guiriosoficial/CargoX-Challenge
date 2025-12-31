@@ -1,31 +1,26 @@
-import { defineConfig, globalIgnores } from 'eslint/config'
+import eslint from '@eslint/js'
+import eslintPluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
-import js from '@eslint/js'
-import pluginVue from 'eslint-plugin-vue'
-import pluginVitest from '@vitest/eslint-plugin'
+import typescriptEslint from 'typescript-eslint'
+// import vitestEslintPlugin from '@vitest/eslint-plugin'
 
-
-export default defineConfig([
+export default typescriptEslint.config(
+  { ignores: ['*.d.ts', '**/coverage', '**/dist'] },
   {
-    name: 'app/files-to-lint',
-    files: ['**/*.{js,mjs,jsx,vue}'],
-  },
-
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
-
-  {
+    extends: [
+      eslint.configs.recommended,
+      ...typescriptEslint.configs.recommended,
+      ...eslintPluginVue.configs['flat/recommended'],
+      // ...vitestEslintPlugin.configs.recommended,
+    ],
+    files: ['**/*.{ts,vue}'],
     languageOptions: {
-      globals: {
-        ...globals.browser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.browser,
+      parserOptions: {
+        parser: typescriptEslint.parser,
       },
     },
   },
-
-  js.configs.recommended,
-  ...pluginVue.configs['flat/recommended'],
-  
-  {
-    ...pluginVitest.configs.recommended,
-    files: ['src/**/__tests__/*'],
-  },
-])
+);
