@@ -1,4 +1,4 @@
-import Vue3Toastify from 'vue3-toastify'
+import Vue3Toastify, { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css';
 
 const toastOptions = {
@@ -7,5 +7,5 @@ const toastOptions = {
   hideProgressBar: true,
 }
 
-export { toastOptions }
+export { toastOptions, toast }
 export default Vue3Toastify
