@@ -22,5 +22,8 @@ export default typescriptEslint.config(
         parser: typescriptEslint.parser,
       },
     },
+    rules: {
+      'vue/no-v-html': 'off'
+    }
   },
 );
