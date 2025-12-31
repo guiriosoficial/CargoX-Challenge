@@ -41,7 +41,7 @@ const CxList = defineAsyncComponent(() => import('@/components/CxList.vue'))
 const CxPlainText = defineAsyncComponent(() => import('@/components/CxPlainText.vue'))
 const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
 const CxTimeline = defineAsyncComponent(() => import('@/components/CxTimeline.vue'))
-const InfoSkeleton = defineAsyncComponent(() => import('./skeleton/InfoSkeleton.vue'))
+const InfoSkeleton = defineAsyncComponent(() => import('../skeleton/InfoSkeleton.vue'))
 
 export default {
   components: {

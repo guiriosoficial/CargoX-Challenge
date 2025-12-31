@@ -23,11 +23,11 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from '@/store/delivery'
+import { useDeliveryStore } from '@/store/delivery.ts'
 import { dateTime, phoneNumber } from '@/filters'
-import type { IDocument, ILocation, IPayment, ITruck } from '@/types/base.ts'
+import type {IDocument, ILocation, IPayment, ITruck, ITrucker} from '@/types/base.ts'
 
-const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
+const InfoPartial = defineAsyncComponent(() => import('./ColumnPartial.vue'))
 
 export default {
   components: {
@@ -156,21 +156,21 @@ export default {
           key: 'delivery-date',
           text: dateTime(delivery_date),
           noContent: 'no-date',
-          tooltip: $t('tooltips.delivery_date'),
+          tooltip: $t('tooltips.delivery-date'),
           component: 'CxPlainText'
         },
         {
           key: 'estimated-arrival',
           text: dateTime(estimated_time_of_arrival),
           noContent: 'no-date',
-          tooltip: $t('tooltips.estimated_time_of_arrival'),
+          tooltip: $t('tooltips.estimated-time-of-arrival'),
           component: 'PlainText'
         },
         {
           key: 'manual-arrival',
           text: dateTime(manual_input_estimated_time_of_arrival),
           noContent: 'no-date',
-          tooltip: $t('tooltips.manual_input_estimated_time_of_arrival'),
+          tooltip: $t('tooltips.manual-input-estimated-time-of-arrival'),
           component: 'CxPlainText'
         },
         {
@@ -198,7 +198,7 @@ export default {
 
     appDataList () {
       const { $t, details: { trucker } } = this
-      const dataKeys = [
+      const dataKeys: (keyof ITrucker)[] = [
         'last_app_open_at',
         'last_app_position_at',
         'first_login_at',
@@ -206,9 +206,9 @@ export default {
       ]
 
       if (trucker?.has_app) {
-        return dataKeys.map(key => {
+        return dataKeys.map((key) => {
           const label = $t(`labels.${key.replace(/_/g, '-')}`)
-          const value = dateTime(new Date(trucker[key]), 'DD/MM/YYYY') || trucker[key]
+          const value = dateTime(String(trucker[key]), 'DD/MM/YYYY')
           return `${label} ${value}`
         })
       } return []

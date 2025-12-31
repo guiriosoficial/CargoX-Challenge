@@ -52,10 +52,10 @@
 
 <script lang="ts">
 import { defineAsyncComponent, type PropType } from 'vue'
-import type { IDeliverie } from '@/types/deliveries'
+import type { IDeliverie } from '@/types/deliveries.ts'
 
 const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
-const TableSkeleton = defineAsyncComponent(() => import('./skeleton/TableSkeleton.vue'))
+const TableSkeleton = defineAsyncComponent(() => import('../skeleton/TableSkeleton.vue'))
 
 export default {
   components: {

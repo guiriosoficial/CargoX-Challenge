@@ -25,11 +25,11 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from '@/store/delivery'
+import { useDeliveryStore } from '@/store/delivery.ts'
 import { dateTime } from '@/filters'
 const API_KEY = import.meta.env.VITE_API_KEY
 
-const MapSkeleton = defineAsyncComponent(() => import('./skeleton/MapSkeleton.vue'))
+const MapSkeleton = defineAsyncComponent(() => import('../skeleton/MapSkeleton.vue'))
 
 export default {
   components: {

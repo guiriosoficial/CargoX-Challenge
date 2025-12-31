@@ -13,11 +13,11 @@ import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
 import { useDeliveryStore } from '@/store/delivery'
 import { usePageStore } from '@/store/page'
-import { toast } from 'vue3-toastify'
+import { toast } from '@/plugins/toastfy'
 import type { IDelivery } from '@/types/delivery'
 
-const DetailsPartial = defineAsyncComponent(() => import('./DetailsPartial.vue'))
-const MapPartial = defineAsyncComponent(() => import('./MapPartial.vue'))
+const DetailsPartial = defineAsyncComponent(() => import('./partials/DetailsPartial.vue'))
+const MapPartial = defineAsyncComponent(() => import('./partials/MapPartial.vue'))
 
 export default {
   components: {
@@ -32,9 +32,10 @@ export default {
   },
   async beforeMount () {
     this.setDelivery({} as IDelivery)
-
     this.setPageIsLoading(true)
-    await this.getDelivery(this.$route.params.id)
+
+    const deliveryId = Number(this.$route.params.id ?? 0)
+    await this.getDelivery(deliveryId)
       .catch(() => {
         toast.error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
         this.$router.push('/')
