@@ -30,6 +30,12 @@ interface ISalesPerson extends IPerson {}
 
 interface ITruckerSeeker extends IPerson {}
 
+interface IDocument extends IDatedEvents<DocumentStatus> {}
+
+interface IPayment extends IDatedEvents<PaymentStatus> {}
+
+interface IHistory extends IDatedEvents<HistoryStatus> {}
+
 interface ILocation {
   latitude: number
   longitude: number
@@ -59,12 +65,6 @@ interface ITruck {
     name: TruckTypes
   }
 }
-
-interface IDocument extends IDatedEvents<DocumentStatus> {}
-
-interface IPayment extends IDatedEvents<PaymentStatus> {}
-
-interface IHistory extends IDatedEvents<HistoryStatus> {}
 
 export type {
   IPerson,

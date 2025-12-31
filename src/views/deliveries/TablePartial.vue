@@ -27,7 +27,7 @@
         <td>{{ data.customer_tracking_number }}</td>
         <td>{{ data.customer?.name.toUpperCase() }}</td>
         <td>
-          <Tags
+          <CxTags
             :tags="[{
               label: data.last_status?.translation,
               isActive: data.last_status?.status === 'delivered'
@@ -52,15 +52,15 @@
 
 <script lang="ts">
 import { defineAsyncComponent, type PropType } from 'vue'
-import type { IDeliverie } from "@/types/deliveries.ts";
+import type { IDeliverie } from '@/types/deliveries'
 
-const Tags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
-const TableSkeleton = defineAsyncComponent(() => import('@/components/CxTags.vue'))
+const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
+const TableSkeleton = defineAsyncComponent(() => import('./skeleton/TableSkeleton.vue'))
 
 export default {
   components: {
     TableSkeleton,
-    Tags
+    CxTags
   },
   props: {
     tableData: {

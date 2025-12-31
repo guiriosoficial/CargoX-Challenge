@@ -11,7 +11,7 @@ import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
 import { useDeliveriesStore } from '@/store/deliveries'
 import { usePageStore } from '@/store/page'
-import { toast } from "vue3-toastify";
+import { toast } from 'vue3-toastify'
 
 const TablePartial = defineAsyncComponent(() => import('./TablePartial.vue'))
 

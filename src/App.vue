@@ -22,8 +22,8 @@
 
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
-import { mapState } from "pinia";
-import { usePageStore } from "@/store/page";
+import { mapState } from 'pinia'
+import { usePageStore } from '@/store/page'
 
 const CxHeader = defineAsyncComponent(() => import('@/components/CxHeader.vue'))
 

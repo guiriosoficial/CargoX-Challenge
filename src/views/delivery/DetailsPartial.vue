@@ -25,7 +25,7 @@ import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
 import { useDeliveryStore } from '@/store/delivery'
 import { dateTime, phoneNumber } from '@/filters'
-import type {IDocument, ILocation, IPayment, ITruck} from "@/types/base.ts";
+import type { IDocument, ILocation, IPayment, ITruck } from '@/types/base.ts'
 
 const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
 

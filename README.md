@@ -1,4 +1,4 @@
-# ![CargoX](https://raw.githubusercontent.com/guiriosoficial/cargox-challenge/main/public/logo.png) Challenge
+# Challenge ![CargoX](https://raw.githubusercontent.com/guiriosoficial/cargox-challenge/main/public/logo.png)
 This project is my challenge for a job at CargoX.  
 CargoX is the largest freight marketplace in Brazil!
 
@@ -79,7 +79,10 @@ npm run lint:fix
 ## TODO
 - Adjust Mocks
 - Create Tests
-- Fix Link
+- Fix Lint
 - Fix Types
+- Migrate Pinia Store do Composition API
+- Turn Styles into Components
+- Tuns Status Types in Enum
 
 > **Status:** I Got the Job :truck:

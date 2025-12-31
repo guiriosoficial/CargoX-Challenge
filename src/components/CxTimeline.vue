@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import type { PropType } from "vue";
+import type { PropType } from 'vue'
 
 export default {
   props: {
