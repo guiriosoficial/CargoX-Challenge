@@ -2,7 +2,7 @@ import eslint from '@eslint/js'
 import eslintPluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import typescriptEslint from 'typescript-eslint'
-// import vitestEslintPlugin from '@vitest/eslint-plugin'
+import vitestEslintPlugin from '@vitest/eslint-plugin'
 
 export default typescriptEslint.config(
   { ignores: ['*.d.ts', '**/coverage', '**/dist'] },
@@ -11,8 +11,8 @@ export default typescriptEslint.config(
       eslint.configs.recommended,
       ...typescriptEslint.configs.recommended,
       ...eslintPluginVue.configs['flat/recommended'],
-      // ...vitestEslintPlugin.configs.recommended,
     ],
+    ...vitestEslintPlugin.configs.recommended,
     files: ['**/*.{ts,vue}'],
     languageOptions: {
       ecmaVersion: 'latest',
