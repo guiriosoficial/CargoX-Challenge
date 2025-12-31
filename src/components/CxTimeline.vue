@@ -34,10 +34,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from "vue";
+
 export default {
   props: {
     timeline: {
-      type: Array,
+      type: Array as PropType<any>,
       default: () => ([])
     }
   }

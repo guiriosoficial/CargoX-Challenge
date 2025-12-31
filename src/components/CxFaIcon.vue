@@ -16,15 +16,17 @@
 
 <script lang="ts">
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
+import type { PropType } from 'vue'
+import type { IconName, IconPrefix } from '@fortawesome/free-brands-svg-icons'
 
 export default {
   props: {
     icon: {
-      type: String,
+      type: String as PropType<IconName>,
       default: ''
     },
     type: {
-      type: String,
+      type: String as PropType<IconPrefix>,
       default: 'fas'
     }
   },
@@ -44,7 +46,7 @@ export default {
       return this.definition?.icon[1] || 0
     },
     svgPath() {
-      return this.definition?.icon[4]
+      return String(this.definition?.icon[4] ?? '')
     }
   }
 }

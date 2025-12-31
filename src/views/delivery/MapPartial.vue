@@ -1,5 +1,5 @@
 <template>
-  <MapSkeleton v-if="isLoading" />
+  <MapSkeleton v-if="isLoadingDelivery" />
   <aside
     v-else
     class="map-container cx-card"
@@ -25,8 +25,8 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from '@/store/delivery/index.ts'
-import { dateTime } from '@/filters/index.js'
+import { useDeliveryStore } from '@/store/delivery'
+import { dateTime } from '@/filters'
 const API_KEY = import.meta.env.VITE_API_KEY
 
 const MapSkeleton = defineAsyncComponent(() => import('./skeleton/MapSkeleton.vue'))
@@ -38,7 +38,7 @@ export default {
   computed: {
     ...mapState(useDeliveryStore, [
       'route',
-      'isLoading'
+      'isLoadingDelivery'
     ]),
 
     routeUrl () {

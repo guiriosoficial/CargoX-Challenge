@@ -4,26 +4,26 @@ export const usePageStore = defineStore('page', {
   state: () => ({
     pageTitle: '',
     pageSubtitle: '',
-    pageLoading: false,
+    pageIsLoading: false,
     hidePageHeader: false,
   }),
   getters: {
     getPageTitle: (state) => state.pageTitle,
     getPageSubtitle: state => state.pageSubtitle,
-    getPageIsLoading: (state) => state.pageLoading,
+    getPageIsLoading: (state) => state.pageIsLoading,
     getHidePageHeader: (state) => state.hidePageHeader,
   },
   actions: {
-    setPageTitle (title) {
+    setPageTitle (title: string): void {
       this.pageTitle = title
     },
-    setPageSubtitle (subtitle) {
+    setPageSubtitle (subtitle: string): void {
       this.pageSubtitle = subtitle
     },
-    setPageIsLoading (isLoading) {
-      this.pageLoading = isLoading
+    setPageIsLoading (isLoading: boolean): void {
+      this.pageIsLoading = isLoading
     },
-    setHidePageHeader (hidePageHeader) {
+    setHidePageHeader (hidePageHeader: boolean): void {
       this.hidePageHeader = hidePageHeader
     }
   }

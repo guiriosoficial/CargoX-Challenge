@@ -19,7 +19,7 @@
     >
       <tr
         v-for="data in tableData"
-        :key="data.token"
+        :key="data.id"
         class="table-container__row"
         @click="goToDelivery(data.id)"
       >
@@ -51,10 +51,11 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue'
+import { defineAsyncComponent, type PropType } from 'vue'
+import type { IDeliverie } from "@/types/deliveries.ts";
 
 const Tags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
-const TableSkeleton = defineComponent(() => import('@/components/CxTags.vue'))
+const TableSkeleton = defineAsyncComponent(() => import('@/components/CxTags.vue'))
 
 export default {
   components: {
@@ -63,7 +64,7 @@ export default {
   },
   props: {
     tableData: {
-      type: Array,
+      type: Array as PropType<IDeliverie[]>,
       required: true
     },
     isLoading: {
@@ -72,7 +73,7 @@ export default {
     }
   },
   methods: {
-    goToDelivery (id) {
+    goToDelivery (id: number) {
       this.$router.push({
         name: 'Delivery',
         params: { id }

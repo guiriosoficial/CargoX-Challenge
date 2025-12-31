@@ -5,8 +5,8 @@
       class="tags-container__content"
     >
       <span
-        v-for="tag in tags"
-        :key="tag.label"
+        v-for="(tag, index) in tags"
+        :key="tag.label + index"
         :class="{ 'tags-container__tag--active': tag.isActive }"
         class="tags-container__tag"
       >
@@ -23,11 +23,19 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from "vue";
+
+interface ITag {
+  isActive: boolean
+  label: string
+}
+
 export default {
   props: {
     tags: {
-      type: Array,
-      required: true
+      type: Array as PropType<ITag[]>,
+      required: true,
+      default: []
     },
     noContent: {
       type: String,

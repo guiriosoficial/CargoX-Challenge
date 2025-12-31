@@ -1,8 +1,11 @@
 import { defineStore } from 'pinia'
+import type { IDeliverie } from '@/types/deliveries'
 
-export const useDeliveriesStore = defineStore('deliveries', {
+const STORE_ID = 'deliveries'
+
+export const useDeliveriesStore = defineStore(STORE_ID, {
   state: () => ({
-    deliveries: [],
+    deliveries: [] as IDeliverie[],
     isLoadingDeliveries: false
   }),
   // getters: {
@@ -10,7 +13,7 @@ export const useDeliveriesStore = defineStore('deliveries', {
   //   getIsLoadingDeliveries: (state) => state.isLoadingDeliveries
   // },
   actions: {
-    getDeliveries() {
+    getDeliveries(): Promise<IDeliverie[]> {
       this.isLoadingDeliveries = true
 
       return new Promise((resolve, reject) => {
@@ -24,7 +27,7 @@ export const useDeliveriesStore = defineStore('deliveries', {
           .finally(() => this.isLoadingDeliveries = false)
       })
     },
-    setDeliveries(payload) {
+    setDeliveries(payload: IDeliverie[]): void {
       this.deliveries = payload
     }
   }

@@ -1,10 +1,13 @@
 import { defineStore } from 'pinia'
+import type { IDelivery, ICustomer, IRoute } from '@/types/delivery'
 
-export const useDeliveryStore = defineStore('delivery', {
+const STORE_ID = 'delivery'
+
+export const useDeliveryStore = defineStore(STORE_ID, {
   state: () => ({
-    route: {},
-    costumer: {},
-    details: {},
+    route: {} as IRoute,
+    customer: {} as ICustomer,
+    details: {} as IDelivery,
     isLoadingDelivery: false
   }),
   // getters: {
@@ -17,15 +20,14 @@ export const useDeliveryStore = defineStore('delivery', {
   //       lastAppUpdateAt: trucker?.last_app_update_at
   //     }
   //   },
-  //   getCostumer: (state) => state.delivery.customer || {},
+  //   getCustomer: (state) => state.delivery.customer || {},
   //   getIsLoadingDelivery: (state) => state.isLoadingDelivery
   // },
   actions: {
-    getDelivery (deliveryId) {
+    getDelivery (deliveryId: number): Promise<IDelivery> {
       this.isLoadingDelivery = true
 
       return new Promise((resolve, reject) => {
-        // axios.get(deliveryId)
         fetch('/mocks/delivery.json')
           .then(async (response) => {
             const json = await response.json()
@@ -36,18 +38,15 @@ export const useDeliveryStore = defineStore('delivery', {
           .finally(() => this.isLoadingDelivery = false)
       })
     },
-    setDelivery (payload) {
+    setDelivery (payload: IDelivery): void {
       const { origin, destination, trucker } = payload
       this.route = {
         origin,
         destination,
         lastAppUpdateAt: trucker?.last_app_update_at
       }
-      this.costumer = payload.customer || {}
+      this.customer = payload.customer || {}
       this.details = payload
     },
-    clearDelivery ()  {
-      this.delivery = {}
-    }
   }
 })

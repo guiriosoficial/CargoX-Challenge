@@ -22,10 +22,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from "vue"
+
 export default {
   props: {
     list: {
-      type: Array,
+      type: Array as PropType<string[]>,
       required: true
     },
     noContent: {

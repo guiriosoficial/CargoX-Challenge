@@ -25,6 +25,7 @@ import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
 import { useDeliveryStore } from '@/store/delivery'
 import { dateTime, phoneNumber } from '@/filters'
+import type {IDocument, ILocation, IPayment, ITruck} from "@/types/base.ts";
 
 const InfoPartial = defineAsyncComponent(() => import('./InfoPartial.vue'))
 
@@ -225,7 +226,7 @@ export default {
     }
   },
   methods: {
-    handleTrucksList (trucks = []) {
+    handleTrucksList (trucks: ITruck[] = []) {
       let trucksString = ''
       trucks.forEach(truck => {
         const { plate, type } = truck
@@ -234,7 +235,7 @@ export default {
       return trucksString
     },
 
-    handleAddress (locale = {}) {
+    handleAddress (locale: ILocation = {} as ILocation) {
       const { address, number, city, state, zip_code } = locale
       return `
         <p>${address}, ${number}</p>
@@ -242,11 +243,11 @@ export default {
       `
     },
 
-    handleTags (list = [], i18n) {
+    handleTags (list: IDocument[] | IPayment[] = [], i18n: string) {
       return list.map(({ name, status, at }) => ({
         label: this.$t(`${i18n}.${name}`),
         isActive: ['emitted', 'ok'].includes(status) && Boolean(at)
-      })) || []
+      })) ?? []
     }
   }
 }

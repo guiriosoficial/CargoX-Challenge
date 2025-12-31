@@ -13,6 +13,7 @@
     "last_app_open_at": "2023-10-27T14:30:00Z",
     "last_app_position_at": "2023-10-27T14:35:00Z",
     "first_login_at": "2023-01-15T10:00:00Z",
+    "has_app": true,
     "app_version": "2.4.1"
   },
   "trucks": [
@@ -38,7 +39,7 @@
     "state": "SP",
     "zip_code": "01234-567",
     "latitude": -23.5505,
-    "longitude": -46.6333,
+    "longitude": -46.6333
   },
   "destination": {
     "address": "Av. Porto Marítimo",
@@ -47,7 +48,7 @@
     "state": "SP",
     "zip_code": "11000-000",
     "latitude": -23.9608,
-    "longitude": -46.3339,
+    "longitude": -46.3339
   },
   "trucker_seeker": {
     "name": "Operador Logístico Alpha",
@@ -81,7 +82,7 @@
       "name": "ciot",
       "status": "",
       "at": ""
-    },
+    }
   ],
   "payments": [
     {
@@ -121,7 +122,5 @@
       "translation": "Carregando",
       "at": ""
     }
-    // { "status": "created", "translation": "Pedido Criado", "at": "2023-10-25T10:00:00Z" },
-    // { "status": "in_transit", "translation": "Em Trânsito", "at": "2023-10-26T08:30:00Z" }
   ]
 }
