@@ -7,12 +7,12 @@ export const usePageStore = defineStore('page', {
     pageIsLoading: false,
     hidePageHeader: false,
   }),
-  getters: {
-    getPageTitle: (state) => state.pageTitle,
-    getPageSubtitle: state => state.pageSubtitle,
-    getPageIsLoading: (state) => state.pageIsLoading,
-    getHidePageHeader: (state) => state.hidePageHeader,
-  },
+  // getters: {
+  //   getPageTitle: (state) => state.pageTitle,
+  //   getPageSubtitle: state => state.pageSubtitle,
+  //   getPageIsLoading: (state) => state.pageIsLoading,
+  //   getHidePageHeader: (state) => state.hidePageHeader,
+  // },
   actions: {
     setPageTitle (title: string): void {
       this.pageTitle = title

@@ -1,4 +1,4 @@
-function phoneNumber (value = '') {
+function phoneNumber (value: string = ''): string {
   if (!value) return ''
   if (!/^\d+$/.test(value)) return value
 
