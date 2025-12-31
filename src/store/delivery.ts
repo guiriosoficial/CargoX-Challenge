@@ -28,7 +28,7 @@ export const useDeliveryStore = defineStore(STORE_ID, {
       this.isLoadingDelivery = true
 
       return new Promise((resolve, reject) => {
-        fetch('/mocks/delivery.json')
+        fetch(`/mocks/delivery_${deliveryId}.json`)
           .then(async (response) => {
             const json = await response.json()
             this.setDelivery(json)

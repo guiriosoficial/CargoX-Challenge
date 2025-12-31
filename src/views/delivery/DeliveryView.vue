@@ -34,9 +34,8 @@ export default {
     this.setDelivery({} as IDelivery)
 
     this.setPageIsLoading(true)
-    this.getDelivery(this.$route.params.id)
-      .catch((e) => {
-        console.log('errrrr', e)
+    await this.getDelivery(this.$route.params.id)
+      .catch(() => {
         toast.error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
         this.$router.push('/')
       })
