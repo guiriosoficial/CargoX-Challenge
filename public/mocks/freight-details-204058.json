@@ -1,0 +1,139 @@
+{
+  "id": 204058,
+  "customer_tracking_number": 276377,
+  "customer": {
+    "id": 430855,
+    "name": "Javier Bailey"
+  },
+  "trucker": {
+    "id": 609096,
+    "name": "Maryann Hessel",
+    "phone": "12991982668",
+    "last_app_update_at": "2025-06-13T14:13:58.248Z",
+    "last_app_open_at": "2025-06-13T14:00:00Z",
+    "last_app_position_at": "2025-06-13T14:05:00Z",
+    "first_login_at": "2023-01-15T10:00:00Z",
+    "has_app": true,
+    "app_version": "2.4.1"
+  },
+  "trucks": [
+    {
+      "plate": "ABC-1234",
+      "type": {
+        "id": 223312,
+        "name": "Caminhão Baú"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Rua das Indústrias",
+    "number": "500",
+    "city": "São Paulo",
+    "state": "SP",
+    "zip_code": "01234-567",
+    "latitude": -23.5505,
+    "longitude": -46.6333
+  },
+  "destination": {
+    "address": "Av. Porto Marítimo",
+    "number": "sn",
+    "city": "Santos",
+    "state": "SP",
+    "zip_code": "11000-000",
+    "latitude": -23.9608,
+    "longitude": -46.3339
+  },
+  "trucker_seeker": {
+    "id": 101559,
+    "name": "Operador Logístico Alpha"
+  },
+  "salesperson": {
+    "id": 101218,
+    "name": "Maria Vendedora"
+  },
+  "pickup_date": "2025-06-10T08:00:00Z",
+  "delivery_date": "2025-06-12T18:30:00Z",
+  "estimated_time_of_arrival": "2025-06-12T17:00:00Z",
+  "manual_input_estimated_time_of_arrival": "2025-06-12T18:00:00Z",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "emitted",
+      "at": "2025-06-13T07:04:38.471Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "ok",
+      "at": "2025-06-12T17:34:51.673Z"
+    },
+    {
+      "name": "ct",
+      "status": "ok ",
+      "at": "2025-06-12T17:41:58.521Z"
+    },
+    {
+      "name": "ciot",
+      "status": "ok",
+      "at": "2025-06-12T17:50:30.215Z"
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "ok",
+      "at": "2025-06-12T14:22:59.637Z"
+    },
+    {
+      "name": "canh",
+      "status": "ok",
+      "at": "2025-06-13T10:42:52.147Z"
+    },
+    {
+      "name": "sald",
+      "status": "emitted",
+      "at": "2025-06-14T11:35:51.147Z"
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-09T10:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": "2025-06-10T07:30:00Z"
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": "2025-06-10T08:00:00Z"
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": "2025-06-10T09:00:00Z"
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": "2025-06-10T10:30:00Z"
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": "2025-06-12T16:30:00Z"
+    },
+    {
+      "status": "discharging",
+      "translation": "Descarregando",
+      "at": "2025-06-12T17:00:00Z"
+    },
+    {
+      "status": "delivered",
+      "translation": "Entregue",
+      "at": "2025-06-12T18:30:00Z"
+    }
+  ]
+}

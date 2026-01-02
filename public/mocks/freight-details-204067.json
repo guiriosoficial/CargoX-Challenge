@@ -1,0 +1,146 @@
+{
+  "id": 204067,
+  "customer_tracking_number": 276379,
+  "customer": {
+    "id": 430871,
+    "name": "Bob Smith"
+  },
+  "trucker": {
+    "id": 609140,
+    "name": "Eduardo Lima",
+    "phone": "41996604455",
+    "last_app_update_at": "",
+    "last_app_open_at": "",
+    "last_app_position_at": "",
+    "first_login_at": "2021-11-20T08:00:00Z",
+    "has_app": false,
+    "app_version": ""
+  },
+  "trucks": [
+    {
+      "plate": "HJK-3322",
+      "type": {
+        "id": 223144,
+        "name": "Van"
+      }
+    },
+    {
+      "plate": "MND-4450",
+      "type": {
+        "id": 223145,
+        "name": "Van"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Rua das Araucárias",
+    "number": "88",
+    "city": "Curitiba",
+    "state": "PR",
+    "zip_code": "80050-320",
+    "latitude": -25.4284,
+    "longitude": -49.2733
+  },
+  "destination": {
+    "address": "Av. Brasil",
+    "number": "1500",
+    "city": "São Paulo",
+    "state": "SP",
+    "zip_code": "01430-001",
+    "latitude": -23.5673,
+    "longitude": -46.6482
+  },
+  "trucker_seeker": {
+    "id": 101563,
+    "name": "Operador Logístico Epsilon"
+  },
+  "salesperson": {
+    "id": 101222,
+    "name": "Lucas Comercial"
+  },
+  "pickup_date": "2025-06-13T08:00:00Z",
+  "delivery_date": "",
+  "estimated_time_of_arrival": "2025-06-15T17:00:00Z",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "emitted",
+      "at": "2025-06-14T07:30:00Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "ok",
+      "at": "2025-06-14T07:45:00Z"
+    },
+    {
+      "name": "ct",
+      "status": "emitted",
+      "at": "2025-06-15T08:31:00Z"
+    },
+    {
+      "name": "ciot",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "emitted",
+      "at": "2025-06-14T07:50:00Z"
+    },
+    {
+      "name": "canh",
+      "status": "",
+      "at": ""
+    },
+    {
+      "name": "sald",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-12T09:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": "2025-06-13T07:30:00Z"
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": "2025-06-13T08:00:00Z"
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": "2025-06-13T09:00:00Z"
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": "2025-06-13T011:00:00Z"
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": ""
+    },
+    {
+      "status": "discharging",
+      "translation": "Descarregando",
+      "at": ""
+    },
+    {
+      "status": "delivered",
+      "translation": "Entregue",
+      "at": ""
+    }
+  ]
+}

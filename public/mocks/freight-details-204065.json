@@ -1,0 +1,139 @@
+{
+  "id": 204065,
+  "customer_tracking_number": 276357,
+  "customer": {
+    "id": 430850,
+    "name": "Peggy Pollich"
+  },
+  "trucker": {
+    "id": 609120,
+    "name": "José Almeida",
+    "phone": "987651122",
+    "last_app_update_at": "",
+    "last_app_open_at": "",
+    "last_app_position_at": "",
+    "first_login_at": "",
+    "has_app": false,
+    "app_version": ""
+  },
+  "trucks": [
+    {
+      "plate": "KLM-4421",
+      "type": {
+        "id": 223416,
+        "name": "Carreta LS"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Rodovia Presidente Dutra",
+    "number": "km 225",
+    "city": "Guarulhos",
+    "state": "SP",
+    "zip_code": "07000-000",
+    "latitude": -23.4543,
+    "longitude": -46.5337
+  },
+  "destination": {
+    "address": "Rua do Cais",
+    "number": "210",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "zip_code": "20090-003",
+    "latitude": -22.8946,
+    "longitude": -43.1803
+  },
+  "trucker_seeker": {
+    "id": 101561,
+    "name": "Operador Logístico Gamma"
+  },
+  "salesperson": {
+    "id": 101220,
+    "name": "Ana Comercial"
+  },
+  "pickup_date": "2025-06-11T07:00:00Z",
+  "delivery_date": "2025-06-13T16:00:00Z",
+  "estimated_time_of_arrival": "2025-06-13T15:30:00Z",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "ok",
+      "at": "2025-06-13T07:04:38.471Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "ok",
+      "at": "2025-06-12T17:34:51.673Z"
+    },
+    {
+      "name": "ct",
+      "status": "ok",
+      "at": "2025-06-12T113:31:54.673Z"
+    },
+    {
+      "name": "ciot",
+      "status": "ok",
+      "at": "2025-06-13T09:56:32.673Z"
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "ok",
+      "at": "2025-06-12T14:22:59.637Z"
+    },
+    {
+      "name": "canh",
+      "status": "ok",
+      "at": "2025-06-13T10:42:52.147Z"
+    },
+    {
+      "name": "sald",
+      "status": "ok",
+      "at": "2025-06-13T17:00:11.147Z"
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-10T10:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": "2025-06-11T06:30:00Z"
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": "2025-06-11T07:00:00Z"
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": "2025-06-11T08:30:00Z"
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": "2025-06-11T10:00:00Z"
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": "2025-06-13T15:00:00Z"
+    },
+    {
+      "status":"discharging",
+      "translation":"Descarregando",
+      "at": "2025-06-13T15:30:00Z"
+    },
+    {
+      "status":"delivered",
+      "translation": "Entregue",
+      "at": "2025-06-13T16:00:00Z"
+    }
+  ]
+}

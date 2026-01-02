@@ -1,0 +1,139 @@
+{
+  "id": 204060,
+  "customer_tracking_number": 276367,
+  "customer": {
+    "id": 430840,
+    "name": "Matthew Cormier"
+  },
+  "trucker": {
+    "id": 609097,
+    "name": "Carlos Motorista",
+    "phone": "988887777",
+    "last_app_update_at": "2025-06-13T11:00:00Z",
+    "last_app_open_at": "2025-06-13T11:10:00Z",
+    "last_app_position_at": "2025-06-13T11:15:00Z",
+    "first_login_at": "2024-02-01T09:00:00Z",
+    "has_app": true,
+    "app_version": "2.5.0"
+  },
+  "trucks": [
+    {
+      "plate": "XYZ-9090",
+      "type": {
+        "id": 223415,
+        "name": "Carreta"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Av. Industrial",
+    "number": "1200",
+    "city": "Campinas",
+    "state": "SP",
+    "zip_code": "13000-000",
+    "latitude": -22.9056,
+    "longitude": -47.0608
+  },
+  "destination": {
+    "address": "Rua do Porto",
+    "number": "45",
+    "city": "Santos",
+    "state": "SP",
+    "zip_code": "11010-000",
+    "latitude": -23.9618,
+    "longitude": -46.3322
+  },
+  "trucker_seeker": {
+    "id": 101560,
+    "name": "Operador Logístico Beta"
+  },
+  "salesperson": {
+    "id": 101219,
+    "name": "João Vendedor"
+  },
+  "pickup_date": "2025-06-12T08:00:00Z",
+  "delivery_date": "2025-06-14T17:54:00Z",
+  "estimated_time_of_arrival": "2025-06-14T18:00:00Z",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "ok",
+      "at": "2025-06-13T07:04:38.471Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "ok",
+      "at": "2025-06-12T17:34:51.673Z"
+    },
+    {
+      "name": "ct",
+      "status": "ok",
+      "at": "2025-06-13T15:31:52.673Z"
+    },
+    {
+      "name": "ciot",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "emitted",
+      "at": "2025-06-12T14:22:59.637Z"
+    },
+    {
+      "name": "canh",
+      "status": "ok",
+      "at": "2025-06-13T10:42:52.147Z"
+    },
+    {
+      "name": "sald",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-11T09:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": "2025-06-12T07:30:00Z"
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": "2025-06-12T08:00:00Z"
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": "2025-06-12T09:00:00Z"
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": "2025-06-12T10:30:00Z"
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": ""
+    },
+    {
+      "status": "discharging",
+      "translation": "Descarregando",
+      "at": ""
+    },
+    {
+      "status": "delivered",
+      "translation": "Entregue",
+      "at": ""
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": 204069,
+  "customer_tracking_number": 276381,
+  "customer": {
+    "id": 430873,
+    "name": "Dan Brown"
+  },
+  "trucker": {
+    "id": 609150,
+    "name": "Marcos Vinícius",
+    "phone": "19997718899",
+    "last_app_update_at": "",
+    "last_app_open_at": "",
+    "last_app_position_at": "",
+    "first_login_at": "",
+    "has_app": false,
+    "app_version": ""
+  },
+  "trucks": [
+    {
+      "plate": "JTR-5588",
+      "type": {
+        "id": 414265,
+        "name":"Truck"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Rua do Comércio",
+    "number": "900",
+    "city": "Sorocaba",
+    "state": "SP",
+    "zip_code": "18010-080",
+    "latitude": -23.5015,
+    "longitude": -47.4526
+  },
+  "destination": {
+    "address": "Av. Logística",
+    "number": "120",
+    "city": "Jundiaí",
+    "state": "SP",
+    "zip_code": "13201-010",
+    "latitude": -23.1857,
+    "longitude": -46.8978
+  },
+  "trucker_seeker": {
+    "id": 101564,
+    "name": "Operador Logístico Zeta"
+  },
+  "salesperson": {
+    "id": 101223,
+    "name": "Fernanda Sales"
+  },
+  "pickup_date": "2025-06-18T08:00:00Z",
+  "delivery_date": "",
+  "estimated_time_of_arrival": "",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "emitted",
+      "at": "2025-06-17T15:10:00Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "emitted",
+      "at": "2025-06-14T54:26:00Z"
+    },
+    {
+      "name": "ct",
+      "status": "emitted",
+      "at": "2025-06-18T11:14:00Z"
+    },
+    {
+      "name": "ciot",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "",
+      "at": ""
+    },
+    {
+      "name": "canh",
+      "status": "emitted",
+      "at": "2025-06-18T11:11:00Z"
+    },
+    {
+      "name": "sald",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-17T09:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": ""
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": ""
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": ""
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": ""
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": ""
+    },
+    {
+      "status": "discharging",
+      "translation": "Descarregando",
+      "at": ""
+    },
+    {
+      "status": "delivered",
+      "translation": "Entregue",
+      "at": ""
+    }
+  ]
+}

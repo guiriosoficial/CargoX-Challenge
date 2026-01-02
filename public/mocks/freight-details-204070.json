@@ -1,0 +1,139 @@
+{
+  "id": 204070,
+  "customer_tracking_number": 276382,
+  "customer": {
+    "id": 430874,
+    "name": "Eve Green"
+  },
+  "trucker": {
+    "id": 609152,
+    "name": "Rodrigo Nunes",
+    "phone": "48991227788",
+    "last_app_update_at": "2025-06-15T09:00:00Z",
+    "last_app_open_at": "2025-06-15T09:02:00Z",
+    "last_app_position_at": "2025-06-15T09:03:00Z",
+    "first_login_at": "2024-01-20T11:00:00Z",
+    "has_app": true,
+    "app_version": "2.4.9"
+  },
+  "trucks": [
+    {
+      "plate": "SDF-9090",
+      "type": {
+        "id": 223188,
+        "name": "Carreta Sider"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Rua das Palmeiras",
+    "number": "700",
+    "city": "Joinville",
+    "state": "SC",
+    "zip_code": "89201-010",
+    "latitude": -26.3044,
+    "longitude": -48.8487
+  },
+  "destination": {
+    "address": "Av. Portuária",
+    "number": "sn",
+    "city": "Itajaí",
+    "state": "SC",
+    "zip_code": "88301-970",
+    "latitude": -26.9085,
+    "longitude": -48.6578
+  },
+  "trucker_seeker": {
+    "id": 101566,
+    "name": "Operador Logístico Sigma"
+  },
+  "salesperson": {
+    "id": 101225,
+    "name": "Diego Sales"
+  },
+  "pickup_date": "2025-06-15T10:00:00Z",
+  "delivery_date": "2025-06-16T15:00:00Z",
+  "estimated_time_of_arrival": "2025-06-16T14:00:00Z",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "emitted",
+      "at": "2025-06-15T08:30:00Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "ok",
+      "at": "2025-06-15T08:45:00Z"
+    },
+    {
+      "name": "ct",
+      "status": "",
+      "at": ""
+    },
+    {
+      "name": "ciot",
+      "status": "emitted",
+      "at": "2025-06-14T09:47:00Z"
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "ok",
+      "at": "2025-06-11T010:23:00Z"
+    },
+    {
+      "name": "canh",
+      "status": "ok",
+      "at": "2025-06-12T017:51:00Z"
+    },
+    {
+      "name": "sald",
+      "status": "emitted",
+      "at": "2025-06-12T14:37:00Z"
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-14T15:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": "2025-06-15T09:00:00Z"
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": "2025-06-15T10:00:00Z"
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": ""
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": ""
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": ""
+    },
+    {
+      "status": "discharging",
+      "translation": "Descarregando",
+      "at": ""
+    },
+    {
+      "status": "delivered",
+      "translation": "Entregue",
+      "at": ""
+    }
+  ]
+}

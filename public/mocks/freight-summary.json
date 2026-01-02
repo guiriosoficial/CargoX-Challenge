@@ -1,0 +1,134 @@
+[
+  {
+    "id": 204058,
+    "customer_tracking_number": 276377,
+    "customer": {
+      "id": 430855,
+      "name": "Javier Bailey"
+    },
+    "last_status": {
+      "translation": "Entregue",
+      "status": "delivered"
+    }
+  },
+  {
+    "id": 204065,
+    "customer_tracking_number": 276357,
+    "customer": {
+      "id": 430850,
+      "name": "Peggy Pollich"
+    },
+    "last_status": {
+      "translation": "Entregue",
+      "status": "delivered"
+    }
+  },
+  {
+    "id": 204066,
+    "customer_tracking_number": 276378,
+    "customer": {
+      "id": 430870,
+      "name": "Alice Johnson"
+    },
+    "last_status": {
+      "translation": "Entregue",
+      "status": "delivered"
+    }
+  },
+  {
+    "id": 204060,
+    "customer_tracking_number": 276367,
+    "customer": {
+      "id": 430840,
+      "name": "Matthew Cormier"
+    },
+    "last_status": {
+      "translation": "Em Trânsito",
+      "status": "in_transit"
+    }
+  },
+  {
+    "id": 204067,
+    "customer_tracking_number": 276379,
+    "customer": {
+      "id": 430871,
+      "name": "Bob Smith"
+    },
+    "last_status": {
+      "translation": "Em Trânsito",
+      "status": "in_transit"
+    }
+  },
+  {
+    "id": 204069,
+    "customer_tracking_number": 276381,
+    "customer": {
+      "id": 430873,
+      "name": "Dan Brown"
+    },
+    "last_status": {
+      "translation": "Agendado",
+      "status": "scheduled"
+    }
+  },
+  {
+    "id": 204068,
+    "customer_tracking_number": 276380,
+    "customer": {
+      "id": 430872,
+      "name": "Carol White"
+    },
+    "last_status": {
+      "translation": "Indo coletar",
+      "status": "going_collect"
+    }
+  },
+  {
+    "id": 204070,
+    "customer_tracking_number": 276382,
+    "customer": {
+      "id": 430874,
+      "name": "Eve Green"
+    },
+    "last_status": {
+      "translation": "Fila coleta",
+      "status": "collection_queue"
+    }
+  },
+  {
+    "id": 204071,
+    "customer_tracking_number": 276383,
+    "customer": {
+      "id": 430875,
+      "name": "Frank Ocean"
+    },
+    "last_status": {
+      "translation": "Carregando",
+      "status": "collecting"
+    }
+  },
+  {
+    "id": 204072,
+    "customer_tracking_number": 276384,
+    "customer": {
+      "id": 430876,
+      "name": "Grace Black"
+    },
+    "last_status": {
+      "translation": "Fila descarga",
+      "status": "discharge_queue"
+    }
+  },
+  {
+    "id": 204073,
+    "customer_tracking_number": 276384,
+    "customer": {
+      "id": 430876,
+      "name": "Grace Black"
+    },
+    "last_status": {
+      "translation": "Descarregando",
+      "status": "discharging"
+    }
+  }
+]

@@ -1,0 +1,146 @@
+{
+  "id": 204066,
+  "customer_tracking_number": 276378,
+  "customer": {
+    "id": 430870,
+    "name": "Alice Johnson"
+  },
+  "trucker": {
+    "id": 609130,
+    "name": "Rafael Moreira",
+    "phone": "31998812233",
+    "last_app_update_at": "2025-06-13T09:00:00Z",
+    "last_app_open_at": "2025-06-13T09:10:00Z",
+    "last_app_position_at": "2025-06-13T09:15:00Z",
+    "first_login_at": "2023-03-12T11:00:00Z",
+    "has_app": true,
+    "app_version": "2.3.9"
+  },
+  "trucks": [
+    {
+      "plate": "QWE-7788",
+      "type": {
+        "id": 232122,
+        "name": "Bitrem"
+      }
+    },
+    {
+      "plate": "RTY-9911",
+      "type": {
+        "id": 232124,
+        "name": "Truck"
+      }
+    }
+  ],
+  "origin": {
+    "address": "Av. Contorno",
+    "number": "450",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "zip_code": "30110-080",
+    "latitude": -19.9208,
+    "longitude": -43.9378
+  },
+  "destination": {
+    "address": "Rua das Docas",
+    "number": "100",
+    "city": "Santos",
+    "state": "SP",
+    "zip_code": "11013-000",
+    "latitude": -23.9555,
+    "longitude": -46.3283
+  },
+  "trucker_seeker": {
+    "id": 101562,
+    "name": "Operador Logístico Delta"
+  },
+  "salesperson": {
+    "id": 101221,
+    "name": "Pedro Vendas"
+  },
+  "pickup_date": "2025-06-12T06:00:00Z",
+  "delivery_date": "2025-06-14T11:30:00Z",
+  "estimated_time_of_arrival": "2025-06-14T12:00:00Z",
+  "manual_input_estimated_time_of_arrival": "",
+  "documents": [
+    {
+      "name": "cte",
+      "status": "emitted",
+      "at": "2025-06-15T08:30:00Z"
+    },
+    {
+      "name": "mdfe",
+      "status": "ok",
+      "at": "2025-06-15T08:45:00Z"
+    },
+    {
+      "name": "ct",
+      "status": "",
+      "at": ""
+    },
+    {
+      "name": "ciot",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "payments": [
+    {
+      "name": "adia",
+      "status": "",
+      "at": ""
+    },
+    {
+      "name": "canh",
+      "status": "",
+      "at": ""
+    },
+    {
+      "name": "sald",
+      "status": "",
+      "at": ""
+    }
+  ],
+  "status_history": [
+    {
+      "status": "waiting",
+      "translation": "Aguardando",
+      "at": "2025-06-11T09:00:00Z"
+    },
+    {
+      "status": "going_collect",
+      "translation": "Indo Coletar",
+      "at": "2025-06-12T05:30:00Z"
+    },
+    {
+      "status": "collection_queue",
+      "translation": "Fila Coleta",
+      "at": "2025-06-12T06:00:00Z"
+    },
+    {
+      "status": "loading",
+      "translation": "Carregando",
+      "at": "2025-06-12T07:30:00Z"
+    },
+    {
+      "status": "in_transit",
+      "translation": "Em Trânsito",
+      "at": "2025-06-12T09:00:00Z"
+    },
+    {
+      "status": "discharge_queue",
+      "translation": "Fila Descarga",
+      "at": "2025-06-14T10:30:00Z"
+    },
+    {
+      "status": "discharging",
+      "translation": "Descarregando",
+      "at": "2025-06-14T11:00:00Z"
+    },
+    {
+      "status": "delivered",
+      "translation": "Entregue",
+      "at": "2025-06-14T11:30:00Z"
+    }
+  ]
+}
