@@ -7,7 +7,7 @@ import type {
   ITruck,
   IDocument,
   IPayment,
-  IHistory
+  IHistory, IStatus
 } from '@/types/base';
 
 interface IRoute {
@@ -16,7 +16,7 @@ interface IRoute {
   lastAppUpdateAt: Date
 }
 
-interface IDelivery {
+interface IFreightDetails {
   id: number,
   customer_tracking_number: number,
   customer: ICustomer,
@@ -35,8 +35,16 @@ interface IDelivery {
   status_history: IHistory[]
 }
 
+interface IFreightSummary {
+  id: number,
+  customer_tracking_number: number,
+  customer: ICustomer,
+  last_status: IStatus
+}
+
 export type {
-  IDelivery,
+  IFreightDetails,
   IRoute,
-  ICustomer
+  ICustomer,
+  IFreightSummary
 }

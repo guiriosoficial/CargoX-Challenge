@@ -1,30 +1,33 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-export const usePageStore = defineStore('page', {
-  state: () => ({
-    pageTitle: '',
-    pageSubtitle: '',
-    pageIsLoading: false,
-    hidePageHeader: false,
-  }),
-  // getters: {
-  //   getPageTitle: (state) => state.pageTitle,
-  //   getPageSubtitle: state => state.pageSubtitle,
-  //   getPageIsLoading: (state) => state.pageIsLoading,
-  //   getHidePageHeader: (state) => state.hidePageHeader,
-  // },
-  actions: {
-    setPageTitle (title: string): void {
-      this.pageTitle = title
-    },
-    setPageSubtitle (subtitle: string): void {
-      this.pageSubtitle = subtitle
-    },
-    setPageIsLoading (isLoading: boolean): void {
-      this.pageIsLoading = isLoading
-    },
-    setHidePageHeader (hidePageHeader: boolean): void {
-      this.hidePageHeader = hidePageHeader
-    }
+export const usePageStore = defineStore('page', () => {
+  const pageTitle = ref<string>('')
+  const pageSubtitle = ref<string>('')
+  const isLoadingPage = ref<boolean>(false)
+  const hidePageHeader = ref<boolean>(false)
+
+  function setPageTitle (title: string): void {
+    pageTitle.value = title
+  }
+  function setPageSubtitle (subtitle: string): void {
+    pageSubtitle.value = subtitle
+  }
+  function setPageIsLoading (isLoading: boolean): void {
+    isLoadingPage.value = isLoading
+  }
+  function setHidePageHeader (hidePageHeader: boolean): void {
+    hidePageHeader.value = hidePageHeader
+  }
+
+  return {
+    pageTitle,
+    pageSubtitle,
+    isLoadingPage,
+    hidePageHeader,
+    setPageTitle,
+    setPageSubtitle,
+    setPageIsLoading,
+    setHidePageHeader
   }
 })

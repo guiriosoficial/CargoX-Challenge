@@ -1,19 +1,19 @@
 <template>
   <section class="details-container cx-card">
     <div class="details-container__column">
-      <InfoPartial
+      <ColumnPartial
         v-for="detail in detailsListLeft"
         :key="detail.key"
-        :is-loading="isLoadingDelivery"
+        :is-loading="isLoadingFreightDetails"
         :detail="detail"
       />
     </div>
 
     <div class="details-container__column">
-      <InfoPartial
+      <ColumnPartial
         v-for="detail in detailsListRight"
         :key="detail.key"
-        :is-loading="isLoadingDelivery"
+        :is-loading="isLoadingFreightDetails"
         :detail="detail"
       />
     </div>
@@ -23,20 +23,20 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from '@/store/delivery.ts'
+import { useFreightDetailsStore } from '@/store/freightDetails.ts'
 import { dateTime, phoneNumber } from '@/filters'
-import type {IDocument, ILocation, IPayment, ITruck, ITrucker} from '@/types/base.ts'
+import type { IDocument, ILocation, IPayment, ITruck, ITrucker } from '@/types/base'
 
-const InfoPartial = defineAsyncComponent(() => import('./ColumnPartial.vue'))
+const ColumnPartial = defineAsyncComponent(() => import('./ColumnPartial.vue'))
 
 export default {
   components: {
-    InfoPartial
+    ColumnPartial
   },
   computed: {
-    ...mapState(useDeliveryStore, [
-      'details',
-      'isLoadingDelivery'
+    ...mapState(useFreightDetailsStore, [
+      'freightDetails',
+      'isLoadingFreightDetails'
     ]),
 
     detailsListLeft () {
@@ -44,7 +44,7 @@ export default {
         appDataList,
         handleTrucksList,
         handleAddress,
-        details
+        freightDetails
       } = this
       const {
         id,
@@ -55,11 +55,11 @@ export default {
         destination,
         trucker_seeker,
         salesperson
-      } = details
+      } = freightDetails
 
       return [
         {
-          key: 'delivery-id',
+          key: 'freight-id',
           text: id,
           icon: 'orcid',
           iconType: 'fab',
@@ -133,7 +133,7 @@ export default {
         $t,
         handleTags,
         timelineSteps,
-        details
+        freightDetails
       } = this
       const {
         pickup_date,
@@ -142,7 +142,7 @@ export default {
         manual_input_estimated_time_of_arrival,
         documents,
         payments
-      } = details
+      } = freightDetails
 
       return [
         {
@@ -153,10 +153,10 @@ export default {
           component: 'CxPlainText'
         },
         {
-          key: 'delivery-date',
+          key: 'freight-date',
           text: dateTime(delivery_date),
           noContent: 'no-date',
-          tooltip: $t('tooltips.delivery-date'),
+          tooltip: $t('tooltips.freight-date'),
           component: 'CxPlainText'
         },
         {
@@ -164,7 +164,7 @@ export default {
           text: dateTime(estimated_time_of_arrival),
           noContent: 'no-date',
           tooltip: $t('tooltips.estimated-time-of-arrival'),
-          component: 'PlainText'
+          component: 'CxPlainText'
         },
         {
           key: 'manual-arrival',
@@ -197,7 +197,7 @@ export default {
     },
 
     appDataList () {
-      const { $t, details: { trucker } } = this
+      const { $t, freightDetails: { trucker } } = this
       const dataKeys: (keyof ITrucker)[] = [
         'last_app_open_at',
         'last_app_position_at',
@@ -215,7 +215,7 @@ export default {
     },
 
     timelineSteps () {
-      return this.details.status_history?.map(step => {
+      return this.freightDetails.status_history?.map(step => {
         const { status, translation, at } = step
         return {
           key: status,

@@ -1,5 +1,5 @@
 <template>
-  <MapSkeleton v-if="isLoadingDelivery" />
+  <MapSkeleton v-if="isLoadingFreightDetails" />
   <aside
     v-else
     class="map-container cx-card"
@@ -17,7 +17,7 @@
     </map>
 
     <footer class="map-container__footer">
-      Última atualização: {{ dateTime(route.lastAppUpdateAt) }}
+      Última atualização: {{ dateTime(freightDetailsRoute.lastAppUpdateAt) }}
     </footer>
   </aside>
 </template>
@@ -25,24 +25,24 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapState } from 'pinia'
-import { useDeliveryStore } from '@/store/delivery.ts'
+import { useFreightDetailsStore } from '@/store/freightDetails.ts'
 import { dateTime } from '@/filters'
 const API_KEY = import.meta.env.VITE_API_KEY
 
-const MapSkeleton = defineAsyncComponent(() => import('../skeleton/MapSkeleton.vue'))
+const MapSkeleton = defineAsyncComponent(() => import('@/views/freightDetails/skeletons/MapSkeleton.vue'))
 
 export default {
   components: {
     MapSkeleton
   },
   computed: {
-    ...mapState(useDeliveryStore, [
-      'route',
-      'isLoadingDelivery'
+    ...mapState(useFreightDetailsStore, [
+      'freightDetailsRoute',
+      'isLoadingFreightDetails'
     ]),
 
     routeUrl () {
-      const { origin, destination } = this.route
+      const { origin, destination } = this.freightDetailsRoute
       return `
         https://www.google.com/maps/embed/v1/directions?key=${API_KEY}
         &origin=${origin?.latitude},+${origin?.longitude}

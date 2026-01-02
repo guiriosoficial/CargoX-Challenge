@@ -4,7 +4,7 @@
       v-if="!hidePageHeader"
       :title="pageTitle"
       :subtitle="pageSubtitle"
-      :is-loading="pageIsLoading"
+      :is-loading="isLoadingPage"
     />
     <router-view v-slot="{ Component }">
       <transition
@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     ...mapState(usePageStore, [
-      'pageIsLoading',
+      'isLoadingPage',
       'pageTitle',
       'pageSubtitle',
       'hidePageHeader'

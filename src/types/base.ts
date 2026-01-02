@@ -3,9 +3,8 @@ import type {
   HistoryStatus,
   DocumentStatus,
   PaymentStatus,
-  TruckTypes,
   BrazilianStates
-} from './statusEnums'
+} from './status.ts'
 
 interface IPerson {
   id: number
@@ -43,13 +42,13 @@ interface ILocation {
   number: string
   city: string
   state: BrazilianStates
-  zip_code: string, //number
+  zip_code: string | number
 }
 
 interface ITrucker {
   id: number
   name: string
-  phone: string //number
+  phone: string | number
   last_app_update_at: Date
   last_app_open_at: Date
   last_app_position_at: Date
@@ -61,8 +60,8 @@ interface ITrucker {
 interface ITruck {
   plate: string
   type: {
-    id: number,
-    name: TruckTypes
+    id: number
+    name: string
   }
 }
 

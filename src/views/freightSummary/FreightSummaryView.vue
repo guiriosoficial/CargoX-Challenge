@@ -1,7 +1,7 @@
 <template>
   <TablePartial
-    :is-loading="isLoadingDeliveries"
-    :table-data="deliveries"
+    :is-loading="isLoadingFreightSummary"
+    :table-data="freightSummary"
     class="home-container__table cx-card"
   />
 </template>
@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
-import { useDeliveriesStore } from '@/store/deliveries'
+import { useFreightSummaryStore } from '@/store/freightSummary.ts'
 import { usePageStore } from '@/store/page'
 import { toast } from '@/plugins/toastfy'
 
@@ -20,23 +20,23 @@ export default {
     TablePartial,
   },
   computed: {
-    ...mapState(useDeliveriesStore, [
-      'deliveries',
-      'isLoadingDeliveries'
+    ...mapState(useFreightSummaryStore, [
+      'freightSummary',
+      'isLoadingFreightSummary'
     ])
   },
   async beforeMount () {
     this.setPageTitle(this.$t('labels.welcome'))
-    this.setPageSubtitle(this.$t('labels.select-delivery'))
+    this.setPageSubtitle(this.$t('labels.select-freight'))
 
-    this.getDeliveries()
+    this.getFreightSummary()
       .catch(() => {
         toast.error(`Ops! ${this.$t('errors.something-wrong')}.`)
       })
   },
   methods: {
-    ...mapActions(useDeliveriesStore, [
-      'getDeliveries',
+    ...mapActions(useFreightSummaryStore, [
+      'getFreightSummary',
     ]),
     ...mapActions(usePageStore, [
       'setPageTitle',

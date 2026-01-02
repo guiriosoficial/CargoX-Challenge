@@ -9,7 +9,6 @@ import './plugins/registerServiceWorker'
 
 import '@/styles/core.scss'
 
-
 createApp(App)
   .use(pinia)
   .use(router)
@@ -17,6 +16,3 @@ createApp(App)
   .use(toast, toastOptions)
   .component('Icon', FaIcon)
   .mount('#app')
-
-// import { toast as toastFunc } from 'vue3-toastify';
-// app.config.globalProperties.$toast = toastFunc;

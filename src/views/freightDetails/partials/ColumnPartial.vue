@@ -1,23 +1,23 @@
 <template>
-  <InfoSkeleton v-if="isLoading" />
+  <ColumnSkeleton v-if="isLoading" />
   <article
     v-else
-    class="info-container"
+    class="column-container"
   >
     <Icon
       :icon="detail.icon"
       :type="detail.iconType || 'fas'"
-      class="info-container__icon"
+      class="column-container__icon"
     />
 
-    <div class="info-container__container">
-      <span class="info-container__label">
+    <div class="column-container__container">
+      <span class="column-container__label">
         {{ $t(`labels.${detail.key}`) }}
         <Icon
           v-if="detail.tooltip"
           :data-tooltip="detail.tooltip"
           icon="question-circle"
-          class="info-container__icon tooltip"
+          class="column-container__icon tooltip"
         />
       </span>
 
@@ -28,7 +28,7 @@
         :list="detail.list"
         :timeline="detail.timeline"
         :no-content="detail.noContent"
-        class="info-container__component"
+        class="column-container__component"
       />
     </div>
   </article>
@@ -41,7 +41,7 @@ const CxList = defineAsyncComponent(() => import('@/components/CxList.vue'))
 const CxPlainText = defineAsyncComponent(() => import('@/components/CxPlainText.vue'))
 const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
 const CxTimeline = defineAsyncComponent(() => import('@/components/CxTimeline.vue'))
-const InfoSkeleton = defineAsyncComponent(() => import('../skeleton/InfoSkeleton.vue'))
+const ColumnSkeleton = defineAsyncComponent(() => import('@/views/freightDetails/skeletons/ColumnSkeleton.vue'))
 
 export default {
   components: {
@@ -49,7 +49,7 @@ export default {
     CxPlainText,
     CxTags,
     CxTimeline,
-    InfoSkeleton
+    ColumnSkeleton
   },
   props: {
     detail: {
@@ -67,24 +67,24 @@ export default {
 <style scoped lang="scss">
 @use '@/styles/variables/colors' as *;
 
-.info-container {
+.column-container {
   display: flex;
   gap: 14px;
   margin-bottom: 20px;
   &:last-child { margin-bottom: 0; }
 
-  .info-container__icon {
+  .column-container__icon {
     width: 26px;
     height: 26px;
     color: $color-text-placeholder;
   }
 
-  .info-container__container {
+  .column-container__container {
     display: flex;
     flex-direction: column;
     gap: 6px;
 
-    .info-container__label {
+    .column-container__label {
       display: flex;
       align-items: center;
       font-size: .84em;
@@ -93,7 +93,7 @@ export default {
       color: $color-text-placeholder;
       font-weight: 500;
 
-      .info-container__icon {
+      .column-container__icon {
         height: 16px;
         width: 16px;
       }

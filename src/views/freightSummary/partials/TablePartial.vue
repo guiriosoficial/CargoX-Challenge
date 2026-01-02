@@ -6,10 +6,10 @@
   >
     <thead class="table-container__head">
       <tr class="table-container__header">
-        <th>{{ $t('labels.delivery-id') }}</th>
+        <th>{{ $t('labels.freight-id') }}</th>
         <th>{{ $t('labels.customer-tracking-number') }}</th>
         <th>{{ $t('labels.customer-name') }}</th>
-        <th>{{ $t('labels.delivery-status') }}</th>
+        <th>{{ $t('labels.freight-status') }}</th>
       </tr>
     </thead>
 
@@ -21,7 +21,7 @@
         v-for="data in tableData"
         :key="data.id"
         class="table-container__row"
-        @click="goToDelivery(data.id)"
+        @click="goToFreight(data.id)"
       >
         <td>{{ data.id }}</td>
         <td>{{ data.customer_tracking_number }}</td>
@@ -52,10 +52,10 @@
 
 <script lang="ts">
 import { defineAsyncComponent, type PropType } from 'vue'
-import type { IDeliverie } from '@/types/deliveries.ts'
+import type { IFreightSummary } from '@/types/freight.ts'
 
 const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
-const TableSkeleton = defineAsyncComponent(() => import('../skeleton/TableSkeleton.vue'))
+const TableSkeleton = defineAsyncComponent(() => import('@/views/freightSummary/skeletons/TableSkeleton.vue'))
 
 export default {
   components: {
@@ -64,7 +64,7 @@ export default {
   },
   props: {
     tableData: {
-      type: Array as PropType<IDeliverie[]>,
+      type: Array as PropType<IFreightSummary[]>,
       required: true
     },
     isLoading: {
@@ -73,9 +73,9 @@ export default {
     }
   },
   methods: {
-    goToDelivery (id: number) {
+    goToFreight (id: number) {
       this.$router.push({
-        name: 'Delivery',
+        name: 'FreightDetails',
         params: { id }
       })
     }

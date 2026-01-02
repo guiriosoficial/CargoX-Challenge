@@ -1,9 +1,9 @@
 export default {
   labels: {
-    'delivery-id': 'CargoX delivery ID',
+    'freight-id': 'CargoX freight ID',
     'customer-tracking-number': 'Customer order number',
     'customer-name': 'Customer name',
-    'delivery-status': 'Delivery status',
+    'freight-status': 'Freight status',
     driver: 'Driver',
     phone: 'Phone number',
     app: 'Application',
@@ -17,17 +17,17 @@ export default {
     operation: 'Option',
     sale: 'Sale',
     'pickup-date': 'Pickup date',
-    'delivery-date': 'Delivery date',
+    'freight-date': 'Freight date',
     'estimated-arrival': 'Estimated arrival',
     'manual-arrival': 'Manual arrival',
     documents: 'Documents',
     payments: 'Payments',
     status: 'Status',
     welcome: 'Welcome',
-    'select-delivery': 'Select an order'
+    'select-freight': 'Select an order'
   },
   tooltips: {
-    'delivery-date': 'Delivery date',
+    'freight-date': 'Freight date',
     'estimated-time-of-arrival': 'Estimated time of arrival',
     'manual-input-estimated-time-of-arrival': 'Manual input estimated time of arrival'
   },
@@ -60,7 +60,7 @@ export default {
       code: 'Error 404',
       message: 'Page not found'
     },
-    'delivery-not-found': 'Delivery not found',
+    'freight-not-found': 'Freight not found',
     'something-wrong': 'Something wrong'
   }
 }

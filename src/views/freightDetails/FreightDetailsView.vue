@@ -2,7 +2,7 @@
   <div class="delivery-container">
     <DetailsPartial class="delivery-container__info-details" />
     <MapPartial
-      :is-loading="isLoadingDelivery"
+      :is-loading="isLoadingFreightDetails"
       class="delivery-container__info-map"
     />
   </div>
@@ -11,10 +11,9 @@
 <script lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { mapActions, mapState } from 'pinia'
-import { useDeliveryStore } from '@/store/delivery'
+import { useFreightDetailsStore } from '@/store/freightDetails.ts'
 import { usePageStore } from '@/store/page'
 import { toast } from '@/plugins/toastfy'
-import type { IDelivery } from '@/types/delivery'
 
 const DetailsPartial = defineAsyncComponent(() => import('./partials/DetailsPartial.vue'))
 const MapPartial = defineAsyncComponent(() => import('./partials/MapPartial.vue'))
@@ -25,30 +24,28 @@ export default {
     MapPartial,
   },
   computed: {
-    ...mapState(useDeliveryStore, [
-      'customer',
-      'isLoadingDelivery'
+    ...mapState(useFreightDetailsStore, [
+      'freightDetailsCustomer',
+      'isLoadingFreightDetails'
     ])
   },
   async beforeMount () {
-    this.setDelivery({} as IDelivery)
     this.setPageIsLoading(true)
 
     const deliveryId = Number(this.$route.params.id ?? 0)
-    await this.getDelivery(deliveryId)
+    await this.getFreightDetails(deliveryId)
       .catch(() => {
-        toast.error(`Ops! ${this.$t('errors.delivery-not-found')}.`)
+        toast.error(`Ops! ${this.$t('errors.freight-not-found')}.`)
         this.$router.push('/')
       })
 
-    this.setPageTitle(this.customer?.name)
-    this.setPageSubtitle(`ID do cliente: ${this.customer?.id}`)
+    this.setPageTitle(this.freightDetailsCustomer?.name)
+    this.setPageSubtitle(`ID do cliente: ${this.freightDetailsCustomer?.id}`)
     this.setPageIsLoading(false)
   },
   methods: {
-    ...mapActions(useDeliveryStore, [
-      'getDelivery',
-      'setDelivery'
+    ...mapActions(useFreightDetailsStore, [
+      'getFreightDetails'
     ]),
     ...mapActions(usePageStore, [
       'setPageTitle',

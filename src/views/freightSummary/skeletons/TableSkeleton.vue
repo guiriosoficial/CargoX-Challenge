@@ -2,10 +2,10 @@
   <table class="table-container">
     <thead class="table-container__head">
       <tr class="table-container__header">
-        <th>{{ $t('labels.delivery-id') }}</th>
+        <th>{{ $t('labels.freight-id') }}</th>
         <th>{{ $t('labels.customer-tracking-number') }}</th>
         <th>{{ $t('labels.customer-name') }}</th>
-        <th>{{ $t('labels.delivery-status') }}</th>
+        <th>{{ $t('labels.freight-status') }}</th>
       </tr>
     </thead>
     <tbody class="table-container__body">
@@ -24,6 +24,7 @@
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/variables/colors' as *;
 @use 'sass:color';
 
 .table-container {
@@ -34,10 +35,10 @@
   .table-container__head {
     .table-container__header {
       display: flex;
-      color: colors.$color-text-title;
+      color: $color-text-title;
       padding: 0 0 6px;
       text-align: left;
-      border-bottom: 2px solid colors.$color-background-light;
+      border-bottom: 2px solid $color-background-light;
       & > th {
         flex: 1;
         font-weight: 500;
@@ -49,9 +50,9 @@
     .table-container__row {
       display: flex;
       padding: 14px 0;
-      border-bottom: 1px solid colors.$color-background-light;
+      border-bottom: 1px solid $color-background-light;
       &:nth-child(even) {
-        background-color: color.mix(colors.$color-background-light, colors.$color-white, 30%);
+        background-color: color.mix($color-background-light, $color-white, 30%);
       }
       & > td {
         flex: 1;

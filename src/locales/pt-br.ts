@@ -1,9 +1,9 @@
 export default {
   labels: {
-    'delivery-id': 'ID do frete CargoX',
+    'freight-id': 'ID do frete CargoX',
     'customer-tracking-number': 'Nº de pedido do cliente',
     'customer-name': 'Nome do cliente',
-    'delivery-status': 'Status do pedido',
+    'freight-status': 'Status do pedido',
     driver: 'Motorista',
     phone: 'Telefone',
     app: 'Aplicativo',
@@ -17,17 +17,17 @@ export default {
     operation: 'Operação',
     sale: 'Venda',
     'pickup-date': 'Coleta agendada',
-    'delivery-date': 'Entrega agendada',
+    'freight-date': 'Entrega agendada',
     'estimated-arrival': 'Entrega calculada',
     'manual-arrival': 'Entrega manual',
     documents: 'Documentos',
     payments: 'Pagamentos',
     status: 'Status',
     welcome: 'Bem vindo(a)',
-    'select-delivery': 'Selecione um pedido'
+    'select-freight': 'Selecione um pedido'
   },
   tooltips: {
-    'delivery-date': 'Data da entrega',
+    'freight-date': 'Data da entrega',
     'estimated-time-of-arrival': 'Tempo estimado de chegada',
     'manual-input-estimated-time-of-arrival': 'Tempo estimado de chegada'
   },
@@ -60,7 +60,7 @@ export default {
       code: 'Erro 404',
       message: 'Página não encontrada'
     },
-    'delivery-not-found': 'Pedido não encontrado',
+    'freight-not-found': 'Pedido não encontrado',
     'something-wrong': 'Algo deu errado'
   }
 }

@@ -23,7 +23,7 @@ The API was moved to `public/mocks` instead of use Mocky.io because the mocks ex
 - [x] New API: `public/mocks/delivery_id`
 
 A Second API was created to test different cases
-- [x] New API: `public/mocks/deliveries`
+- [x] New API: `public/mocks/freight-summary.json`
 
 A Second Screen was created to navigate between cases
 
@@ -75,11 +75,9 @@ npm run lint:fix
 ```
 
 ## TODO
-- Adjust Mocks
 - Create Tests
 - Fix Lint Ans Types ($router)
 - Migrate to Composition API
-- Migrate Pinia Store do Composition API
-- Tuns Status Types in Enum
+- Ajusta States Cleaning and Loadings
 
 > **Status:** I Got the Job 🚚

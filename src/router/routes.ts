@@ -1,20 +1,20 @@
-const Deliveries = () => import('@/views/deliveries/DeliveriesView.vue')
-const Delivery = () => import('@/views/delivery/DeliveryView.vue')
+const FreightSummary = () => import('@/views/freightSummary/FreightSummaryView.vue')
+const FreightDetails = () => import('@/views/freightDetails/FreightDetailsView.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 const routes = [
   {
     path: '/',
-    name: 'Deliveries',
-    component: Deliveries
+    name: 'FreightSummary',
+    component: FreightSummary
   },
   {
-    path: '/delivery/:id',
-    name: 'Delivery',
-    component: Delivery
+    path: '/freight/:id',
+    name: 'FreightDetails',
+    component: FreightDetails
   },
   {
-    path: '/delivery',
+    path: '/freight',
     redirect: '/'
   },
   {

@@ -23,7 +23,7 @@ export default {
   props: {
     icon: {
       type: String as PropType<IconName>,
-      default: ''
+      required: true
     },
     type: {
       type: String as PropType<IconPrefix>,

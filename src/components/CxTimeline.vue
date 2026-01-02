@@ -8,15 +8,15 @@
       <div class="timeline-container__progress-bar">
         <span
           :class="{
-            'timeline-container__progress-dot--done': step.time,
-            'timeline-container__progress-dot--doing': !step.time && timeline[index - 1]?.time
+            'timeline-container__progress-dot--done': step.time && (timeline[index + 1]?.time || index === timeline.length - 1),
+            'timeline-container__progress-dot--doing': step.time && !(timeline[index + 1]?.time || index === timeline.length - 1)
           }"
           class="timeline-container__progress-dot"
         />
         <span
           :class="{
-            'timeline-container__progress-line--done': timeline[index + 1]?.time,
-            'timeline-container__progress-line--doing': step.time && !timeline[index + 1]?.time
+            'timeline-container__progress-line--done': timeline[index + 1]?.time && (timeline[index + 2]?.time || index + 1 === timeline.length - 1),
+            'timeline-container__progress-line--doing': timeline[index + 1]?.time && !(timeline[index + 2]?.time || index + 1 === timeline.length - 1),
           }"
           class="timeline-container__progress-line"
         />
