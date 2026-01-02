@@ -80,7 +80,7 @@ export default {
         },
         {
           key: 'phone',
-          text: phoneNumber(trucker?.phone),
+          text: phoneNumber(trucker.phone),
           noContent: 'no-phone',
           icon: 'phone-alt',
           component: 'CxPlainText'
@@ -265,7 +265,7 @@ export default {
   }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   .details-container {
     display: flex;
     flex-direction: column;

@@ -17,7 +17,7 @@
     </map>
 
     <footer class="map-container__footer">
-      Última atualização: {{ dateTime(freightDetailsRoute.lastAppUpdateAt) }}
+      {{ $t('labels.last-update') }}: {{ dateTime(freightDetailsRoute.lastAppUpdateAt) || $t('no-content.no-date') }}
     </footer>
   </aside>
 </template>

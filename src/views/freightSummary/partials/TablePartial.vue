@@ -145,7 +145,7 @@ export default {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .table-container {
     font-size: .89em;
 

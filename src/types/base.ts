@@ -48,7 +48,7 @@ interface ILocation {
 interface ITrucker {
   id: number
   name: string
-  phone: string | number
+  phone: string
   last_app_update_at: Date
   last_app_open_at: Date
   last_app_position_at: Date

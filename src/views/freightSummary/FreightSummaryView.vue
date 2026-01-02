@@ -54,7 +54,7 @@ export default {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .home-container {
     height: calc(100vh);
 

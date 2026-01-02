@@ -66,7 +66,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .table-container {
     .table-container__head {
       .table-container__header > th {

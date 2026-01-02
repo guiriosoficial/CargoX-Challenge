@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     ...mapActions(useFreightDetailsStore, [
-      'getFreightDetails'
+      'getFreightDetails',
     ]),
     ...mapActions(usePageStore, [
       'setPageTitle',
@@ -73,7 +73,7 @@ export default {
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 992px) {
   .delivery-container {
     flex-direction: column;
 
@@ -81,9 +81,9 @@ export default {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .delivery-container {
-    gap: 10px;
+    gap: 0;
   }
 }
 </style>

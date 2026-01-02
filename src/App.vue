@@ -48,14 +48,14 @@ export default {
   flex-direction: column;
   margin: auto;
   padding: 0 20px 20px;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1600px;
   .main-container__component {
     flex: 1;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .main-container {
     padding: 0;
   }

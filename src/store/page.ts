@@ -16,8 +16,8 @@ export const usePageStore = defineStore('page', () => {
   function setPageIsLoading (isLoading: boolean): void {
     isLoadingPage.value = isLoading
   }
-  function setHidePageHeader (hidePageHeader: boolean): void {
-    hidePageHeader.value = hidePageHeader
+  function setHidePageHeader (isHide: boolean): void {
+    hidePageHeader.value = isHide
   }
 
   return {

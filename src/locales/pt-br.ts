@@ -24,7 +24,8 @@ export default {
     payments: 'Pagamentos',
     status: 'Status',
     welcome: 'Bem vindo(a)',
-    'select-freight': 'Selecione um pedido'
+    'select-freight': 'Selecione um pedido',
+    'last-update': 'Última atualização'
   },
   tooltips: {
     'freight-date': 'Data da entrega',
