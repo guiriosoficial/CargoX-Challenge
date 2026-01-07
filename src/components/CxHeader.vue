@@ -6,10 +6,10 @@
     class="header-container"
   >
     <CxFaIcon
-      v-if="$route.path !== '/'"
+      v-if="route.path !== '/'"
       icon="arrow-left"
       class="header-container__back-icon"
-      @click="$router.go(-1)"
+      @click="router.go(-1)"
     />
     <div>
       <h1 class="header-container__title">
@@ -22,32 +22,25 @@
   </header>
 </template>
 
-<script lang="ts">
-import { defineAsyncComponent } from 'vue'
-import CxFaIcon from "@/components/CxFaIcon.vue";
+<script setup lang="ts">
+import HeaderSkeleton from '@/components/skeleton/HeaderSkeleton.vue'
+import CxFaIcon from '@/components/CxFaIcon.vue'
+import { useRouter, useRoute } from 'vue-router'
 
-const HeaderSkeleton = defineAsyncComponent(() => import('./skeleton/HeaderSkeleton.vue'))
-
-export default {
-  components: {
-    CxFaIcon,
-    HeaderSkeleton
-  },
-  props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    subtitle: {
-      type: String,
-      default: ''
-    },
-    isLoading: {
-      type: Boolean,
-      default: false
-    }
-  }
+interface IHeaderProps {
+  title?: string
+  subtitle?: string
+  isLoading?: boolean
 }
+
+const router = useRouter()
+const route = useRoute()
+
+const {
+  title = '',
+  subtitle = '',
+  isLoading = false
+} = defineProps<IHeaderProps>()
 </script>
 
 <style scoped lang="scss">

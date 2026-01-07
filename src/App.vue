@@ -20,26 +20,19 @@
   </main>
 </template>
 
-<script lang="ts">
-import { defineAsyncComponent } from 'vue'
-import { mapState } from 'pinia'
+<script setup lang="ts">
+import CxHeader from '@/components/CxHeader.vue'
 import { usePageStore } from '@/store/page'
+import { storeToRefs } from 'pinia'
 
-const CxHeader = defineAsyncComponent(() => import('@/components/CxHeader.vue'))
+const pageStore = usePageStore()
 
-export default {
-  components: {
-    CxHeader
-  },
-  computed: {
-    ...mapState(usePageStore, [
-      'isLoadingPage',
-      'pageTitle',
-      'pageSubtitle',
-      'hidePageHeader'
-    ])
-  }
-}
+const {
+  isLoadingPage,
+  pageTitle,
+  pageSubtitle,
+  hidePageHeader
+} = storeToRefs(pageStore)
 </script>
 
 <style scoped lang="scss">

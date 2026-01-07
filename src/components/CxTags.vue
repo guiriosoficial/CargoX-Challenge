@@ -22,26 +22,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { PropType } from "vue";
-
-interface ITag {
+<script setup lang="ts">
+export interface ITag {
   isActive: boolean
   label: string
 }
 
-export default {
-  props: {
-    tags: {
-      type: Array as PropType<ITag[]>,
-      default: () => []
-    },
-    noContent: {
-      type: String,
-      default: 'no-data'
-    }
-  }
+interface ITagsProps {
+  tags?: ITag[]
+  noContent?: string
 }
+
+const {
+  tags = [],
+  noContent = 'no-data'
+} = defineProps<ITagsProps>()
 </script>
 
 <style scoped lang="scss">

@@ -8,6 +8,7 @@
 <style lang="scss" scoped>
 .header-container {
   margin: 30px 0;
+  display: block;
 
   .header-container__title {
     width: 340px;

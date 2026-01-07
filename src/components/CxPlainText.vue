@@ -14,24 +14,20 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    text: {
-      type: [String, Number],
-      default: ''
-    },
-    noContent: {
-      type: String,
-      default: 'no-data'
-    }
-  },
-  computed: {
-    upperCaseText () {
-      return String(this.text).toUpperCase()
-    }
-  }
+<script setup lang="ts">
+import { computed } from 'vue'
+
+interface IPlainTextProps {
+  text?: string | number
+  noContent?: string
 }
+
+const {
+  text = '',
+  noContent = 'no-data'
+} = defineProps<IPlainTextProps>()
+
+const upperCaseText = computed(() => String(text).toUpperCase())
 </script>
 
 <style scoped lang="scss">

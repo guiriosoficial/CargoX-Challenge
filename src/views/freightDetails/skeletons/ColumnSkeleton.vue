@@ -1,6 +1,6 @@
 <template>
   <article class="column-container">
-    <Icon class="column-container__icon skeleton-loading" />
+    <div class="column-container__icon skeleton-loading" />
     <div class="column-container__container">
       <h5 class="column-container__label skeleton-loading" />
       <div class="column-container__component skeleton-loading" />

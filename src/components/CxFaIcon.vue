@@ -14,42 +14,33 @@
   </span>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { computed } from 'vue'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
-import type { PropType } from 'vue'
 import type { IconName, IconPrefix } from '@fortawesome/free-brands-svg-icons'
 
-export default {
-  props: {
-    icon: {
-      type: String as PropType<IconName>,
-      required: true
-    },
-    type: {
-      type: String as PropType<IconPrefix>,
-      default: 'fas'
-    }
-  },
-  computed: {
-    definition() {
-      const { type, icon } = this
-
-      return findIconDefinition({
-        prefix: type,
-        iconName: icon
-      })
-    },
-    width() {
-      return this.definition?.icon[0] || 0
-    },
-    height() {
-      return this.definition?.icon[1] || 0
-    },
-    svgPath() {
-      return String(this.definition?.icon[4] ?? '')
-    }
-  }
+interface ICxFaIconProps {
+  icon: IconName
+  type?: IconPrefix
 }
+
+const {
+  icon,
+  type = 'fas'
+} = defineProps<ICxFaIconProps>()
+
+const definition = computed(() => {
+  return findIconDefinition({
+    prefix: type,
+    iconName: icon
+  })
+})
+
+const width = computed(() => definition.value?.icon[0] || 0)
+
+const height = computed(() => definition.value?.icon[1] || 0)
+
+const svgPath = computed(() => String(definition.value?.icon[4] ?? ''))
 </script>
 
 <style lang="scss" scoped>

@@ -61,7 +61,7 @@ export default {
       code: 'Error 404',
       message: 'Page not found'
     },
-    'freight-not-found': 'Freight not found',
-    'something-wrong': 'Something wrong'
+    'freight-not-found': 'Ops! Freight not found.',
+    'something-wrong': 'Ops! Something wrong.'
   }
 }

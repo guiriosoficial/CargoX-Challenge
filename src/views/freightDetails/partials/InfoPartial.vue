@@ -21,47 +21,48 @@
         />
       </span>
 
+<!--        :text="detail.text"-->
+<!--        :tags="detail.tags"-->
+<!--        :list="detail.list"-->
+<!--        :timeline="detail.timeline"-->
+<!--        :no-content="detail.noContent"-->
       <component
         :is="detail.component"
-        :text="detail.text"
-        :tags="detail.tags"
-        :list="detail.list"
-        :timeline="detail.timeline"
-        :no-content="detail.noContent"
+        v-bind="detail"
         class="column-container__component"
       />
     </div>
   </article>
 </template>
 
-<script lang="ts">
-import { defineAsyncComponent } from 'vue'
+<script setup lang="ts">
+import ColumnSkeleton from '@/views/freightDetails/skeletons/ColumnSkeleton.vue'
+import type { Raw, Component } from 'vue'
+import type { ITag } from '@/components/CxTags.vue'
+import type { ITimeline } from '@/components/CxTimeline.vue'
 
-const CxList = defineAsyncComponent(() => import('@/components/CxList.vue'))
-const CxPlainText = defineAsyncComponent(() => import('@/components/CxPlainText.vue'))
-const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
-const CxTimeline = defineAsyncComponent(() => import('@/components/CxTimeline.vue'))
-const ColumnSkeleton = defineAsyncComponent(() => import('@/views/freightDetails/skeletons/ColumnSkeleton.vue'))
-
-export default {
-  components: {
-    CxList,
-    CxPlainText,
-    CxTags,
-    CxTimeline,
-    ColumnSkeleton
-  },
-  props: {
-    detail: {
-      type: Object,
-      required: true
-    },
-    isLoading: {
-      type: Boolean,
-      default: false
-    }
-  }
+export interface IColumnDetail {
+  key: string
+  component: Raw<Component>
+  icon?: string
+  iconType?: string
+  tooltip?: string
+  noContent?: string
+  text?: string | number
+  list?: string[]
+  tags?: ITag[]
+  timeline?: ITimeline[]
 }
+
+interface IColumnPartialProps {
+  isLoading?: boolean
+  detail: IColumnDetail
+}
+
+const {
+  detail,
+  isLoading = false
+} = defineProps<IColumnPartialProps>()
 </script>
 
 <style scoped lang="scss">

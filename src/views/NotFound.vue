@@ -8,31 +8,33 @@
     </h2>
     <button
       class="not-found-container__button cx-button"
-      @click="goBack"
+      @click="goToSummary"
     >
       {{ $t(`buttons.go-back`) }}
     </button>
   </div>
 </template>
 
-<script lang="ts">
-import { mapActions } from 'pinia'
+<script setup lang="ts">
+import { onBeforeMount, onBeforeUnmount } from 'vue'
+import { useRouter } from 'vue-router'
 import { usePageStore } from '@/store/page'
 
-export default {
-  beforeMount() {
-    this.setHidePageHeader(true)
-  },
-  beforeUnmount() {
-    this.setHidePageHeader(false)
-  },
-  methods: {
-    ...mapActions(usePageStore, ['setHidePageHeader']),
+const router = useRouter()
+const pageStore = usePageStore()
 
-    goBack() {
-      this.$router.push('/')
-    }
-  }
+onBeforeMount(() => {
+  pageStore.setHidePageHeader(true)
+})
+
+onBeforeUnmount(() => {
+  pageStore.setHidePageHeader(false)
+})
+
+function goToSummary () {
+  router.push({
+    name: 'FreightSummary'
+  })
 }
 </script>
 

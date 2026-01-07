@@ -33,23 +33,22 @@
   </article>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue'
+<script setup lang="ts">
+import type { HistoryStatus } from '@/types/status'
 
-interface ITimeline {
-  key: string
+export interface ITimeline {
+  key: HistoryStatus
   label: string
-  time: Date
+  time: string
 }
 
-export default {
-  props: {
-    timeline: {
-      type: Array as PropType<ITimeline[]>,
-      default: () => []
-    }
-  }
+interface ITimelineProps {
+  timeline?: ITimeline[]
 }
+
+const {
+  timeline = []
+} = defineProps<ITimelineProps>()
 </script>
 
 <style scoped lang="scss">

@@ -21,21 +21,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { PropType } from "vue"
-
-export default {
-  props: {
-    list: {
-      type: Array as PropType<string[]>,
-      required: true
-    },
-    noContent: {
-      type: String,
-      default: 'no-data'
-    }
-  }
+<script setup lang="ts">
+interface IListProps {
+  list: string[]
+  noContent?: string
 }
+
+const {
+  list,
+  noContent = 'no-data'
+} = defineProps<IListProps>()
 </script>
 
 <style scoped lang="scss">

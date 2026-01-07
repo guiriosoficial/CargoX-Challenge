@@ -1,71 +1,84 @@
 <template>
-  <div class="delivery-container">
-    <DetailsPartial class="delivery-container__info-details" />
+  <div class="freight-container">
+    <InfoGroupPartial class="freight-container__info-details" />
     <MapPartial
       :is-loading="isLoadingFreightDetails"
-      class="delivery-container__info-map"
+      class="freight-container__info-map"
     />
   </div>
 </template>
 
-<script lang="ts">
-import { defineAsyncComponent } from 'vue'
-import { mapActions, mapState } from 'pinia'
+<script setup lang="ts">
+import { onBeforeMount, onBeforeUnmount, defineAsyncComponent } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useRoute, useRouter } from 'vue-router'
 import { useFreightDetailsStore } from '@/store/freightDetails.ts'
 import { usePageStore } from '@/store/page'
 import { toast } from '@/plugins/toastfy'
+import { useI18n } from 'vue-i18n'
 
-const DetailsPartial = defineAsyncComponent(() => import('./partials/DetailsPartial.vue'))
+const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
+const pageStore = usePageStore()
+const freightDetailsStore = useFreightDetailsStore()
+
+const InfoGroupPartial = defineAsyncComponent(() => import('./partials/InfoGroupPartial.vue'))
 const MapPartial = defineAsyncComponent(() => import('./partials/MapPartial.vue'))
 
-export default {
-  components: {
-    DetailsPartial,
-    MapPartial,
-  },
-  computed: {
-    ...mapState(useFreightDetailsStore, [
-      'freightDetailsCustomer',
-      'isLoadingFreightDetails'
-    ])
-  },
-  async beforeMount () {
-    this.setPageIsLoading(true)
+const {
+  freightDetailsCustomer,
+  isLoadingFreightDetails,
+} = storeToRefs(freightDetailsStore)
 
-    const deliveryId = Number(this.$route.params.id ?? 0)
-    await this.getFreightDetails(deliveryId)
-      .catch(() => {
-        toast.error(`Ops! ${this.$t('errors.freight-not-found')}.`)
-        this.$router.push('/')
-      })
+onBeforeMount(async() => {
+  pageStore.setPageIsLoading(true)
+  await fetchData()
+  setPageHeaders()
+  pageStore.setPageIsLoading(false)
+})
 
-    this.setPageTitle(this.freightDetailsCustomer?.name)
-    this.setPageSubtitle(`ID do cliente: ${this.freightDetailsCustomer?.id}`)
-    this.setPageIsLoading(false)
-  },
-  methods: {
-    ...mapActions(useFreightDetailsStore, [
-      'getFreightDetails',
-    ]),
-    ...mapActions(usePageStore, [
-      'setPageTitle',
-      'setPageSubtitle',
-      'setPageIsLoading'
-    ])
+onBeforeUnmount(() => {
+  freightDetailsStore.clearFreightDetails()
+})
+
+async function fetchData () {
+  const freightId = Number(route.params.id ?? 0)
+
+  try {
+    await freightDetailsStore.getFreightDetails(freightId)
+  } catch {
+    goToSummary()
+    notifyFetchError()
   }
+}
+
+function setPageHeaders () {
+  pageStore.setPageTitle(freightDetailsCustomer.value?.name)
+  pageStore.setPageSubtitle(`ID do cliente: ${freightDetailsCustomer.value?.id}`)
+}
+
+function goToSummary () {
+  router.push({
+    name: 'FreightSummary'
+  })
+}
+
+function notifyFetchError () {
+  toast.error(t('errors.freight-not-found'))
 }
 </script>
 
 <style scoped lang="scss">
-.delivery-container {
+.freight-container {
   display: flex;
   gap: 20px;
 
-  .delivery-container__info-details {
+  .freight-container__info-details {
     flex: 1;
   }
 
-  .delivery-container__info-map {
+  .freight-container__info-map {
     width: 480px;
     height: fit-content;
     position: sticky;
@@ -74,15 +87,15 @@ export default {
 }
 
 @media (max-width: 992px) {
-  .delivery-container {
+  .freight-container {
     flex-direction: column;
 
-    .delivery-container__info-map { width: 100%; }
+    .freight-container__info-map { width: 100%; }
   }
 }
 
 @media (max-width: 768px) {
-  .delivery-container {
+  .freight-container {
     gap: 0;
   }
 }

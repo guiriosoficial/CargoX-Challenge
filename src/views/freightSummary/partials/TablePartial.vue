@@ -50,36 +50,31 @@
   </table>
 </template>
 
-<script lang="ts">
-import { defineAsyncComponent, type PropType } from 'vue'
-import type { IFreightSummary } from '@/types/freight.ts'
+<script setup lang="ts">
+import TableSkeleton from '@/views/freightSummary/skeletons/TableSkeleton.vue'
+import { defineAsyncComponent } from 'vue'
+import { useRouter } from 'vue-router'
+import type { IFreightSummary } from '@/types/freight'
+
+interface ITablePartialProps {
+  tableData: IFreightSummary[]
+  isLoading: boolean
+}
 
 const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
-const TableSkeleton = defineAsyncComponent(() => import('@/views/freightSummary/skeletons/TableSkeleton.vue'))
 
-export default {
-  components: {
-    TableSkeleton,
-    CxTags
-  },
-  props: {
-    tableData: {
-      type: Array as PropType<IFreightSummary[]>,
-      required: true
-    },
-    isLoading: {
-      type: Boolean,
-      default: false
-    }
-  },
-  methods: {
-    goToFreight (id: number) {
-      this.$router.push({
-        name: 'FreightDetails',
-        params: { id }
-      })
-    }
-  }
+const router = useRouter()
+
+const {
+  tableData,
+  isLoading
+} = defineProps<ITablePartialProps>()
+
+function goToFreight (id: number) {
+  router.push({
+    name: 'FreightDetails',
+    params: { id }
+  })
 }
 </script>
 
@@ -90,7 +85,7 @@ export default {
 .table-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  overflow: auto;
 
   .table-container__head {
     .table-container__header {
@@ -108,8 +103,6 @@ export default {
   }
 
   .table-container__body {
-    overflow: auto;
-
     .table-container__row {
       display: flex;
       align-items: center;

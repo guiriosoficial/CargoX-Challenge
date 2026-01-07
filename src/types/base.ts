@@ -1,5 +1,5 @@
 import type {
-  DeliveryStatus,
+  FreightStatus,
   HistoryStatus,
   DocumentStatus,
   PaymentStatus,
@@ -15,12 +15,12 @@ interface IDatedEvents<T> {
   name: string
   at: Date,
   status: T
-  translation?: string
+  translation: string
 }
 
 interface IStatus {
   translation: string,
-  status: DeliveryStatus
+  status: FreightStatus
 }
 
 type ICustomer = IPerson
