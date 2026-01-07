@@ -66,6 +66,18 @@
   }
 }
 
+@media screen and (max-width: 1180px) {
+  .table-container {
+    .table-container__body {
+      .table-container__row  > td {
+        .skeleton-loading {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .table-container {
     .table-container__head {
