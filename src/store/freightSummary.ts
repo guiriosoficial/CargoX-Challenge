@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
-import type { IFreightSummary } from '@/types/freight.ts'
-import {ref} from "vue";
+import { ref } from 'vue'
+import { sleep } from '@/utils'
+import { freightService } from '@/services/freightService'
+import type { IFreightSummary } from '@/types/freight'
 
 const STORE_ID = 'freightSummary'
 
@@ -8,23 +10,20 @@ export const useFreightSummaryStore = defineStore(STORE_ID, () => {
   const freightSummary = ref<IFreightSummary[]>([] as IFreightSummary[])
   const isLoadingFreightSummary = ref<boolean>(false)
 
-  function getFreightSummary(): Promise<IFreightSummary[]> {
+  async function getFreightSummary(): Promise<IFreightSummary[]> {
     isLoadingFreightSummary.value = true
 
-    return new Promise((resolve, reject) => {
-      fetch('/mocks/freight-summary.json')
-        .then(async (response) => {
-          const json = await response.json()
-          setFreightSummary(json)
-          resolve(json)
-        })
-        .catch((error) => reject(error))
-        .finally(() => isLoadingFreightSummary.value = false)
-    })
-  }
-
-  function setFreightSummary(payload: IFreightSummary[]): void {
-    freightSummary.value = payload
+    try {
+      const data = await freightService.fetchSummary()
+      await sleep()
+      freightSummary.value = data
+      return data
+    } catch (error) {
+      freightSummary.value = [] as IFreightSummary[]
+      throw error
+    } finally {
+      isLoadingFreightSummary.value = false
+    }
   }
 
   return {
