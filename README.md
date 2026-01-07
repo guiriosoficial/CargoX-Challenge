@@ -20,7 +20,7 @@ The following layouts must been created:
 ### Notes:
 The API was moved to `public/mocks` instead of use Mocky.io because the mocks expired
 - [ ] Old API: <http://www.mocky.io/v2/5c7552e43100009c20c23450>
-- [x] New API: `public/mocks/delivery_id`
+- [x] New API: `public/mocks/freight-details-<id>`
 
 A Second API was created to test different cases
 - [x] New API: `public/mocks/freight-summary.json`
@@ -75,9 +75,6 @@ npm run lint:fix
 ```
 
 ## TODO
-- Create Tests
-- Fix Lint Ans Types ($router)
-- Migrate to Composition API
-- Ajusta States Cleaning and Loadings
+- Adjust Tests
 
 > **Status:** I Got the Job 🚚
