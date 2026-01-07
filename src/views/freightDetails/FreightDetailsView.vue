@@ -42,7 +42,7 @@ onBeforeUnmount(() => {
   freightDetailsStore.clearFreightDetails()
 })
 
-async function fetchData () {
+async function fetchData() {
   const freightId = Number(route.params.id ?? 0)
 
   try {
@@ -53,18 +53,18 @@ async function fetchData () {
   }
 }
 
-function setPageHeaders () {
+function setPageHeaders() {
   pageStore.setPageTitle(freightDetailsCustomer.value?.name)
   pageStore.setPageSubtitle(`ID do cliente: ${freightDetailsCustomer.value?.id}`)
 }
 
-function goToSummary () {
+function goToSummary() {
   router.push({
     name: 'FreightSummary'
   })
 }
 
-function notifyFetchError () {
+function notifyFetchError() {
   toast.error(t('errors.freight-not-found'))
 }
 </script>

@@ -1,10 +1,16 @@
 <template>
   <div class="plain-text-container">
-    <span
+    <div
       v-if="text"
       class="plain-text-container__content"
-      v-html="upperCaseText"
-    />
+    >
+      <p
+        v-for="line in upperCaseText"
+        :key="line"
+      >
+        {{ line }}
+      </p>
+    </div>
     <span
       v-else
       class="no-content"

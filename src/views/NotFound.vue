@@ -31,7 +31,7 @@ onBeforeUnmount(() => {
   pageStore.setHidePageHeader(false)
 })
 
-function goToSummary () {
+function goToSummary() {
   router.push({
     name: 'FreightSummary'
   })

@@ -30,16 +30,16 @@ onBeforeMount(() => {
   fetchData()
 })
 
-function setPageHeaders () {
+function setPageHeaders() {
   pageStore.setPageTitle(t('labels.welcome'))
   pageStore.setPageSubtitle(t('labels.select-freight'))
 }
 
-function notifyFetchError () {
+function notifyFetchError() {
   toast.error(t('errors.something-wrong'))
 }
 
-async function fetchData () {
+async function fetchData() {
   try {
     await freightSummaryStore.getFreightSummary()
   } catch {

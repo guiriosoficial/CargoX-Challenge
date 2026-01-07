@@ -2,7 +2,7 @@ const FreightSummary = () => import('@/views/freightSummary/FreightSummaryView.v
 const FreightDetails = () => import('@/views/freightDetails/FreightDetailsView.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'FreightSummary',
@@ -22,5 +22,3 @@ const routes = [
     component: NotFound
   }
 ]
-
-export { routes }

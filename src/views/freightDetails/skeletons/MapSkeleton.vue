@@ -7,8 +7,8 @@
   </aside>
 </template>
 
-<style lang="scss" scoped>
-.map-container {
+<style scoped lang="scss">
+.map-skeleton-container {
   height: 100%;
   padding: 0;
 

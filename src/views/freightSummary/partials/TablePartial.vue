@@ -70,7 +70,7 @@ const {
   isLoading
 } = defineProps<ITablePartialProps>()
 
-function goToFreight (id: number) {
+function goToFreight(id: number) {
   router.push({
     name: 'FreightDetails',
     params: { id }
