@@ -52,7 +52,7 @@
 
 <script setup lang="ts">
 import TableSkeleton from '@/views/freightSummary/skeletons/TableSkeleton.vue'
-import { defineAsyncComponent } from 'vue'
+import CxTags from '@/components/CxTags.vue'
 import { useRouter } from 'vue-router'
 import type { IFreightSummary } from '@/types/freight'
 
@@ -60,8 +60,6 @@ interface ITablePartialProps {
   tableData: IFreightSummary[]
   isLoading: boolean
 }
-
-const CxTags = defineAsyncComponent(() => import('@/components/CxTags.vue'))
 
 const router = useRouter()
 
