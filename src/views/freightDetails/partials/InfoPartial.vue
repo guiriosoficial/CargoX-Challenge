@@ -31,8 +31,8 @@
 </template>
 
 <script setup lang="ts">
-import ColumnSkeleton from '@/views/freightDetails/skeletons/ColumnSkeleton.vue'
-import type { Raw, Component } from 'vue'
+import InfoSkeleton from '@/views/freightDetails/skeletons/InfoSkeleton.vue'
+import { computed, type Raw, type Component } from 'vue'
 import type { ITag } from '@/components/CxTags.vue'
 import type { ITimeline } from '@/components/CxTimeline.vue'
 
