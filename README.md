@@ -76,5 +76,6 @@ npm run lint:fix
 
 ## TODO
 - Adjust Tests
+- Put All Styles Into Variables
 
 > **Status:** I Got the Job 🚚
