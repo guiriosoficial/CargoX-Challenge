@@ -21,11 +21,6 @@
         />
       </span>
 
-<!--        :text="detail.text"-->
-<!--        :tags="detail.tags"-->
-<!--        :list="detail.list"-->
-<!--        :timeline="detail.timeline"-->
-<!--        :no-content="detail.noContent"-->
       <component
         :is="detail.component"
         v-bind="detail"
