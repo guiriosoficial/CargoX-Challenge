@@ -1,5 +1,5 @@
 <template>
-  <ColumnSkeleton v-if="isLoading" />
+  <InfoSkeleton v-if="isLoading" />
   <article
     v-else
     class="column-container"
@@ -23,7 +23,7 @@
 
       <component
         :is="detail.component"
-        v-bind="detail"
+        v-bind="componentProps"
         class="column-container__component"
       />
     </div>
@@ -43,7 +43,7 @@ export interface IColumnDetail {
   iconType?: string
   tooltip?: string
   noContent?: string
-  text?: string | number
+  text?: string[] | string | number
   list?: string[]
   tags?: ITag[]
   timeline?: ITimeline[]
@@ -58,6 +58,14 @@ const {
   detail,
   isLoading = false
 } = defineProps<IColumnPartialProps>()
+
+const componentProps = computed(() => {
+  const layoutKeys = ['component', 'icon', 'iconType', 'key', 'tooltip', 'noContent']
+
+  return Object.fromEntries(
+      Object.entries(detail).filter(([key]) => !layoutKeys.includes(key))
+  )
+})
 </script>
 
 <style scoped lang="scss">

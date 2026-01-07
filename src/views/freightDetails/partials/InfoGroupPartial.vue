@@ -33,7 +33,13 @@ import { useFreightDetailsStore } from '@/store/freightDetails.ts'
 import { dateTime, phoneNumber } from '@/filters'
 import type { IDocument, ILocation, IPayment, ITruck, ITrucker } from '@/types/base'
 import type { IColumnDetail } from './InfoPartial.vue'
-import type { ITimeline } from '@/components/CxTimeline.vue'
+
+const COMPONENT_MAP = {
+  text: markRaw(CxPlainText),
+  tags: markRaw(CxTags),
+  list: markRaw(CxList),
+  timeline: markRaw(CxTimeline)
+}
 
 const { t } = useI18n()
 const freightDetailsStore = useFreightDetailsStore()
@@ -44,146 +50,130 @@ const {
 } = storeToRefs(freightDetailsStore)
 
 const detailsListLeft = computed<IColumnDetail[]>(() => {
-  const {
-    id,
-    customer_tracking_number,
-    trucker,
-    trucks,
-    origin,
-    destination,
-    trucker_seeker,
-    salesperson
-  } = freightDetails.value
+  const details = freightDetails.value
 
   return [
     {
       key: 'freight-id',
-      text: id,
+      text: String(details.id),
       icon: 'orcid',
       iconType: 'fab',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'customer-tracking-number',
-      text: customer_tracking_number,
+      text: details.customer_tracking_number,
       icon: 'orcid',
       iconType: 'fab',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'driver',
-      text: trucker?.name,
+      text: details.trucker?.name,
       icon: 'user-astronaut',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'phone',
-      text: phoneNumber(trucker?.phone),
+      text: phoneNumber(details.trucker?.phone),
       noContent: 'no-phone',
       icon: 'phone-alt',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'app',
       list: appDataList.value,
       noContent: 'no-app',
       icon: 'mobile-alt',
-      component: markRaw(CxList)
+      component: COMPONENT_MAP.list
     },
     {
       key: 'trucks',
-      text: handleTrucksList(trucks),
+      text: handleTrucksList(details.trucks),
       noContent: 'no-trucks',
       icon: 'truck',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'origin',
-      text: handleAddress(origin),
+      text: handleAddress(details.origin),
       noContent: 'no-location',
       icon: 'map-marker-alt',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'destination',
-      text: handleAddress(destination),
+      text: handleAddress(details.destination),
       noContent: 'no-location',
       icon: 'flag',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'operation',
-      text: trucker_seeker?.name,
+      text: details.trucker_seeker?.name,
       icon: 'user-cog',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'sale',
-      text: salesperson?.name,
+      text: details.salesperson?.name,
       icon: 'user-tag',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     }
   ]
 })
 
 const detailsListRight = computed<IColumnDetail[]>(() => {
-  const {
-    pickup_date,
-    delivery_date,
-    estimated_time_of_arrival,
-    manual_input_estimated_time_of_arrival,
-    documents,
-    payments
-  } = freightDetails.value
+  const details = freightDetails.value
 
   return [
     {
       key: 'pickup-date',
-      text: dateTime(pickup_date),
+      text: dateTime(details.pickup_date),
       noContent: 'no-date',
       icon: 'calendar-day',
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'freight-date',
-      text: dateTime(delivery_date),
+      text: dateTime(details.delivery_date),
       noContent: 'no-date',
       tooltip: t('tooltips.freight-date'),
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'estimated-arrival',
-      text: dateTime(estimated_time_of_arrival),
+      text: dateTime(details.estimated_time_of_arrival),
       noContent: 'no-date',
       tooltip: t('tooltips.estimated-time-of-arrival'),
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'manual-arrival',
-      text: dateTime(manual_input_estimated_time_of_arrival),
+      text: dateTime(details.manual_input_estimated_time_of_arrival),
       noContent: 'no-date',
       tooltip: t('tooltips.manual-input-estimated-time-of-arrival'),
-      component: markRaw(CxPlainText)
+      component: COMPONENT_MAP.text
     },
     {
       key: 'documents',
-      tags: handleTags(documents, 'documents'),
+      tags: handleTags(details.documents, 'documents'),
       noContent: 'no-documents',
       icon: 'file-alt',
-      component: markRaw(CxTags)
+      component: COMPONENT_MAP.tags
     },
     {
       key: 'payments',
-      tags: handleTags(payments, 'payments'),
+      tags: handleTags(details.payments, 'payments'),
       noContent: 'no-payments',
       icon: 'hand-holding-usd',
-      component: markRaw(CxTags)
+      component: COMPONENT_MAP.tags
     },
     {
       key: 'status',
       timeline: timelineSteps.value,
       icon: 'ellipsis-v',
-      component: markRaw(CxTimeline)
+      component: COMPONENT_MAP.timeline
     }
   ]
 })
@@ -207,7 +197,7 @@ const appDataList = computed(() => {
   })
 })
 
-const timelineSteps = computed<ITimeline[]>(() => {
+const timelineSteps = computed(() => {
   const history = freightDetails.value?.status_history
 
   if (!history) return []
@@ -219,28 +209,26 @@ const timelineSteps = computed<ITimeline[]>(() => {
   }))
 })
 
-function handleTrucksList (trucks: ITruck[] = []) {
-  let trucksString = ''
-  trucks.forEach((truck) => {
-    const { plate, type } = truck
-    trucksString += `<p>${type?.name} - ${plate}</p>`
-  })
-  return trucksString
+function handleTrucksList(trucks: ITruck[] = []) {
+  return trucks.map((truck) => `${truck.type?.name} - ${truck.plate}`)
 }
 
-function handleAddress (locale: ILocation = {} as ILocation) {
-  const { address, number, city, state, zip_code } = locale
-  return `
-    <p>${address}, ${number}</p>
-    <p>${city} - ${state} - CEP: ${zip_code}</p>
-  `
-}
-
-function handleTags (list: IDocument[] | IPayment[] = [], i18n: string) {
+function handleTags(list: IDocument[] | IPayment[] = [], i18n: string) {
   return list.map(({ name, status, at }) => ({
     label: t(`${i18n}.${name}`),
     isActive: ['emitted', 'ok'].includes(status) && Boolean(at)
-  })) ?? []
+  }))
+}
+
+function handleAddress(locale: ILocation = {} as ILocation) {
+  if (!locale.address) return []
+
+  const { address, number, city, state, zip_code } = locale
+
+  return [
+    `${address}, ${number}`,
+    `${city} - ${state} - CEP: ${zip_code}`
+  ]
 }
 </script>
 

@@ -24,7 +24,7 @@
 import { computed } from 'vue'
 
 interface IPlainTextProps {
-  text?: string | number
+  text?: string[] | string
   noContent?: string
 }
 
@@ -33,7 +33,13 @@ const {
   noContent = 'no-data'
 } = defineProps<IPlainTextProps>()
 
-const upperCaseText = computed(() => String(text).toUpperCase())
+const upperCaseText = computed(() => {
+  if (!Array.isArray(text)) {
+    return [String(text).toUpperCase()]
+  }
+
+  return text.map((line) => String(line).toUpperCase())
+})
 </script>
 
 <style scoped lang="scss">
