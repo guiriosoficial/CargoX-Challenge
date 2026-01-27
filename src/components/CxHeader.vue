@@ -22,11 +22,13 @@
       </h2>
     </div>
   </header>
+
+  <CxSelectLang class="main-container__lang-selector" />
 </template>
 
 <script setup lang="ts">
 import HeaderSkeleton from '@/components/skeletons/HeaderSkeleton.vue'
-import CxIcon from '@/components/CxIcon.vue'
+import CxSelectLang from '@/components/CxSelectLang.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { computed } from 'vue'
 
