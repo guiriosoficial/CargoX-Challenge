@@ -1,10 +1,10 @@
+import type { BrazilianStates } from './brazilianStates'
 import type {
   FreightStatus,
   HistoryStatus,
   DocumentStatus,
   PaymentStatus,
-  BrazilianStates
-} from './status.ts'
+} from './status'
 
 export interface IPerson {
   id: number
