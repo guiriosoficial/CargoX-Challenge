@@ -51,7 +51,8 @@ export default {
     'no-payments': 'No payments',
     'no-phone': 'No phone number',
     'no-location': 'No location',
-    'no-trucks': 'No trucks'
+    'no-trucks': 'No trucks',
+    'nothing-here': 'Nothing here...'
   },
   buttons: {
     'go-back': 'Go back'

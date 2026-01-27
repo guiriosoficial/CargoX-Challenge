@@ -45,7 +45,7 @@
         icon="folder-open"
         class="table-container__empty-state-icon"
       />
-      Nada por aqui
+      {{ t('no-content.nothing-here') }}
     </tbody>
   </table>
 </template>
@@ -54,6 +54,7 @@
 import TableSkeleton from '@/views/freightSummary/skeletons/TableSkeleton.vue'
 import CxTags from '@/components/CxTags.vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import type { IFreightSummary } from '@/types/freight'
 
 interface ITablePartialProps {
@@ -61,6 +62,7 @@ interface ITablePartialProps {
   isLoading: boolean
 }
 
+const { t } = useI18n()
 const router = useRouter()
 
 const {

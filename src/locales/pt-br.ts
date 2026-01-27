@@ -51,7 +51,8 @@ export default {
     'no-payments': 'Sem pagamentos',
     'no-phone': 'Sem telefone',
     'no-location': 'Sem localização',
-    'no-trucks': 'Sem veículos'
+    'no-trucks': 'Sem veículos',
+    'nothing-here': 'Nada aqui...'
   },
   buttons: {
     'go-back': 'Voltar'
