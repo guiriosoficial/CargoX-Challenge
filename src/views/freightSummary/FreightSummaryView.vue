@@ -12,7 +12,7 @@ import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useFreightSummaryStore } from '@/store/freightSummary'
 import { usePageStore } from '@/store/page'
-import { toast } from '@/plugins/toastfy'
+import { notify } from '@/plugins/notify'
 
 const TablePartial = defineAsyncComponent(() => import('./partials/TablePartial.vue'))
 
@@ -43,7 +43,7 @@ async function fetchData() {
   try {
     await freightSummaryStore.getFreightSummary()
   } catch {
-    notifyFetchError()
+    notify.error(t('errors.something-wrong'))
   }
 }
 </script>

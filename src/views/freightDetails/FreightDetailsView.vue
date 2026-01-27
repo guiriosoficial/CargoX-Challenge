@@ -14,7 +14,7 @@ import { storeToRefs } from 'pinia'
 import { useRoute, useRouter } from 'vue-router'
 import { useFreightDetailsStore } from '@/store/freightDetails.ts'
 import { usePageStore } from '@/store/page'
-import { toast } from '@/plugins/toastfy'
+import { notify } from '@/plugins/notify'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -48,8 +48,8 @@ async function fetchData() {
   try {
     await freightDetailsStore.getFreightDetails(freightId)
   } catch {
+    notify.error(t('errors.freight-not-found'))
     goToSummary()
-    notifyFetchError()
   }
 }
 
@@ -62,10 +62,6 @@ function goToSummary() {
   router.push({
     name: 'FreightSummary'
   })
-}
-
-function notifyFetchError() {
-  toast.error(t('errors.freight-not-found'))
 }
 </script>
 

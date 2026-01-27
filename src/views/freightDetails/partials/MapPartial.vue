@@ -1,5 +1,6 @@
 <template>
   <MapSkeleton v-if="isLoadingFreightDetails" />
+
   <aside
     v-else
     class="map-container cx-card"
