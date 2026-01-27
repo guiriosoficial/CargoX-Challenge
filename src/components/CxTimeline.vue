@@ -1,35 +1,37 @@
 <template>
   <article class="timeline-container">
-    <div
-      v-for="(step, index) in timeline"
-      :key="step.key"
-      class="timeline-container__step"
-    >
-      <div class="timeline-container__progress-bar">
-        <span
-          :class="{
-            'timeline-container__progress-dot--done': step.time && (timeline[index + 1]?.time || index === timeline.length - 1),
-            'timeline-container__progress-dot--doing': step.time && !(timeline[index + 1]?.time || index === timeline.length - 1)
-          }"
-          class="timeline-container__progress-dot"
-        />
-        <span
-          :class="{
-            'timeline-container__progress-line--done': timeline[index + 1]?.time && (timeline[index + 2]?.time || index + 1 === timeline.length - 1),
-            'timeline-container__progress-line--doing': timeline[index + 1]?.time && !(timeline[index + 2]?.time || index + 1 === timeline.length - 1),
-          }"
-          class="timeline-container__progress-line"
-        />
-      </div>
-      <div class="timeline-container__step-info">
-        <h4 class="timeline-container__step-title">
-          {{ step.label }}
-        </h4>
-        <span class="timeline-container__step-time">
-          {{ step.time }}
-        </span>
-      </div>
-    </div>
+    <ol class="timeline-container__list">
+      <li
+        v-for="(step, index) in timeline"
+        :key="step.key"
+        class="timeline-container__step"
+      >
+        <div class="timeline-container__progress-bar">
+          <span
+            :class="{
+              'timeline-container__progress-dot--done': isStepDone(index),
+              'timeline-container__progress-dot--doing': isStepDoing(index)
+            }"
+            class="timeline-container__progress-dot"
+          />
+          <span
+            :class="{
+              'timeline-container__progress-line--done': isStepDone(index + 1),
+              'timeline-container__progress-line--doing': isStepDoing(index + 1),
+            }"
+            class="timeline-container__progress-line"
+          />
+        </div>
+        <div class="timeline-container__step-info">
+          <h4 class="timeline-container__step-title">
+            {{ step.label }}
+          </h4>
+          <span class="timeline-container__step-time">
+            {{ step.time }}
+          </span>
+        </div>
+      </li>
+    </ol>
   </article>
 </template>
 
@@ -49,6 +51,23 @@ interface ITimelineProps {
 const {
   timeline = []
 } = defineProps<ITimelineProps>()
+
+function isStepDone(index: number) {
+  const currentStep = timeline[index]
+  return currentStep?.time && isNextStepStartedOrLast(index)
+}
+
+function isStepDoing(index: number) {
+  const currentStep = timeline[index]
+  return currentStep?.time && !isNextStepStartedOrLast(index)
+}
+
+function isNextStepStartedOrLast(index: number) {
+  const nextStep = timeline[index + 1]
+  const isLastStep = index === timeline.length - 1
+
+  return nextStep?.time || isLastStep
+}
 </script>
 
 <style scoped lang="scss">

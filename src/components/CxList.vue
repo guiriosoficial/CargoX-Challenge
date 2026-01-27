@@ -12,12 +12,13 @@
         {{ item }}
       </li>
     </ul>
-    <span
+    <p
       v-else
+      role="status"
       class="no-content"
     >
       {{ $t(`no-content.${noContent}`) }}
-    </span>
+    </p>
   </div>
 </template>
 

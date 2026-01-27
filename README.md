@@ -75,7 +75,11 @@ npm run lint:fix
 ```
 
 ## TODO
-- Adjust Tests
+- Create Tests
 - Put All Styles Into Variables
+- Review CSS Overwrites (Toastifications Mainly)
+- Put AriaLabels in Internationalization
+- Review WCAG
+- 
 
 > **Status:** I Got the Job 🚚

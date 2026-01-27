@@ -11,12 +11,13 @@
         {{ line }}
       </p>
     </div>
-    <span
+    <p
       v-else
       class="no-content"
+      role="status"
     >
       {{ $t(`no-content.${noContent}`) }}
-    </span>
+    </p>
   </div>
 </template>
 
@@ -34,11 +35,7 @@ const {
 } = defineProps<IPlainTextProps>()
 
 const upperCaseText = computed(() => {
-  if (!Array.isArray(text)) {
-    return [String(text).toUpperCase()]
-  }
-
-  return text.map((line) => String(line).toUpperCase())
+  return !Array.isArray(text) ? [text] : text
 })
 </script>
 
@@ -49,6 +46,7 @@ const upperCaseText = computed(() => {
       display: block;
       margin-block-end: 6px;
       margin-bottom: 6px !important;
+      text-transform: uppercase;
       &:last-child { margin-bottom: 0; }
     }
   }

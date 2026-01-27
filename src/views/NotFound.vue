@@ -8,6 +8,7 @@
     </h2>
     <button
       class="not-found-container__button cx-button"
+      aria-label="Go back to previous page"
       @click="goToSummary"
     >
       {{ $t(`buttons.go-back`) }}

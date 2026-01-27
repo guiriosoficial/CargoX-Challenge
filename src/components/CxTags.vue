@@ -1,24 +1,25 @@
 <template>
   <div class="tags-container">
-    <div
+    <ul
       v-if="tags.length"
       class="tags-container__content"
     >
-      <span
-        v-for="(tag, index) in tags"
-        :key="tag.label + index"
-        :class="{ 'tags-container__tag--active': tag.isActive }"
+      <li
+        v-for="tag in tags"
+        :key="tag.label"
         class="tags-container__tag"
+        :class="{ 'tags-container__tag--active': tag.isActive }"
       >
         {{ tag.label }}
-      </span>
-    </div>
-    <span
+      </li>
+    </ul>
+    <p
       v-else
       class="no-content"
+      role="status"
     >
       {{ $t(`no-content.${noContent}`) }}
-    </span>
+    </p>
   </div>
 </template>
 
@@ -45,6 +46,7 @@ const {
 .tags-container {
   .tags-container__content {
     display: flex;
+    list-style: none;
 
     .tags-container__tag {
       font-size: 0.83em;
