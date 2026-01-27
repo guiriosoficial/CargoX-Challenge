@@ -1,7 +1,2 @@
-import dateTime from './dateTime.js'
-import phoneNumber from './phoneNumber'
-
-export {
-  dateTime,
-  phoneNumber
-}
+export { dateTime } from './dateTime'
+export { phoneNumber } from './phoneNumber'

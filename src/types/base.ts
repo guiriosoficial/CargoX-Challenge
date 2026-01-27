@@ -6,36 +6,36 @@ import type {
   BrazilianStates
 } from './status.ts'
 
-interface IPerson {
+export interface IPerson {
   id: number
   name: string
 }
 
-interface IDatedEvents<T> {
+export interface IDatedEvents<T> {
   name: string
   at: Date,
   status: T
   translation: string
 }
 
-interface IStatus {
+export interface IStatus {
   translation: string,
   status: FreightStatus
 }
 
-type ICustomer = IPerson
+export type ICustomer = IPerson
 
-type ISalesPerson = IPerson
+export type ISalesPerson = IPerson
 
-type ITruckerSeeker = IPerson
+export type ITruckerSeeker = IPerson
 
-type IDocument = IDatedEvents<DocumentStatus>
+export type IDocument = IDatedEvents<DocumentStatus>
 
-type IPayment = IDatedEvents<PaymentStatus>
+export type IPayment = IDatedEvents<PaymentStatus>
 
-type IHistory = IDatedEvents<HistoryStatus>
+export type IHistory = IDatedEvents<HistoryStatus>
 
-interface ILocation {
+export interface ILocation {
   latitude: number
   longitude: number
   address: string
@@ -45,7 +45,7 @@ interface ILocation {
   zip_code: string | number
 }
 
-interface ITrucker {
+export interface ITrucker {
   id: number
   name: string
   phone: string
@@ -57,24 +57,12 @@ interface ITrucker {
   app_version: string
 }
 
-interface ITruck {
-  plate: string
-  type: {
-    id: number
-    name: string
-  }
+export interface ITruckType {
+  id: number
+  name: string
 }
 
-export type {
-  IPerson,
-  IStatus,
-  ICustomer,
-  ISalesPerson,
-  ITruckerSeeker,
-  ILocation,
-  ITrucker,
-  ITruck,
-  IDocument,
-  IPayment,
-  IHistory
+export interface ITruck {
+  plate: string
+  type: ITruckType
 }
