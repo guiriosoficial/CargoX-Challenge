@@ -4,7 +4,7 @@
     v-else
     class="column-container"
   >
-    <Icon
+    <CxIcon
       :icon="detail.icon"
       :type="detail.iconType || 'fas'"
       class="column-container__icon"
@@ -13,7 +13,7 @@
     <div class="column-container__container">
       <span class="column-container__label">
         {{ $t(`labels.${detail.key}`) }}
-        <Icon
+        <CxIcon
           v-if="detail.tooltip"
           :data-tooltip="detail.tooltip"
           icon="question-circle"
@@ -63,7 +63,7 @@ const componentProps = computed(() => {
   const layoutKeys = ['component', 'icon', 'iconType', 'key', 'tooltip', 'noContent']
 
   return Object.fromEntries(
-      Object.entries(detail).filter(([key]) => !layoutKeys.includes(key))
+    Object.entries(detail).filter(([key]) => !layoutKeys.includes(key))
   )
 })
 </script>

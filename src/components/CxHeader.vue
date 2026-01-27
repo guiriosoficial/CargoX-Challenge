@@ -5,15 +5,17 @@
     v-else
     class="header-container"
   >
-    <CxFaIcon
-      v-if="route.path !== '/'"
-      icon="arrow-left"
+    <button
+      v-if="showBackButton"
       class="header-container__back-icon"
-      @click="router.go(-1)"
-    />
+      aria-label="Back to previous page"
+      @click="goBack"
+    >
+      <CxIcon icon="arrow-left" />
+    </button>
     <div>
       <h1 class="header-container__title">
-        {{ title.toUpperCase() }}
+        {{ title }}
       </h1>
       <h2 class="header-container__sub-title">
         {{ subtitle }}
@@ -23,9 +25,10 @@
 </template>
 
 <script setup lang="ts">
-import HeaderSkeleton from '@/components/skeleton/HeaderSkeleton.vue'
-import CxFaIcon from '@/components/CxFaIcon.vue'
+import HeaderSkeleton from '@/components/skeletons/HeaderSkeleton.vue'
+import CxIcon from '@/components/CxIcon.vue'
 import { useRouter, useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 interface IHeaderProps {
   title?: string
@@ -41,6 +44,12 @@ const {
   subtitle = '',
   isLoading = false
 } = defineProps<IHeaderProps>()
+
+const showBackButton = computed(() => route.path !== '/')
+
+function goBack() {
+  router.go(-1)
+}
 </script>
 
 <style scoped lang="scss">
@@ -51,6 +60,10 @@ const {
   display: flex;
   align-items: center;
   gap: 12px;
+
+  .header-container__title {
+    text-transform: uppercase;
+  }
 
   .header-container__back-icon {
     width: 32px;

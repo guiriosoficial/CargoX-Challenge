@@ -1,5 +1,6 @@
 <template>
   <TableSkeleton v-if="isLoading" />
+
   <table
     v-else
     class="table-container"
@@ -36,12 +37,11 @@
         </td>
       </tr>
     </tbody>
-
     <tbody
       v-else
       class="table-container__empty-state"
     >
-      <Icon
+      <CxIcon
         icon="folder-open"
         class="table-container__empty-state-icon"
       />

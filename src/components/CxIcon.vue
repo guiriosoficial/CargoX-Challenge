@@ -19,7 +19,7 @@ import { computed } from 'vue'
 import { findIconDefinition } from '@fortawesome/fontawesome-svg-core'
 import type { IconName, IconPrefix } from '@fortawesome/free-brands-svg-icons'
 
-interface ICxFaIconProps {
+interface ICxIconProps {
   icon: IconName
   type?: IconPrefix
 }
@@ -27,7 +27,7 @@ interface ICxFaIconProps {
 const {
   icon,
   type = 'fas'
-} = defineProps<ICxFaIconProps>()
+} = defineProps<ICxIconProps>()
 
 const definition = computed(() => {
   return findIconDefinition({

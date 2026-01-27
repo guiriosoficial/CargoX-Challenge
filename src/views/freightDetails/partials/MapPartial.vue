@@ -15,7 +15,6 @@
         allowfullscreen
       />
     </map>
-
     <footer class="map-container__footer">
       {{ $t('labels.last-update') }}: {{ dateTime(freightDetailsRoute.lastAppUpdateAt) || $t('no-content.no-date') }}
     </footer>
