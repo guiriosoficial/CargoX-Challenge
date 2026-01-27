@@ -25,18 +25,19 @@ const {
   isLoadingFreightSummary
 } = storeToRefs(freightSummaryStore)
 
+const {
+  pageTitle,
+  pageSubtitle
+} = storeToRefs(pageStore)
+
 onBeforeMount(() => {
   setPageHeaders()
   fetchData()
 })
 
 function setPageHeaders() {
-  pageStore.setPageTitle(t('labels.welcome'))
-  pageStore.setPageSubtitle(t('labels.select-freight'))
-}
-
-function notifyFetchError() {
-  toast.error(t('errors.something-wrong'))
+  pageTitle.value = t('labels.welcome')
+  pageSubtitle.value = t('labels.select-freight')
 }
 
 async function fetchData() {

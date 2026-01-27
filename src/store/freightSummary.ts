@@ -4,9 +4,9 @@ import { sleep } from '@/utils'
 import { freightService } from '@/services/freightService'
 import type { IFreightSummary } from '@/types/freight'
 
-const STORE_ID = 'freightSummary'
+const storeId = 'freightSummary'
 
-export const useFreightSummaryStore = defineStore(STORE_ID, () => {
+export const useFreightSummaryStore = defineStore(storeId, () => {
   const freightSummary = ref<IFreightSummary[]>([] as IFreightSummary[])
   const isLoadingFreightSummary = ref<boolean>(false)
 
@@ -14,21 +14,25 @@ export const useFreightSummaryStore = defineStore(STORE_ID, () => {
     isLoadingFreightSummary.value = true
 
     try {
-      const data = await freightService.fetchSummary()
+      const data = await freightService.fetchFreightSummary()
       await sleep()
       freightSummary.value = data
       return data
     } catch (error) {
-      freightSummary.value = [] as IFreightSummary[]
+      clearFreightSummary()
       throw error
     } finally {
       isLoadingFreightSummary.value = false
     }
   }
 
+  function clearFreightSummary(): void {
+    freightSummary.value = [] as IFreightSummary[]
+  }
+
   return {
     freightSummary,
     isLoadingFreightSummary,
-    getFreightSummary,
+    getFreightSummary
   }
 })

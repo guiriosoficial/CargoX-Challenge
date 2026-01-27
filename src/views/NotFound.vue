@@ -24,11 +24,11 @@ const router = useRouter()
 const pageStore = usePageStore()
 
 onBeforeMount(() => {
-  pageStore.setHidePageHeader(true)
+  pageStore.hidePageHeader = true
 })
 
 onBeforeUnmount(() => {
-  pageStore.setHidePageHeader(false)
+  pageStore.hidePageHeader = false
 })
 
 function goToSummary() {

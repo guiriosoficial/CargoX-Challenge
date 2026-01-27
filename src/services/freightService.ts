@@ -1,7 +1,7 @@
 import type { IFreightDetails, IFreightSummary } from '@/types/freight'
 
 export const freightService = {
-  async fetchSummary(): Promise<IFreightSummary[]> {
+  async fetchFreightSummary(): Promise<IFreightSummary[]> {
     const response = await fetch('/mocks/freight-summary.json')
 
     if (!response.ok) {
@@ -12,7 +12,7 @@ export const freightService = {
     return response.json()
   },
 
-  async fetchDetails(freightId: number): Promise<IFreightDetails> {
+  async fetchFreightDetailsById(freightId: number): Promise<IFreightDetails> {
     const response = await fetch(`/mocks/freight-details-${freightId}.json`)
 
     if (!response.ok) {

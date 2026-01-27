@@ -4,9 +4,9 @@ import { sleep } from '@/utils'
 import { freightService } from '@/services/freightService'
 import type { IFreightDetails, ICustomer, IRoute } from '@/types/freight'
 
-const STORE_ID = 'freightDetails'
+const storeId = 'freightDetails'
 
-export const useFreightDetailsStore = defineStore(STORE_ID, () => {
+export const useFreightDetailsStore = defineStore(storeId, () => {
   const freightDetails = ref<IFreightDetails>({} as IFreightDetails)
   const isLoadingFreightDetails = ref<boolean>(false)
 
@@ -28,23 +28,23 @@ export const useFreightDetailsStore = defineStore(STORE_ID, () => {
     return freightDetails.value.customer
   })
 
-  async function getFreightDetails (freightId: number): Promise<IFreightDetails> {
+  async function getFreightDetailsById(freightId: number): Promise<IFreightDetails> {
     isLoadingFreightDetails.value = true
 
     try {
-      const data = await freightService.fetchDetails(freightId)
+      const data = await freightService.fetchFreightDetailsById(freightId)
       await sleep()
       freightDetails.value = data
       return data
     } catch (error) {
-      freightDetails.value = {} as IFreightDetails
+      clearFreightDetails()
       throw error
     } finally {
       isLoadingFreightDetails.value = false
     }
   }
 
-  function clearFreightDetails() {
+  function clearFreightDetails(): void {
     freightDetails.value = {} as IFreightDetails
   }
 
@@ -54,6 +54,6 @@ export const useFreightDetailsStore = defineStore(STORE_ID, () => {
     freightDetailsRoute,
     freightDetailsCustomer,
     clearFreightDetails,
-    getFreightDetails
+    getFreightDetailsById
   })
 })

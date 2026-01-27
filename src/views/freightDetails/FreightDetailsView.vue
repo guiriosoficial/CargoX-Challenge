@@ -31,11 +31,17 @@ const {
   isLoadingFreightDetails,
 } = storeToRefs(freightDetailsStore)
 
+const {
+  pageTitle,
+  pageSubtitle,
+  isLoadingPage
+} = storeToRefs(pageStore)
+
 onBeforeMount(async() => {
-  pageStore.setPageIsLoading(true)
+  isLoadingPage.value = true
   await fetchData()
   setPageHeaders()
-  pageStore.setPageIsLoading(false)
+  isLoadingPage.value = false
 })
 
 onBeforeUnmount(() => {
@@ -46,7 +52,7 @@ async function fetchData() {
   const freightId = Number(route.params.id ?? 0)
 
   try {
-    await freightDetailsStore.getFreightDetails(freightId)
+    await freightDetailsStore.getFreightDetailsById(freightId)
   } catch {
     notify.error(t('errors.freight-not-found'))
     goToSummary()
@@ -54,8 +60,8 @@ async function fetchData() {
 }
 
 function setPageHeaders() {
-  pageStore.setPageTitle(freightDetailsCustomer.value?.name)
-  pageStore.setPageSubtitle(`ID do cliente: ${freightDetailsCustomer.value?.id}`)
+  pageTitle.value = freightDetailsCustomer.value?.name
+  pageSubtitle.value = `ID do cliente: ${freightDetailsCustomer.value?.id}`
 }
 
 function goToSummary() {
