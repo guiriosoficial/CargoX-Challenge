@@ -5,18 +5,18 @@
       class="plain-text-container__content"
     >
       <p
-        v-for="line in upperCaseText"
-        :key="line"
+        v-for="(line, index) in normalizedText"
+        :key="line + index"
       >
         {{ line }}
       </p>
     </div>
     <p
       v-else
-      class="no-content"
+      class="emptyState"
       role="status"
     >
-      {{ $t(`no-content.${noContent}`) }}
+      {{ $t(`emptyState.${emptyState}`) }}
     </p>
   </div>
 </template>
@@ -26,15 +26,15 @@ import { computed } from 'vue'
 
 interface IPlainTextProps {
   text?: string[] | string
-  noContent?: string
+  emptyState?: string
 }
 
 const {
   text = '',
-  noContent = 'no-data'
+  emptyState = 'noData'
 } = defineProps<IPlainTextProps>()
 
-const upperCaseText = computed(() => {
+const normalizedText = computed(() => {
   return !Array.isArray(text) ? [text] : text
 })
 </script>
@@ -44,8 +44,7 @@ const upperCaseText = computed(() => {
   .plain-text-container__content {
     & > p {
       display: block;
-      margin-block-end: 6px;
-      margin-bottom: 6px !important;
+      margin-bottom: 4px;
       text-transform: uppercase;
       &:last-child { margin-bottom: 0; }
     }

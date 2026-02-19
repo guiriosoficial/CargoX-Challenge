@@ -3,7 +3,7 @@ import NotFound from '@/views/NotFound'
 
 const i18n = {
   buttons: {
-    'go-back': 'Voltar'
+    'goBack': 'Voltar'
   },
   errors: {
     404: {

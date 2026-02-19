@@ -1,5 +1,5 @@
 <template>
-  <div class="not-found-container">
+  <section class="not-found-container">
     <h1 class="not-found-container__title">
       {{ $t('errors.404.code') }}
     </h1>
@@ -8,27 +8,28 @@
     </h2>
     <button
       class="not-found-container__button cx-button"
-      aria-label="Go back to previous page"
+      :aria-label="$t('a11y.labels.goBack')"
+      type="button"
       @click="goToSummary"
     >
-      {{ $t(`buttons.go-back`) }}
+      {{ $t(`buttons.goBack`) }}
     </button>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, onBeforeUnmount } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePageStore } from '@/store/page'
 
 const router = useRouter()
 const pageStore = usePageStore()
 
-onBeforeMount(() => {
+onMounted(() => {
   pageStore.hidePageHeader = true
 })
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   pageStore.hidePageHeader = false
 })
 
@@ -41,7 +42,7 @@ function goToSummary() {
 
 <style scoped lang="scss">
 .not-found-container {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   height: 100%;
   width: 100%;
   display: flex;

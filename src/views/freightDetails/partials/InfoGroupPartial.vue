@@ -76,35 +76,35 @@ const detailsListLeft = computed<IColumnDetail[]>(() => {
     {
       key: 'phone',
       text: phoneNumber(details.trucker?.phone),
-      noContent: 'no-phone',
+      emptyState: 'noPhone',
       icon: 'phone-alt',
       component: COMPONENT_MAP.text
     },
     {
       key: 'app',
       list: appDataList.value,
-      noContent: 'no-app',
+      emptyState: 'noApp',
       icon: 'mobile-alt',
       component: COMPONENT_MAP.list
     },
     {
       key: 'trucks',
       text: handleTrucksList(details.trucks),
-      noContent: 'no-trucks',
+      emptyState: 'noTrucks',
       icon: 'truck',
       component: COMPONENT_MAP.text
     },
     {
       key: 'origin',
       text: handleAddress(details.origin),
-      noContent: 'no-location',
+      emptyState: 'noLocation',
       icon: 'map-marker-alt',
       component: COMPONENT_MAP.text
     },
     {
       key: 'destination',
       text: handleAddress(details.destination),
-      noContent: 'no-location',
+      emptyState: 'noLocation',
       icon: 'flag',
       component: COMPONENT_MAP.text
     },
@@ -130,42 +130,42 @@ const detailsListRight = computed<IColumnDetail[]>(() => {
     {
       key: 'pickup-date',
       text: dateTime(details.pickup_date),
-      noContent: 'no-date',
+      emptyState: 'noDate',
       icon: 'calendar-day',
       component: COMPONENT_MAP.text
     },
     {
       key: 'freight-date',
       text: dateTime(details.delivery_date),
-      noContent: 'no-date',
+      emptyState: 'noDate',
       tooltip: t('tooltips.freight-date'),
       component: COMPONENT_MAP.text
     },
     {
       key: 'estimated-arrival',
       text: dateTime(details.estimated_time_of_arrival),
-      noContent: 'no-date',
+      emptyState: 'noDate',
       tooltip: t('tooltips.estimated-time-of-arrival'),
       component: COMPONENT_MAP.text
     },
     {
       key: 'manual-arrival',
       text: dateTime(details.manual_input_estimated_time_of_arrival),
-      noContent: 'no-date',
+      emptyState: 'noDate',
       tooltip: t('tooltips.manual-input-estimated-time-of-arrival'),
       component: COMPONENT_MAP.text
     },
     {
       key: 'documents',
       tags: handleTags(details.documents, 'documents'),
-      noContent: 'no-documents',
+      emptyState: 'noDocuments',
       icon: 'file-alt',
       component: COMPONENT_MAP.tags
     },
     {
       key: 'payments',
       tags: handleTags(details.payments, 'payments'),
-      noContent: 'no-payments',
+      emptyState: 'noPayments',
       icon: 'hand-holding-usd',
       component: COMPONENT_MAP.tags
     },

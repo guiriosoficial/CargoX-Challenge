@@ -6,9 +6,10 @@
     class="header-container"
   >
     <button
-      v-if="showBackButton"
+      v-if="canGoBack"
+      :aria-label="$t('a11y.labels.goBack')"
+      type="button"
       class="header-container__back-icon"
-      aria-label="Back to previous page"
       @click="goBack"
     >
       <CxIcon icon="arrow-left" />
@@ -21,14 +22,14 @@
         {{ subtitle }}
       </h2>
     </div>
-  </header>
 
-  <CxSelectLang class="main-container__lang-selector" />
+    <CxLangSelect class="main-container__lang-selector" />
+  </header>
 </template>
 
 <script setup lang="ts">
 import HeaderSkeleton from '@/components/skeletons/HeaderSkeleton.vue'
-import CxSelectLang from '@/components/CxSelectLang.vue'
+import CxLangSelect from '@/components/CxLangSelect.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { computed } from 'vue'
 
@@ -47,10 +48,10 @@ const {
   isLoading = false
 } = defineProps<IHeaderProps>()
 
-const showBackButton = computed(() => route.path !== '/')
+const canGoBack = computed(() => route.path !== '/')
 
 function goBack() {
-  router.go(-1)
+  router.push({ name: 'FreightSummary' })
 }
 </script>
 
@@ -58,7 +59,7 @@ function goBack() {
 @use '@/styles/variables/colors' as *;
 
 .header-container {
-  margin: 30px 0;
+  margin: 32px 0;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -82,7 +83,7 @@ function goBack() {
 
 @media (max-width: 768px) {
   .header-container {
-    margin: 30px 20px
+    margin: 32px 24px
   }
 }
 </style>

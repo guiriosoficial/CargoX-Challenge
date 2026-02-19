@@ -3,22 +3,25 @@
     <ul
       v-if="tags.length"
       class="tags-container__content"
+      role="listbox"
     >
       <li
         v-for="tag in tags"
         :key="tag.label"
-        class="tags-container__tag"
+        :aria-selected="tag.isActive"
         :class="{ 'tags-container__tag--active': tag.isActive }"
+        class="tags-container__tag"
+        role="option"
       >
         {{ tag.label }}
       </li>
     </ul>
     <p
       v-else
-      class="no-content"
+      class="emptyState"
       role="status"
     >
-      {{ $t(`no-content.${noContent}`) }}
+      {{ $t(`emptyState.${emptyState}`) }}
     </p>
   </div>
 </template>
@@ -31,12 +34,12 @@ export interface ITag {
 
 interface ITagsProps {
   tags?: ITag[]
-  noContent?: string
+  emptyState?: string
 }
 
 const {
   tags = [],
-  noContent = 'no-data'
+  emptyState = 'noData'
 } = defineProps<ITagsProps>()
 </script>
 

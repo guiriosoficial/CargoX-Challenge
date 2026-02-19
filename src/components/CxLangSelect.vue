@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const langOptions = {
@@ -8,23 +9,25 @@ const langOptions = {
 
 const { locale } = useI18n()
 
-function handleChangeLocale(value: Event) {
-  const target = value.target as HTMLSelectElement
-  document.documentElement.lang = target.value;
-}
+watch(locale, (newLocale) => {
+  document.documentElement.lang = newLocale
+})
 </script>
 
 <template>
+  <label class="sr-only" for="lang-select">
+    {{ $t('a11y.labels.selectLanguage') }}
+  </label>
   <select
-    v-model="locale"
-    class="select-lang"
-    aria-label="Select language"
-    @change="handleChangeLocale"
+      id="lang-select"
+      v-model="locale"
+      :aria-label="$t('a11y.labels.selectLanguage')"
+      class="lang-select"
   >
     <option
-      v-for="(value, key) in langOptions"
-      :key="key"
-      :value="key"
+        v-for="(value, key) in langOptions"
+        :key="key"
+        :value="key"
     >
       {{ value }}
     </option>
@@ -32,7 +35,7 @@ function handleChangeLocale(value: Event) {
 </template>
 
 <style scoped lang="scss">
-.select-lang {
+.lang-select {
   padding: 4px;
   background: none;
   position: absolute;

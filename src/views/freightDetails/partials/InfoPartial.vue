@@ -42,7 +42,7 @@ export interface IColumnDetail {
   icon?: string
   iconType?: string
   tooltip?: string
-  noContent?: string
+  emptyState?: string
   text?: string[] | string | number
   list?: string[]
   tags?: ITag[]
@@ -60,7 +60,7 @@ const {
 } = defineProps<IColumnPartialProps>()
 
 const componentProps = computed(() => {
-  const layoutKeys = ['component', 'icon', 'iconType', 'key', 'tooltip', 'noContent']
+  const layoutKeys = ['component', 'icon', 'iconType', 'key', 'tooltip', 'emptyState']
 
   return Object.fromEntries(
     Object.entries(detail).filter(([key]) => !layoutKeys.includes(key))

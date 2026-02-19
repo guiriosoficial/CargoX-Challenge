@@ -54,7 +54,7 @@ async function fetchData() {
   try {
     await freightDetailsStore.getFreightDetailsById(freightId)
   } catch {
-    notify.error(t('errors.freight-not-found'))
+    notify.error(t('errors.freight.notFound'))
     goToSummary()
   }
 }

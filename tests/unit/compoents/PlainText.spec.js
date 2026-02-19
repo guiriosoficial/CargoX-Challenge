@@ -19,19 +19,19 @@ describe('PlainText', () => {
     const expectedText = 'IM A TEST PARAGRAPH'
     expect(recived.text()).toBe(expectedText)
     expect(recived.isVisible()).toBeTruthy()
-    expect(wrapper.find('.no-content').exists()).toBeFalsy()
+    expect(wrapper.find('.emptyState').exists()).toBeFalsy()
   })
 
   test('Should be show no content message', () => {
-    const noContentWrapper = shallowMount(PlainText, {
+    const emptyStateWrapper = shallowMount(PlainText, {
       global: {
         mocks: { $t: () => 'Sem dados' }
       }
     })
-    const noContentRecived = noContentWrapper.find('.no-content')
-    const contentRecived = noContentWrapper.find('.plain-text-container__content')
+    const emptyStateRecived = emptyStateWrapper.find('.emptyState')
+    const contentRecived = emptyStateWrapper.find('.plain-text-container__content')
 
-    expect(noContentRecived.text()).toBe('Sem dados')
+    expect(emptyStateRecived.text()).toBe('Sem dados')
     expect(contentRecived.exists()).toBeFalsy()
   })
 })

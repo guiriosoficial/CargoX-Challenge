@@ -44,7 +44,7 @@ async function fetchData() {
   try {
     await freightSummaryStore.getFreightSummary()
   } catch {
-    notify.error(t('errors.something-wrong'))
+    notify.error(t('errors.somethingWrong'))
   }
 }
 </script>

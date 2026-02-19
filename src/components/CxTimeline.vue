@@ -1,24 +1,22 @@
 <template>
-  <article class="timeline-container">
+  <article
+    class="timeline-container"
+    :aria-labelledby="$t('a11y.labels.statusTimeline')"
+  >
     <ol class="timeline-container__list">
       <li
         v-for="(step, index) in timeline"
         :key="step.key"
+        :aria-current="stepStates[index] === 'doing' ? 'step' : 'false'"
         class="timeline-container__step"
       >
         <div class="timeline-container__progress-bar">
           <span
-            :class="{
-              'timeline-container__progress-dot--done': isStepDone(index),
-              'timeline-container__progress-dot--doing': isStepDoing(index)
-            }"
+            :class="`timeline-container__progress-dot--${stepStates[index]}`"
             class="timeline-container__progress-dot"
           />
           <span
-            :class="{
-              'timeline-container__progress-line--done': isStepDone(index + 1),
-              'timeline-container__progress-line--doing': isStepDoing(index + 1),
-            }"
+            :class="`timeline-container__progress-line--${stepStates[index + 1]}`"
             class="timeline-container__progress-line"
           />
         </div>
@@ -36,6 +34,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { HistoryStatus } from '@/types/status'
 
 export interface ITimeline {
@@ -52,21 +51,17 @@ const {
   timeline = []
 } = defineProps<ITimelineProps>()
 
-function isStepDone(index: number) {
-  const currentStep = timeline[index]
-  return currentStep?.time && isNextStepStartedOrLast(index)
-}
+const stepStates = computed(() =>
+  timeline.map((_, index) => getStepState(index))
+)
 
-function isStepDoing(index: number) {
-  const currentStep = timeline[index]
-  return currentStep?.time && !isNextStepStartedOrLast(index)
-}
+function getStepState(index: number) {
+  const current = timeline[index]
+  const next = timeline[index + 1]
 
-function isNextStepStartedOrLast(index: number) {
-  const nextStep = timeline[index + 1]
-  const isLastStep = index === timeline.length - 1
-
-  return nextStep?.time || isLastStep
+  if (!current?.time) return 'pending'
+  if (!next || next.time) return 'done'
+  return 'doing'
 }
 </script>
 
@@ -93,7 +88,7 @@ function isNextStepStartedOrLast(index: number) {
       display: flex;
       align-items: center;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
 
       .timeline-container__progress-dot {
         display: inline-block;
@@ -140,7 +135,7 @@ function isNextStepStartedOrLast(index: number) {
     .timeline-container__step-info {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
 
       .timeline-container__step-title {
         display: flex;
@@ -151,7 +146,7 @@ function isNextStepStartedOrLast(index: number) {
       }
 
       .timeline-container__step-time {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
       }
     }
   }

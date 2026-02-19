@@ -43,26 +43,35 @@ export default {
     canh: 'Check stub',
     sald: 'Balance'
   },
-  'no-content': {
-    'no-data': 'No data',
-    'no-date': 'No date',
-    'no-app': 'No application',
-    'no-documents': 'No documents',
-    'no-payments': 'No payments',
-    'no-phone': 'No phone number',
-    'no-location': 'No location',
-    'no-trucks': 'No trucks',
-    'nothing-here': 'Nothing here...'
+  emptyState: {
+    noData: 'No data',
+    noDate: 'No date',
+    noApp: 'No application',
+    noDocuments: 'No documents',
+    noPayments: 'No payments',
+    noPhone: 'No phone number',
+    noLocation: 'No location',
+    noTrucks: 'No trucks',
+    noContent: 'Nothing here...'
   },
   buttons: {
-    'go-back': 'Go back'
+    goBack: 'Go back'
   },
   errors: {
+    somethingWrong: 'Ops! Something wrong.',
+    freight: {
+      notFound: 'Ops! Freight not found.'
+    },
     404: {
       code: 'Error 404',
       message: 'Page not found'
-    },
-    'freight-not-found': 'Ops! Freight not found.',
-    'something-wrong': 'Ops! Something wrong.'
+    }
+  },
+  a11y: {
+    labels: {
+      goBack: 'Go back to previews page',
+      selectLanguage: 'Select language',
+      statusTimeline: 'Status timeline'
+    }
   }
 }

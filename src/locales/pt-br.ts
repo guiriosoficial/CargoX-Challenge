@@ -32,7 +32,7 @@ export default {
     'estimated-time-of-arrival': 'Tempo estimado de chegada',
     'manual-input-estimated-time-of-arrival': 'Tempo estimado de chegada'
   },
-  'documents': {
+  documents: {
     cte: 'CTe',
     mdfe: 'MDFe',
     ct: 'Contrato',
@@ -43,26 +43,35 @@ export default {
     canh: 'Canhoto',
     sald: 'Saldo'
   },
-  'no-content': {
-    'no-data': 'Sem dados',
-    'no-date': 'Sem data',
-    'no-app': 'Sem aplicativo',
-    'no-documents': 'Sem documentos',
-    'no-payments': 'Sem pagamentos',
-    'no-phone': 'Sem telefone',
-    'no-location': 'Sem localização',
-    'no-trucks': 'Sem veículos',
-    'nothing-here': 'Nada aqui...'
+  emptyState: {
+    noData: 'Sem dados',
+    noDate: 'Sem data',
+    noApp: 'Sem aplicativo',
+    noDocuments: 'Sem documentos',
+    noPayments: 'Sem pagamentos',
+    noPhone: 'Sem telefone',
+    noLocation: 'Sem localização',
+    noTrucks: 'Sem veículos',
+    noContent: 'Nada aqui...'
   },
   buttons: {
-    'go-back': 'Voltar'
+    goBack: 'Voltar'
   },
   errors: {
+    somethingWrong: 'Ops! Algo deu errado.',
+    freight: {
+      notFound: 'Ops! Pedido não encontrado.'
+    },
     404: {
       code: 'Erro 404',
       message: 'Página não encontrada'
-    },
-    'freight-not-found': 'Pedido não encontrado',
-    'something-wrong': 'Algo deu errado'
+    }
+  },
+  a11y: {
+    labels: {
+      goBack: 'Voltar para a página anterior',
+      selectLanguage: 'Selecionar idioma',
+      statusTimeline: 'Linha do tempo do status'
+    }
   }
 }

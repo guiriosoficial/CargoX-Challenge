@@ -45,7 +45,7 @@
         icon="folder-open"
         class="table-container__empty-state-icon"
       />
-      {{ t('no-content.nothing-here') }}
+      {{ t('emptyState.noContent') }}
     </tbody>
   </table>
 </template>
