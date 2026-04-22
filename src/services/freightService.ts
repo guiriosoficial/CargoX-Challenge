@@ -1,11 +1,13 @@
 import type { IFreightDetails, IFreightSummary } from '@/types/freight'
 
+const freightPath = '/mocks'
+
 export const freightService = {
   async fetchFreightSummary(): Promise<IFreightSummary[]> {
-    const response = await fetch('/mocks/freight-summary.json')
+    const response = await fetch(`${freightPath}/freight-summary.json`)
 
     if (!response.ok) {
-      const errorMsg = `Erro na API: ${response.status} ${response.statusText}`
+      const errorMsg = `API Error: ${response.status} ${response.statusText}`
       throw new Error(errorMsg)
     }
 
@@ -13,10 +15,10 @@ export const freightService = {
   },
 
   async fetchFreightDetailsById(freightId: number): Promise<IFreightDetails> {
-    const response = await fetch(`/mocks/freight-details-${freightId}.json`)
+    const response = await fetch(`${freightPath}/freight-details-${freightId}.json`)
 
     if (!response.ok) {
-      const errorMsg = `Erro na API: ${response.status} ${response.statusText}`
+      const errorMsg = `API Error: ${response.status} ${response.statusText}`
       throw new Error(errorMsg)
     }
 

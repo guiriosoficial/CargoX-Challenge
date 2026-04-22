@@ -1,6 +1,9 @@
-const FreightSummary = () => import('@/views/freightSummary/FreightSummaryView.vue')
-const FreightDetails = () => import('@/views/freightDetails/FreightDetailsView.vue')
-const NotFound = () => import('@/views/NotFound.vue')
+const FreightSummary = () =>
+  import('@/views/freightSummary/FreightSummaryView.vue')
+const FreightDetails = () =>
+  import('@/views/freightDetails/FreightDetailsView.vue')
+const NotFound = () =>
+  import('@/views/NotFound.vue')
 
 export const routes = [
   {

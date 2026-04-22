@@ -15,13 +15,15 @@ watch(locale, (newLocale) => {
 </script>
 
 <template>
-  <label class="sr-only" for="lang-select">
+  <label
+    class="sr-only"
+    for="lang-select"
+  >
     {{ $t('a11y.labels.selectLanguage') }}
   </label>
   <select
       id="lang-select"
       v-model="locale"
-      :aria-label="$t('a11y.labels.selectLanguage')"
       class="lang-select"
   >
     <option

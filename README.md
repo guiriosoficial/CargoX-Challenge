@@ -77,9 +77,8 @@ npm run lint:fix
 ## TODO
 - Create Tests
 - Put All Styles Into Variables
-- Review CSS Overwrites (Toastifications Mainly)
-- Put AriaLabels in Internationalization
-- Review WCAG
-- 
+- Adjust Table Navigation
+- Adjust Back Button Focus
+- Fix Internationalization in Header
 
 > **Status:** I Got the Job 🚚

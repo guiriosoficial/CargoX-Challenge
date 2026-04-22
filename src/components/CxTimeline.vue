@@ -1,8 +1,14 @@
 <template>
   <article
     class="timeline-container"
-    :aria-labelledby="$t('a11y.labels.statusTimeline')"
+    aria-labelledby="timeline-title"
   >
+    <h3
+      id="timeline-title"
+      class="sr-only"
+    >
+      {{ $t('a11y.labels.statusTimeline') }}
+    </h3>
     <ol class="timeline-container__list">
       <li
         v-for="(step, index) in timeline"

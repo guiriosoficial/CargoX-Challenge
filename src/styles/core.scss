@@ -29,12 +29,28 @@ html {
   line-height: normal;
 }
 
+button {
+  background: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: $color-text-title;
 }
 
-// Generic classes
+// Generic Classes
 .emptyState {
   color: $color-text-placeholder;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
