@@ -14,11 +14,8 @@ dist-ssr
 coverage
 *.local
 
-/cypress/videos/
-/cypress/screenshots/
-
 # Editor directories and files
-.vscode/*
+vite-project/.vscode/settings.json
 !.vscode/extensions.json
 .idea
 *.suo
@@ -28,3 +25,15 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+.eslintcache
+
+# Cypress
+/cypress/videos/
+/cypress/screenshots/
+
+# Vitest
+__screenshots__/
+
+# Vite
+*.timestamp-*-*.mjs

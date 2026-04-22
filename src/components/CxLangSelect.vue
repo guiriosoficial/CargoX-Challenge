@@ -22,14 +22,14 @@ watch(locale, (newLocale) => {
     {{ $t('a11y.labels.selectLanguage') }}
   </label>
   <select
-      id="lang-select"
-      v-model="locale"
-      class="lang-select"
+    id="lang-select"
+    v-model="locale"
+    class="lang-select"
   >
     <option
-        v-for="(value, key) in langOptions"
-        :key="key"
-        :value="key"
+      v-for="(value, key) in langOptions"
+      :key="key"
+      :value="key"
     >
       {{ value }}
     </option>

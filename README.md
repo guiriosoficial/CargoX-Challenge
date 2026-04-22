@@ -80,5 +80,6 @@ npm run lint:fix
 - Adjust Table Navigation
 - Adjust Back Button Focus
 - Fix Internationalization in Header
+- Fix Phone Number Mask
 
 > **Status:** I Got the Job 🚚
