@@ -4,6 +4,7 @@
       v-if="!hidePageHeader"
       :title="pageTitle"
       :subtitle="pageSubtitle"
+      :variables="pageVariables"
       :is-loading="isLoadingPage"
     />
     <router-view v-slot="{ Component }">
@@ -31,6 +32,7 @@ const {
   isLoadingPage,
   pageTitle,
   pageSubtitle,
+  pageVariables,
   hidePageHeader
 } = storeToRefs(pageStore)
 </script>

@@ -36,8 +36,8 @@ onBeforeMount(() => {
 })
 
 function setPageHeaders() {
-  pageTitle.value = t('labels.welcome')
-  pageSubtitle.value = t('labels.select-freight')
+  pageTitle.value = 'labels.welcome'
+  pageSubtitle.value = 'labels.select-freight'
 }
 
 async function fetchData() {

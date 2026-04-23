@@ -16,10 +16,10 @@
     </button>
     <div>
       <h1 class="header-container__title">
-        {{ title }}
+        {{ $t(title) }}
       </h1>
       <h2 class="header-container__sub-title">
-        {{ subtitle }}
+        {{ $t(subtitle, variables) }}
       </h2>
     </div>
 
@@ -36,6 +36,7 @@ import { computed } from 'vue'
 interface IHeaderProps {
   title?: string
   subtitle?: string
+  variables?: Record<string, unknown>
   isLoading?: boolean
 }
 
@@ -45,6 +46,7 @@ const route = useRoute()
 const {
   title = '',
   subtitle = '',
+  variables = {},
   isLoading = false
 } = defineProps<IHeaderProps>()
 

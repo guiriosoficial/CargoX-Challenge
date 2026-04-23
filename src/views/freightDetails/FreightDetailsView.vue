@@ -34,6 +34,7 @@ const {
 const {
   pageTitle,
   pageSubtitle,
+  pageVariables,
   isLoadingPage
 } = storeToRefs(pageStore)
 
@@ -61,7 +62,10 @@ async function fetchData() {
 
 function setPageHeaders() {
   pageTitle.value = freightDetailsCustomer.value?.name
-  pageSubtitle.value = `ID do cliente: ${freightDetailsCustomer.value?.id}`
+  pageSubtitle.value = 'labels.customer-id'
+  pageVariables.value = {
+    customerId: freightDetailsCustomer.value?.id
+  }
 }
 
 function goToSummary() {

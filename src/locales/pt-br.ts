@@ -1,6 +1,7 @@
 export default {
   labels: {
     'freight-id': 'ID do frete CargoX',
+    'customer-id': 'ID do cliente: {customerId}',
     'customer-tracking-number': 'Nº de pedido do cliente',
     'customer-name': 'Nome do cliente',
     'freight-status': 'Status do pedido',
