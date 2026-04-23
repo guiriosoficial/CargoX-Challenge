@@ -66,7 +66,7 @@
   }
 }
 
-@media screen and (max-width: 1180px) {
+@media (max-width: 1180px) {
   .table-container {
     .table-container__body {
       .table-container__row  > td {

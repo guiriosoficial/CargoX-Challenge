@@ -77,7 +77,5 @@ npm run lint:fix
 ## TODO
 - Create Tests
 - Put All Styles Into Variables
-- Adjust Table Navigation
-- Adjust Back Button Focus
 
 > **Status:** I Got the Job 🚚

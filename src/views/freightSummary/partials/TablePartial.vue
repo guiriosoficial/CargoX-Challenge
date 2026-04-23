@@ -22,9 +22,13 @@
         v-for="data in tableData"
         :key="data.id"
         class="table-container__row"
-        @click="goToFreight(data.id)"
+        @click.stop="goToFreight(data.id)"
       >
-        <td>{{ data.id }}</td>
+        <td>
+          <RouterLink :to="getFreightRedirectObject(data.id)">
+            {{ data.id }}
+          </RouterLink>
+        </td>
         <td>{{ data.customer_tracking_number }}</td>
         <td>{{ data.customer?.name.toUpperCase() }}</td>
         <td>
@@ -41,11 +45,15 @@
       v-else
       class="table-container__empty-state"
     >
-      <CxIcon
-        icon="folder-open"
-        class="table-container__empty-state-icon"
-      />
-      {{ t('emptyState.noContent') }}
+      <tr>
+        <td colspan="4">
+          <CxIcon
+            icon="folder-open"
+            class="table-container__empty-state-icon"
+          />
+          {{ t('emptyState.noContent') }}
+        </td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -71,10 +79,15 @@ const {
 } = defineProps<ITablePartialProps>()
 
 function goToFreight(id: number) {
-  router.push({
+  const freightRedirectObject = getFreightRedirectObject(id)
+  router.push(freightRedirectObject)
+}
+
+function getFreightRedirectObject(id: number) {
+  return {
     name: 'FreightDetails',
     params: { id }
-  })
+  }
 }
 </script>
 
