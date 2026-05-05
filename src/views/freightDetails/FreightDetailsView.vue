@@ -76,6 +76,8 @@ function goToSummary() {
 </script>
 
 <style scoped lang="scss">
+@use '@/styles/mixins/breakpoints' as *;
+
 .freight-container {
   display: flex;
   gap: 20px;
@@ -100,7 +102,7 @@ function goToSummary() {
   }
 }
 
-@media (max-width: 768px) {
+@include max-width(md) {
   .freight-container {
     gap: 0;
   }

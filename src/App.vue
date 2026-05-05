@@ -38,6 +38,8 @@ const {
 </script>
 
 <style scoped lang="scss">
+@use '@/styles/mixins/breakpoints' as *;
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -50,7 +52,7 @@ const {
   }
 }
 
-@media (max-width: 768px) {
+@include max-width(md) {
   .main-container {
     padding: 0;
   }

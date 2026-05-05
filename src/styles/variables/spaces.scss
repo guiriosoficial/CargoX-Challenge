@@ -1,0 +1,66 @@
+// ========================================
+// Spacing Variables
+// ========================================
+
+// Base unit: 4px
+$space-none: 0 !default;
+
+// Margin
+$margin-xxs: 2px !default;   // 0.5 * base
+$margin-xs: 4px !default;    // 1 * base
+$margin-sm: 6px !default;    // 1.5 * base
+$margin-md: 8px !default;    // 2 * base
+$margin-lg: 12px !default;   // 3 * base
+$margin-xl: 16px !default;   // 4 * base
+$margin-2xl: 20px !default;  // 5 * base
+$margin-3xl: 24px !default;  // 6 * base
+$margin-4xl: 30px !default;  // 7.5 * base
+$margin-5xl: 32px !default;  // 8 * base
+
+// Padding
+$padding-xxs: 2px !default;   // 0.5 * base
+$padding-xs: 4px !default;    // 1 * base
+$padding-sm: 6px !default;    // 1.5 * base
+$padding-md: 8px !default;    // 2 * base
+$padding-lg: 12px !default;   // 3 * base
+$padding-xl: 16px !default;   // 4 * base
+$padding-2xl: 20px !default;  // 5 * base
+$padding-3xl: 24px !default;  // 6 * base
+$padding-4xl: 30px !default;  // 7.5 * base
+$padding-5xl: 32px !default;  // 8 * base
+
+// Gap (para flexbox/grid)
+$gap-xxs: 2px !default;   // 0.5 * base
+$gap-xs: 4px !default;    // 1 * base
+$gap-sm: 6px !default;    // 1.5 * base
+$gap-md: 8px !default;    // 2 * base
+$gap-lg: 12px !default;   // 3 * base
+$gap-xl: 16px !default;   // 4 * base
+$gap-2xl: 20px !default;  // 5 * base
+$gap-3xl: 24px !default;  // 6 * base
+$gap-4xl: 30px !default;  // 7.5 * base
+$gap-5xl: 32px !default;  // 8 * base
+
+// Border width
+$border-thin: 1px !default;
+$border-base: 2px !default;
+$border-thick: 3px !default;
+
+// Border radius
+$radius-sm: 2px !default;
+$radius-md: 6px !default;
+
+// ========================================
+// Dimension Variables
+// ========================================
+
+// Width
+$w-full: 100% !default;
+$w-half: 50% !default;
+$w-screen: 100vw !default;
+
+// Height
+$h-full: 100% !default;
+$h-half: 50% !default;
+$h-screen: 100vh !default;
+

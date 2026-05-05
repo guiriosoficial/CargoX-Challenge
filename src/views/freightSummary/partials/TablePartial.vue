@@ -93,6 +93,7 @@ function getFreightRedirectObject(id: number) {
 
 <style scoped lang="scss">
 @use '@/styles/variables/colors' as *;
+@use '@/styles/mixins/breakpoints' as *;
 @use 'sass:color';
 
 .table-container {
@@ -151,7 +152,7 @@ function getFreightRedirectObject(id: number) {
   }
 }
 
-@media (max-width: 768px) {
+@include max-width(md) {
   .table-container {
     font-size: .89em;
 

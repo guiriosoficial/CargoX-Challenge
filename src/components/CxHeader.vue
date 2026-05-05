@@ -59,6 +59,7 @@ function goBack() {
 
 <style scoped lang="scss">
 @use '@/styles/variables/colors' as *;
+@use '@/styles/mixins/breakpoints' as *;
 
 .header-container {
   margin: 32px 0;
@@ -83,7 +84,7 @@ function goBack() {
   }
 }
 
-@media (max-width: 768px) {
+@include max-width(md) {
   .header-container {
     margin: 32px 24px
   }

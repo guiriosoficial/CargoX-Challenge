@@ -1,0 +1,35 @@
+// ========================================
+// Breakpoints map
+// ========================================
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// ========================================
+// Helpers
+// ========================================
+@function breakpoint($key) {
+  @if map-has-key($breakpoints, $key) {
+    @return map-get($breakpoints, $key);
+  }
+
+  @error "Breakpoint '#{$key}' does not exist. Valid values: #{map-keys($breakpoints)}";
+}
+
+// Desktop-first (max-width)
+@mixin max-width($key) {
+  $max: breakpoint($key);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

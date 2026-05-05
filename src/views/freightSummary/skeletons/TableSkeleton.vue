@@ -25,6 +25,7 @@
 
 <style lang="scss" scoped>
 @use '@/styles/variables/colors' as *;
+@use '@/styles/mixins/breakpoints' as *;
 @use 'sass:color';
 
 .table-container {
@@ -78,7 +79,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include max-width(md) {
   .table-container {
     .table-container__head {
       .table-container__header > th {

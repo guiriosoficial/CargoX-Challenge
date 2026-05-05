@@ -6,6 +6,8 @@
 </template>
 
 <style scoped lang="scss">
+@use '@/styles/mixins/breakpoints' as *;
+
 .header-skeleton-container {
   margin: 30px 0;
 
@@ -21,7 +23,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include max-width(md) {
   .header-skeleton-container {
     margin: 30px 20px
   }
