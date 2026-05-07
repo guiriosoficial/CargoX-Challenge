@@ -75,7 +75,7 @@ npm run lint:fix
 ```
 
 ## TODO
-- Create Tests
-- Put All Styles Into Variables
+- Create and Update Tests
+- Put All Styles Into Variables (Design Tokens)
 
 > **Status:** I Got the Job 🚚
